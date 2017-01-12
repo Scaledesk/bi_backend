@@ -1,0 +1,960 @@
+
+
+b,
+strong { font-weight: 700; }
+
+/* ==========================================================================
+   2.Hero section
+   ========================================================================== */
+
+.hero-section {
+
+
+    position: relative;
+
+}
+.hr-color{
+color:#EEEEEE;}
+
+
+.border-none{
+    border-color:transparent!important;
+}
+
+
+.cta-form{    position: absolute;
+    width: 450px;
+   /* margin-left: 50px;*/
+    /* margin: 0 auto; */
+    /* text-align: right; */
+    max-width: 100%;}
+
+.hero-section::before,
+.testimonial::before,
+.video-tour::before,
+.content-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.form-input-custom{
+    border-radius: 2px!important;
+}
+
+a{
+    color: #ffffff;
+
+}
+.nav-collapse li
+ {
+    list-style-type: none!important;
+}
+
+a:hover, a:focus {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.hero-section::before {     background: rgb(238, 238, 238); }
+
+
+.hero-section .cta-signup-form {
+   /* background: rgba(255, 255, 255, 0.33);*/
+    background: #ffffff;
+    padding: 1em 2em;
+    margin-top: 3em;
+}
+
+.hero-section .cta-signup-form h2 {
+    padding: 10px 0 0px 0;
+    font-size: 28px;
+    color: #091d25;
+    font-weight: normal;
+}
+
+.hero-section .cta-form .form-group {
+    margin-bottom: 17px;
+    position: relative;
+}
+
+.hero-section .cta-form .form-group i {
+    position: absolute;
+    left: 16px;
+    bottom: 14px;
+}
+
+.hero-section .form-control,
+.hero-section select.form-control {
+    height: 40px;
+    padding: 0 1.5em 0 2.5em;
+    line-height: 40px;
+}
+
+.hero-section select.form-control {
+    border-color: #dadddf;
+    color: #848e92;
+    -moz-appearance: none;
+}
+
+/* ==========================================================================
+   3.Navbar
+   ========================================================================== */
+
+/* ==========================================================================
+   6. Benefits cta
+   ========================================================================== */
+
+.benefits-cta-list > li > i {
+    position: absolute;
+    color: #091d25;
+    margin-top: 5px;
+}
+
+.benefits-cta-list h4 { font-size: 22px; }
+
+.benefits-cta-list > li > h4,
+.benefits-cta-list > li > p { margin: 0 0 12px 35px; }
+
+.benefits-cta-list > li > p,
+.benefits-cta .row > [class^="col"]:not(:last-child) > .benefits-cta-list { margin-bottom: 24px; }
+
+.benefits-cta-list > li:last-child > p { margin-bottom: 0; }
+
+/* ==========================================================================
+   7. video intro
+   ========================================================================== */
+
+.features,
+.cta,
+.pricing,
+.trusted-clients,
+.site-footer { background-color: #f9f9f9; }
+
+.feature-cta-list > li > p:last-child { margin-bottom: 0; }
+
+/* ==========================================================================
+   10.cta
+   ========================================================================== */
+
+
+
+.cta h2 {
+    font-size: 32px;
+    margin: 0 0 36px;
+    line-height: 1.6;
+}
+
+.cta h2 em {
+    color: #31aff5;
+    border-bottom: 3px solid #31aff5;
+}
+
+.cta h2 em,
+.cta-footer h2 em {
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.cta .btn {
+    background: transparent;
+    border: 2px solid #31aff5;
+    color: #091d25;
+}
+
+.cta .btn:hover,
+.cta .btn:active,
+.cta .btn:focus,
+.cta .btn:active:hover,
+.cta .btn:active:focus {
+    background: #31aff5;
+    color: #fff;
+}
+
+/* ==========================================================================
+   11.New feature
+   ========================================================================== */
+
+/* ==========================================================================
+   12.cta into
+   ========================================================================== */
+
+.cta-info .section-spacing {
+    background: #31aff5;
+    padding: 3.75em 2em;
+}
+
+.cta-info h2,
+.cta-info p { color: #fff; }
+
+.cta-info h2 {
+    font-size: 14px;
+    letter-spacing: .5px;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+}
+
+.cta-info p {
+    font-size: 20px;
+    margin-bottom: 36px;
+}
+
+/* ==========================================================================
+   21.cta footer
+   ========================================================================== */
+
+.cta-footer h2 {
+    font-size: 32px;
+    color: #fff;
+    margin: 0;
+}
+
+.cta-footer h2 em { border-bottom: 3px solid #fff; }
+
+.cta-footer .btn {
+    display: block;
+    width: 50%;
+    margin: 2.25em auto 0;
+}
+
+/* ==========================================================================
+    22.Twitter reviews
+   ========================================================================== */
+
+/* ==========================================================================
+    24.Features cta
+   ========================================================================== */
+
+.features-cta { overflow-x: hidden; }
+
+.feature-cta-list { margin: 48px 0 36px; }
+
+.feature-cta-list > li:not(:last-child ) { margin-bottom: 24px; }
+
+.feature-cta-list > li > h4 { font-size: 22px; }
+
+/* ==========================================================================
+    25.Site footer
+   ========================================================================== */
+
+
+
+.sub-form { margin-bottom: 3em; }
+
+.sub-form p:not(.form-terms) { margin-bottom: 24px; }
+
+.sub-form .form-control {
+    border-color: #dadddf;
+    color: #848e92;
+    padding: 10px 16px 10px 40px;
+}
+
+.sub-form .form-control:focus {
+    border-color: #31aff5;
+    background-color: #fff;
+}
+
+#mc-form .input-group > i.fa-envelope {
+    position: absolute;
+    left: 16px;
+    color: #b5bbbd;
+    z-index: 10;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.ie9 #mc-form .input-group > i.fa-envelope { top: 35%; }
+.sub-form input::-webkit-input-placeholder {
+    color: #b5bbbd;
+    font-weight: 400;
+}
+.sub-form input:-moz-placeholder {
+    color: #b5bbbd;
+    font-weight: 400;
+}
+.sub-form input::-moz-placeholder {
+    color: #b5bbbd;
+    font-weight: 400;
+}
+.sub-form input:-ms-input-placeholder {
+    color: #b5bbbd;
+    font-weight: 400;
+}
+
+.sub-form input,
+.sub-form button { height: 52px; }
+
+.sub-form button {
+    padding: 0px 24px;
+    font-size: 24px;
+}
+
+#mc-error i,
+#mc-success i,
+#mc-error-cta i,
+#mc-success-cta i { padding-right: .5em; }
+
+#mc-error,
+#mc-success,
+#mc-error-cta,
+#mc-success-cta {
+    padding: .3em 0;
+    color: #fff;
+    display: none;
+    font-weight: 400;
+    margin-bottom: .75em;
+    border-radius: 2px;
+    text-align: center;
+}
+
+#mc-error,
+#mc-error-cta { background: #f44336; }
+
+#mc-success,
+#mc-success-cta { background: #2dbf5b; }
+
+.twitter-icon { margin-bottom: 1.5em; }
+
+.twitter-icon i {
+    width: 53px;
+    height: 53px;
+    line-height: 53px;
+    border: 1px solid #31aff5;
+    font-size: 30px;
+    color: #31aff5;
+    border-radius: 50%;
+}
+
+.tweet {
+    color: #848e92;
+    font-size: 16px;
+    padding: 0 2em;
+    line-height: 1.7;
+}
+.footer-col-spacing [class^="col-"]:not(:nth-last-child(1) ) {
+    margin-bottom: 2.25em;
+}
+/* ==========================================================================
+   29.Contact form
+   ========================================================================== */
+
+#modal-contact-form .modal-body { padding: 3em 1em; }
+
+.contact-form .section-header { margin-bottom: 3em; }
+
+.contact-form .section-header h2 { margin: .75em 0 0; }
+
+.contact-form .section-header h3 { margin: 16px 0 0; }
+
+.contact-form .form-control.input-error { border-color: #f44336; }
+
+.contact-form-success {
+    text-align: center;
+    padding: 12px;
+    margin: 0;
+    font-size: 20px;
+    display: none;
+}
+
+.contact-form-success i {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
+    border: 3px solid #2dbf5b;
+    line-height: 74px;
+    border-radius: 50%;
+    font-size: 38px;
+    text-align: center;
+    color: #2dbf5b;
+    background: transparent;
+}
+
+.contact-form-success span {
+    display: block;
+    margin-bottom: 6px;
+    color: #091d25;
+    font-size: 30px;
+}
+
+/* ==========================================================================
+   30.Signup Page
+   ========================================================================== */
+
+
+.content-wrapper {
+    background: url(../img/bg-form-page.jpg) center center no-repeat;
+    background-size: cover;
+    position: relative;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+    min-height: 100%;
+}
+
+.content-wrapper::before { background: rgba(0, 0, 0, 0.45); }
+
+.logo-sl-page {
+    position: relative;
+    padding: 3em 0 0;
+}
+
+.cta-light.section-spacing { padding-top: 3em; }
+
+
+
+.cta-light .section-header { margin-bottom: 2.25em; }
+
+.cta-light .section-header h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.cta-light .form-control {
+   /* border-color: #dadddf;*/
+    background-color: #F9F9F9;
+    color: #848e92;
+    font-size: 15px;
+}
+
+.cta-light .form-control:focus {     border-color: #F4DA14; }
+.cta-light input::-webkit-input-placeholder, .cta-light textarea::-webkit-input-placeholder {
+    color: #6b777c;
+    font-weight: 400;
+}
+.cta-light input:-moz-placeholder, .cta-light textarea:-moz-placeholder {
+    color: #6b777c;
+    font-weight: 400;
+}
+.cta-light input::-moz-placeholder, .cta-light textarea::-moz-placeholder {
+    color: #6b777c;
+    font-weight: 400;
+}
+.cta-light input:-ms-input-placeholder, .cta-light textarea:-ms-input-placeholder {
+    color: #6b777c;
+    font-weight: 400;
+}
+
+.cta-light .form-group label,
+.cta-light .form-terms { color: #9da5a8; }
+
+.cta-light .checkbox label {
+    color: #6b777c;
+    font-size: 14px;
+}
+
+.cta-light .form-option { color: #fff; }
+
+.cta-light form h3 {
+    font-size: 16px;
+    color: #6b777c;
+    margin: 2.25em 0 0;
+}
+
+.sl-page .copyright-terms small,
+.sl-page .terms-privacy a { color: #fff; }
+
+/* ==========================================================================
+   31.Signin Page
+   ========================================================================== */
+
+/* ==========================================================================
+   32.Small devices (tablets, 768px and up)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+
+    .section-spacing {
+        padding: 5.25em 0;
+    }
+
+    .section-spacing1 {
+        padding-top: 4.45em;
+    }
+
+    .cta h2 {
+        font-size: 38px;
+    }
+
+    .cta-info .section-spacing {
+        padding: 3.75em 3em;
+    }
+
+    .pricing .section-header {
+        margin-bottom: 4.6875em;
+    }
+
+    .testimonial.section-spacing {
+        padding: 7.5em 0;
+    }
+
+    .testimonial blockquote p {
+        font-size: 24px;
+    }
+
+    .faq-list {
+        margin: 10px 0 0;
+    }
+
+    .form-option {
+        margin: 48px 0;
+    }
+
+    .form-signup-google .btn,
+    .form-signup-facebook .btn {
+        width: 95%;
+    }
+
+    .clients-list [class^="col-"] {
+        margin-bottom: 3em;
+    }
+
+}
+/* ==========================================================================
+   33. Medium devices (desktops, 992px and up)
+   ========================================================================== */
+
+@media (min-width: 992px) {
+
+    .hero-section .cta-signup-form {
+        margin-top: 0;
+    }
+
+    .section-spacing {
+        padding: 3em 0;
+    }
+
+    .section-spacing1 {
+        padding-top: 6em;
+    }
+
+    .section-header {
+        margin-bottom: 3.75em;
+    }
+
+    .cta h2 {
+        line-height: 1.75;
+    }
+
+    .cta-info .section-spacing {
+        padding: 5.25em 3em;
+    }
+
+    .cta-info .row {
+        display: table;
+    }
+
+    .cta-info [class*="col-"] {
+        float: none;
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .cta-info .col-md-5 {
+        padding-right: 0;
+    }
+
+    .cta-info .col-md-7 {
+        padding-left: 0;
+        background: url(../img/cta-info.jpg) 0 0 no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        width: auto;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        -ms-interpolation-mode: nearest-neighbor;
+    }
+
+    .pricing .section-header {
+        margin-bottom: 5.4375em;
+    }
+
+    .section-spacing {
+        padding: 9.75em 0;
+    }
+
+    .form-signup-google .btn,
+    .form-signup-facebook .btn {
+        width: 88%;
+    }
+
+    .feature-cta-big-img {
+        max-width: 1000px;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        right: 420px;
+    }
+
+    .feature-cta-list {
+        margin: 48px 0;
+    }
+
+    .cta-footer .btn {
+        width: auto;
+        margin: 0 0 0 48px;
+        display: inline-block;
+    }
+
+}
+
+@media (min-width: 766px) and (max-width: 855px) {
+
+}
+
+
+/*
+custom css*/
+
+
+input[type="file"]{
+    margin-top: 10px
+;
+}
+
+
+.img-style {
+    width: 58px!important;
+    height: 58px!important;
+}
+/*.custum-height-img{
+  height:630px;
+
+}*/
+
+
+.input-file{
+    padding: 7px 1.5em 0 2.5em!important;
+    line-height: 0px!important;
+}
+
+
+
+.hollow-btn1 {
+
+    color: #333333;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    /* margin: 0 auto; */
+    line-height: 14px;
+    margin: 0px 110px 8px;
+    padding: 15px 20px;
+    text-decoration: none !important;
+    position: relative;
+    border: 1px solid #343434;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    background: none;
+}
+
+.hollow-btn1:hover {
+    background-color: #333333!important;
+    opacity: 0.8;
+    color: #fff!important;
+    border-color: #ffffff!important;
+}
+
+
+#cta-signup-form{
+    font-family: 'Raleway', sans-serif;
+}
+
+
+.product-shop.product_description #product-options-wrapper, .product-shop.product_description .product-options-bottom {
+    float: left;
+    width: 100%;
+}
+
+.product-options {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+}
+
+.product-options {
+    width: 100% !important;
+}
+
+.product-options {
+    padding: 10px;
+    margin: 10px 0 0;
+    border: 1px solid #ddd;
+    background-color: #f6f6f6;
+}
+
+.product-shop .product-options b.title_option {
+    display: block !important;
+}
+
+.m_bottom_10 {
+    margin-bottom: 10px;
+}
+
+.product-options dt label {
+    font-weight: 300;
+}
+.product-options dt label {
+    font-weight: bold;
+}
+
+.product-options dt label em {
+    padding-right: 2px;
+}
+
+.product-options dt label {
+    font-weight: 300;
+}
+.product-options dd select {
+    width: 100% !important;
+}
+
+/*colors selection*/
+.color-swatch-92-24{
+    background-color: #00FFD4;
+}
+.color-swatch-92-30{
+    background-color: #B9B1A6;
+}
+.color-swatch-92-29{
+    background-color: #E4DBC9;
+}
+.color-swatch-92-28{
+    background-color: #DAC17E;
+}
+.color-swatch-92-27{
+    background-color: #8D7B67;
+}
+.color-swatch-92-26{
+    background-color: #EDEBDF;
+}
+.color-swatch-92-25{
+    background-color: #D3B670;
+}
+
+.border-no{
+    border: 1px solid #f5f5f5;
+   padding:12px;
+
+}
+
+.border-no1{
+    border: 1px solid #000000;
+    padding:12px;
+
+}
+
+.fa:focus{
+    outline:none;
+}
+
+.tz-search1:focus{
+    outline:none;
+}
+
+
+.blog-item .h4style {
+    padding: 0 0 0;
+    margin: 0;
+    text-align: center;
+}
+
+
+
+
+
+
+.validation-failed {
+    border: 1px dashed #eb340a !important;
+    background: #faebe7 !important;
+}
+
+select {
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #e9e9e9;
+    color: #8c8c8c;
+    max-width: 100%;
+    outline: medium none;
+    padding: 8px;
+    transition: box-shadow 400ms ease 0s, border-color 400ms ease 0s;
+    height: 38px;
+    width: 100%;
+}
+
+input, select, textarea, button {
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: middle;
+    color: #666;
+    background: #fff;
+}
+
+.validation-advice {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.validation-advice {
+    clear: both;
+    min-height: 13px;
+    margin: 3px 0 0;
+    padding-left: 17px;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 13px;
+    background: url(../images/validation_advice_bg.gif) 2px 0 no-repeat;
+    color: #eb340a;
+}
+
+.product-options dd {
+    margin: 10px 0;
+}
+
+
+.color-swatch-wrapper ul li {
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    margin: 1px;
+    position: relative;
+    padding: 3px;
+    border: 1px solid #cccccc;
+}
+
+.color-swatch-wrapper ul li .swatch-title {
+    /* text-indent: -9999px; */
+    line-height: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    display: block;
+    overflow: hidden;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+
+
+    .hero-section .cta-signup-form {
+
+        margin-top: 2.5em;
+    }
+    .hero-section .cta-signup-form h2{
+        font-size: 16px;
+    }
+
+    .cta-light .form-control {
+
+        font-size: 14px;
+    }
+
+
+
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+
+    .hero-section .cta-signup-form {
+
+        margin-top: 2.5em;
+    }
+    .hero-section .cta-signup-form h2{
+        font-size: 16px;
+    }
+
+    .cta-light .form-control {
+
+        font-size: 14px;
+    }
+
+
+}
+
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+
+
+    .hero-section .cta-signup-form {
+
+        margin-top: 2.5em;
+    }
+    .hero-section .cta-signup-form h2{
+        font-size: 16px;
+    }
+
+    .cta-light .form-control {
+
+        font-size: 14px;
+    }
+
+}
+
+
+
+/*vedio bg*/
+
+/*---------BACKGROUND VIDEO-----------*/
+
+/*.fullscreen-bg {*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*overflow: hidden;*/
+    /*z-index: -100;*/
+
+/*}*/
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.tzslider{
+    background-color: rgba(11, 9, 10, 0.62);
+}
+
+.footer-navi{
+    padding-bottom:5px;
+}
+
+.hr-style{
+    margin-top:10px;
+}
+
+
+@media screen and (max-width: 768px)
+{
+.rev_slider_wrapper{
+    top: 50px;
+    height: 218px!important;
+}
+
+
+
+}

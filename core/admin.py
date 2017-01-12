@@ -78,3 +78,5 @@ admin.site.register(WMaterial)
 admin.site.register(WFinishing)
 admin.site.register(WColor)
 admin.site.register(WImage)
+
+# admin.site.register(ColorModel)

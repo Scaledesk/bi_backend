@@ -1,0 +1,300 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="tzcategory-shop-wrap">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h3 class="tz-title-bold-3">KITCHENS</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div id="tz-shop-content" class="row">
+          <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+            <div id="slider" class="flexslider">
+              <ul class="slides">
+
+                {% for obj in KImage%}
+                <li>
+                  <img src="{{obj.image.url}}" alt="Roses Deco Accent Chair" width="685" height="685"/>
+                </li>
+                {% endfor %}
+
+                <!-- <li>
+                <img src="/static/demos/flexsliderimg/kitchen1.png" alt="Roses Deco Accent Chair"/>
+              </li>
+              <li>
+              <img src="/static/demos/flexsliderimg/kitchen2.png" alt="Roses Deco Accent Chair"/>
+            </li>
+            <li>
+            <img src="/static/demos/flexsliderimg/kitchen3.png" alt="Roses Deco Accent Chair" />
+          </li> -->
+        </ul>
+      </div>
+      <div id="carousel">
+        <ul class="slides">
+          {% for obj in KImage%}
+
+          <li>
+            <img src="{{obj.image.url}}" alt="Roses Deco Accent Chair" width="80" height=/>
+          </li>
+
+          {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-1 col-md-1">
+
+    </div>
+  </div>
+  <div class="tzshop-summary">
+
+    <h6 class="tz-title-details">KITCHEN DETAILS</h6>
+    <ul class="tzshop-status">
+      <li>
+        <span>Unit:</span> {{ kitchen.name }}
+      </li>
+
+      <li>
+        <span>Type: </span> {{ kitchen.type.name }}
+      </li>
+
+      <li>
+        <span>Size (in mm):</span> {{ kitchen.l }} x {{ kitchen.b }} x {{ kitchen.h }}
+      </li>
+      <li>
+        <span>Includes: </span> Shelf
+      </li>
+
+    </ul>
+    <p>{{ kitchen.desc }}</p>
+    <a class="tzheart" href="#">
+      <span class="tz-shop-detail-meta">
+        <i class="fa fa-heart"></i>
+      </a>
+    </span>
+  </div>
+
+
+</div>
+<div id="tz-wp-content" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 tzshop-aside">
+
+  <h3 class="module-title title-widget"><span>Available option</span></h3>
+  <div class="clearfix" id="tz-shop-content"></div>
+
+  <div class="product-options" id="product-options-wrapper">
+
+
+    <dl class="last">
+      <dt><label class="required"><em>*</em>Select Cabinet Material<span style="float:right; text-decoration:none"><a href="http://www.modspace.in/step-3#mat" class="sc_hover tr_delay">Need help?</a></span>
+      </label>
+    </dt>
+    <dd>
+      <div class="input-box" style="display: block;">
+        <select name="super_attribute[149]" id="attribute149" class="required-entry super-attribute-select">
+          <option>Choose an Option...</option>
+
+          {% for obj in KMaterial %}
+          <option>{{obj.name}}</option>
+          {% endfor %}
+
+        </select>
+      </div>
+    </dd>
+
+
+    <dt><label class="required"><em>*</em>Select Shutter Finish                   <span style="float:right; text-decoration:none"><a href="http://www.modspace.in/step-3#fin" class="sc_hover tr_delay">Need help?</a></span>
+
+    </label>
+  </dt>
+  <dd>
+    <div class="input-box" style="display: block;">
+      <select name="super_attribute[146]" id="attribute146" class="required-entry super-attribute-select">
+        <option>Choose an Option...</option>
+
+        {% for obj in KFinishing %}
+        <option>{{ obj.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+  </dd>
+  <dt><label class="required"><em>*</em>Select Color                     <span class="select-label" id="select_label_color">Brown Grey and Linen</span>
+
+  </label>
+</dt>
+<dd class="last">
+
+  <div class="color-swatch-wrapper">
+    <ul id="color-swatch-attribute-92" class="is-disabled-attribute">
+      <li class="color-swatch-92-24 ">
+        <span class="swatch-title" info="Custom" style="width:21px; height:21px; line-height:21px;">&nbsp;
+          <img class="image-base" src="http://www.modspace.in/media/colorswatch/image/image_base/92/24/21x21/custom.png">
+
+
+        </span>
+      </li>
+
+      <li class="color-swatch-92-30 ">
+        <span class="swatch-title" info="Stone Grey and Hydra" style="width:21px; height:21px; line-height:21px;">&nbsp;
+          <img class="image-base" src="http://www.modspace.in/media/colorswatch/image/image_base/92/30/21x21/stone-grey-and-hydra.png" data-pin-nopin="true">
+
+
+        </span>
+      </li>
+
+      <li class="color-swatch-92-29 ">
+        <span class="swatch-title" info="Brown Grey and Linen" style="width:21px; height:21px; line-height:21px;">&nbsp;
+          <img class="image-base" src="http://www.modspace.in/media/colorswatch/image/image_base/92/29/21x21/brown-grey-and-linen.png" data-pin-nopin="true">
+
+
+        </span>
+      </li>
+
+      <li class="color-swatch-92-28 ">
+        <span class="swatch-title" info="Mussel and Saffron" style="width:21px; height:21px; line-height:21px;">&nbsp;
+          <img class="image-base" src="http://www.modspace.in/media/colorswatch/image/image_base/92/28/21x21/mussel-and-saffron.png">
+
+
+        </span>
+      </li>
+
+      <li class="color-swatch-92-27 ">
+        <span class="swatch-title" info="Current Black" style="width:21px; height:21px; line-height:21px;">&nbsp;
+          <img class="image-base" src="http://www.modspace.in/media/colorswatch/image/image_base/92/27/21x21/current-black.png">
+
+
+        </span>
+      </li>
+
+      <li class="color-swatch-92-26 ">
+        <span class="swatch-title" info="Frosty white and brazilian" style="width:21px; height:21px; line-height:21px;">&nbsp;
+          <img class="image-base" src="http://www.modspace.in/media/colorswatch/image/image_base/92/26/21x21/frosty-white-and-brazilian.png">
+
+
+        </span>
+      </li>
+
+      <li class="color-swatch-92-25 ">
+        <span class="swatch-title" info="Oak and Misty" style="width:21px; height:21px; line-height:21px;">&nbsp;
+          <img class="image-base" src="http://www.modspace.in/media/colorswatch/image/image_base/92/25/21x21/oak-and-misty.png">
+
+
+        </span>
+      </li>
+
+    </ul>
+    <input type="hidden" id="hidden-attribute-92" name="super_attribute[92]" class="required-entry hidden-super-attribute-select">
+  </div>
+  <br class="clearfloat">
+</dd>
+</dl>
+<h3 class="module-title">INR 152,020</h>
+  <a href="#" class="p-share" style="margin-left: 30%;">
+    <span>GET A QUOTE</span>
+  </a>
+  <p class="required">* Required Fields</p>
+</div>
+</div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="tabs-style">
+      <ul class="nav nav-tabs" role="tablist" id="detailTab">
+        <li class="active"><a href="#infomation" role="tab" data-toggle="tab">What's Included</a></li>
+        <li><a href="#specifications" role="tab" data-toggle="tab">Add Appliances</a></li>
+
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="infomation">
+          <div class="container">
+            <form method="post" action="#">
+              <table class="shop_table">
+                <thead>
+                  <tr>
+                    <th class="product-image">Image</th>
+                    <th class="name">Unit</th>
+                    <th class="porduct-quantity">W x D x H (in mm)</th>
+                    <th class="product-price">Accessories Included</th>
+                    <th class="product-total">Brand</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {% for obj in KIncludes %}
+                  <tr class="cart_table_item">
+                    <!-- Product Name -->
+                    <td class="product-img">
+                      <img alt="01" class="wp-post-image" src="{{obj.image.url}}">
+                    </td>
+                    <!-- Product Code -->
+                    <td class="product-name">
+                      <a>{{obj.name}}</a>
+                    </td>
+                    <!-- Quantity inputs -->
+                    <td class="product-quantity">
+                      <span>{{ obj.size }}</span>
+                    </td>
+                    <!-- Quantity inputs -->
+                    <td class="product-price">
+                      <span class="price">{{obj.items}}</span>
+                    </td>
+
+                    <!-- Product subtotal -->
+                    <td class="product-subtotal">
+                      <span class="price">{{obj.brand}}</span>
+                    </td>
+                    <!-- Remove from cart link -->
+                    <!-- <td class="product-remove">
+                    <a title="Remove this item" class="remove" href="#"><i class="fa fa-trash-o"></i></a>
+                  </td>-->
+                </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+          </form>
+        </div><!--end class container-->
+      </div>
+      <div class="tab-pane" id="specifications">
+        <div class="tzrelated">
+          <div class="container">
+            <div class="row">
+
+              {% for obj in KAppliance %}
+
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="tz-tzrelated">
+                  <div class="tz-tzrelated-img">
+                    <img alt="Nulla tortor nulla" src="{{ obj.image.url }}">
+
+                  </div>
+                  <h6><a href="#">{{ obj.desc }}</a></h6>
+                  <span>{{ obj.name }}</span>
+                </div>
+              </div>
+
+              {% endfor %}
+
+
+            </div><!--end class row-->
+          </div><!--end class container-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div><!--end class container-->
+</div><!--end class tzblog-wrap-->
+
+{% endblock %}
+
+{% block custom_script %}
+
+
+
+{% endblock %}

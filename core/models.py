@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
+# from colorfield.fields import ColorField
+from autoslug import AutoSlugField
 
 class BaseModel(models.Model):
     class Meta:
@@ -8,6 +10,8 @@ class BaseModel(models.Model):
 ##### KITCHEN #####
 class KType(BaseModel):
     name = models.CharField(max_length=30, unique=True, verbose_name='Type Name')
+    slug = AutoSlugField(populate_from='name', unique=True)
+
     class Meta:
         db_table = "%s_%s" % ('core', "kitchen_type")
 
@@ -36,6 +40,7 @@ class Kitchen(BaseModel):
         verbose_name = 'Kitchen'
         verbose_name_plural = 'Kitchens'
         ordering = ['name', 'type']
+        unique_together = ['type', 'name']
 
 class KIncludes(BaseModel):
     kitchen = models.ForeignKey(Kitchen, on_delete=models.CASCADE)
@@ -81,7 +86,6 @@ class KMaterial(BaseModel):
 
 class KFinishing(BaseModel):
     name = models.CharField(max_length=20)
-
     def __unicode__(self):
         return self.name
 
@@ -240,4 +244,11 @@ class WImage(BaseModel):
         verbose_name_plural = 'Wardrobe Images'
         ordering = ['wardrobe', 'w_color']
 
-# ##### WARDROBE END #####
+##### WARDROBE END #####
+
+
+##### TRY #####
+# class ColorModel(BaseModel):
+#     color = ColorField()
+#     name  = models.CharField(max_length=15)
+##### TRY END #####
