@@ -14,8 +14,8 @@ def Test(request):
 
 def ServeType(request):
     context = {}
-    context['types'] = KType.objects.all()
-    return render(request, 'kitchen/kitchen_by_type.html', context)
+    context['k_types'] = KType.objects.all()
+    return render(request, 'kitchen/product_types.html', context)
 
 def ThemeContextCreator(k_type_slug):
     context = {}
@@ -27,20 +27,22 @@ def ThemeContextCreator(k_type_slug):
 
 def ServeTheme(request, k_type_slug):
     context = ThemeContextCreator(k_type_slug)
-    return render(request, 'kitchen/product_by_theme.html', context)
+    return render(request, 'kitchen/product_by_type.html', context)
+
 
 def KitchenContextCreator(k_type_slug, theme_slug):
     context = {}
     #theme slug is not unuque. Its unique together with other attributes
-    theme = KTheme.objects.get(type=type, slug=theme_slug)
-    kitchens = Kitchens.objects.filter(theme=theme)
-    context['kitchens'] = theme
+    k_type = KType.objects.get(slug=k_type_slug)
+    theme = KTheme.objects.get(k_type=k_type, slug=theme_slug)
+    kitchens = Kitchen.objects.filter(theme=theme)
+    context['kitchens'] = kitchens
     return context
 
-def ServeKitchen(request, type_slug, theme_slug):
+def ServeKitchen(request, k_type_slug, theme_slug):
     context = None
-    context = KitchenContextCreator(type_slug, theme_slug)
-    return render(request, 'kitchen/kitchen_by_theme.html', context)
+    context = KitchenContextCreator(k_type_slug, theme_slug)
+    return render(request, 'kitchen/product_by_theme.html', context)
 
 def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
     context = {}
@@ -48,7 +50,6 @@ def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
     # theme slug and kitchen slug are not unique. they are unique together with other fields
     theme = KTheme.objects.get(k_type=k_type, slug=theme_slug)
     kitchen = Kitchen.objects.get(theme=theme, slug=kitchen_slug)
-    pprint(kitchen.__dict__)
 
     k_images = KImage.objects.filter(kitchen=kitchen)
     k_material = KMaterial.objects.all()
