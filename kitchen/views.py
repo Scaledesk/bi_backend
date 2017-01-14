@@ -12,6 +12,62 @@ from pprint import pprint
 def Test(request):
     return render(request, 'privacypolicy.html', None)
 
+def ServeType(request):
+    context = {}
+    context['types'] = KType.objects.all()
+    return render(request, 'kitchen/kitchen_by_type.html', context)
+
+def ThemeContextCreator(k_type_slug):
+    context = {}
+    pprint(type(k_type_slug))
+    k_type = KType.objects.get(slug=k_type_slug)
+    context['k_type']= k_type
+    context['themes'] = KTheme.objects.filter(k_type=k_type)
+    return context
+
+def ServeTheme(request, k_type_slug):
+    context = ThemeContextCreator(k_type_slug)
+    return render(request, 'kitchen/product_by_theme.html', context)
+
+def KitchenContextCreator(k_type_slug, theme_slug):
+    context = {}
+    #theme slug is not unuque. Its unique together with other attributes
+    theme = KTheme.objects.get(type=type, slug=theme_slug)
+    kitchens = Kitchens.objects.filter(theme=theme)
+    context['kitchens'] = theme
+    return context
+
+def ServeKitchen(request, type_slug, theme_slug):
+    context = None
+    context = KitchenContextCreator(type_slug, theme_slug)
+    return render(request, 'kitchen/kitchen_by_theme.html', context)
+
+def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
+    context = {}
+    k_type = KType.objects.get(slug=k_type_slug)
+    # theme slug and kitchen slug are not unique. they are unique together with other fields
+    theme = KTheme.objects.get(k_type=k_type, slug=theme_slug)
+    kitchen = Kitchen.objects.get(theme=theme, slug=kitchen_slug)
+    pprint(kitchen.__dict__)
+
+    k_images = KImage.objects.filter(kitchen=kitchen)
+    k_material = KMaterial.objects.all()
+    k_finishing = KFinishing.objects.all()
+    k_appliance = KAppliance.objects.filter(kitchen=kitchen)
+    k_includes = KIncludes.objects.filter(kitchen=kitchen)
+
+    context['kitchen'] = kitchen
+    context['k_images'] = k_images
+    context['k_material'] = k_material
+    context['k_finishing'] = k_finishing
+    context['k_includes'] = k_includes
+
+    return context
+
+def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):
+    context = ProductContextCreator(k_type_slug, theme_slug, kitchen_slug)
+    return render(request, 'kitchen/kitchen_pdp.html', context=context)
+
 # def ProductContextCreator(kitchen):
 #     context = {}
 #     context['kitchen'] =  kitchen.__dict__
@@ -56,47 +112,3 @@ def Test(request):
 #             list.append(obj.__dict__)
 #         context['KImage'] = list
 #     return context
-
-def KitchenContextCreator(type):
-    context = {}
-    if KTypes.objects.filter(name=type).exists():
-        context['kitchen'] =  Kitchen.objects.filter(type=KTypes.objects.get(name=type))
-    return context
-
-def ProductContextCreator(kitchen):
-    context = {}
-    context['kitchen'] =  kitchen
-    context['KIncludes'] = None
-    context['KAppliance'] = None
-    context['KMaterial'] = None
-    context['KMaterial'] = None
-    context['KColor'] = None
-    context['KImage'] = None
-
-    if KIncludes.objects.filter(kitchen=kitchen).exists():
-        context['KIncludes'] = KIncludes.objects.filter(kitchen=kitchen)
-    if KAppliance.objects.filter(kitchen=kitchen).exists():
-        context['KAppliance'] = KAppliance.objects.filter(kitchen=kitchen)
-    if KMaterial.objects.all().exists():
-        context['KMaterial'] = KMaterial.objects.all()
-    if KFinishing.objects.all().exists():
-        context['KFinishing'] = KFinishing.objects.all()
-    if KColor.objects.all().exists():
-        context['KColor'] = KColor.objects.all()
-    if KImage.objects.filter(kitchen=kitchen).exists():
-        context['KImage'] = KImage.objects.filter(kitchen=kitchen)
-    return context
-
-def ServeKitchen(request, type):
-    context = None
-    context = KitchenContextCreator(typ)
-    return HttpResponse(context)
-
-def ServeType(request):
-    context = None
-    # context = TypeContextCreator
-
-def ServeProduct(request, type, name):
-    kitchen = Kitchen.objects.get(type=KType.objects.get(name=type), name=name)
-    context = ProductContextCreator(kitchen)
-    return render(request, 'kitchen/kitchen_pdp.html', context=context)

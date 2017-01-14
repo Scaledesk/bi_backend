@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from web.views import *
 # from .views import *
 urlpatterns = [
+    url(r'^test/', TestView, name='test'),
     url(r'^kitchen/', include('kitchen.urls')),
     # url(r'^wardrobe/', include('wardrobe.urls')),
     url(r'^admin/', admin.site.urls),

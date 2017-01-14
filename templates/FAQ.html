@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block custom_css %}
+<link href="/static/css/reset.css" rel="stylesheet" />
+<link href="/static/css/styleFAQ.css" rel="stylesheet" />
 {% endblock %}
 
 {% block content %}
+
+<div class="tzcategory-shop-wrap ">
+    <div class="container">
 <section class="cd-faq">
     <ul class="cd-faq-categories">
         <li><a class="selected" href="#basics">Basics</a></li>
@@ -132,10 +137,17 @@
                 </div> <!-- cd-faq-content -->
             </li>
         </ul> <!-- cd-faq-group -->
+
+
     </div> <!-- cd-faq-items -->
     <a href="#0" class="cd-close-panel">Close</a>
 </section> <!-- cd-faq -->
+        </div></div>
+
 {% endblock %}
 
 {% block custom_script %}
+<script src="/static/js/modernizr.js"></script> <!-- Modernizr -->
+<script src="/static/js/jquery.mobile.custom.min.js"></script>
+<script src="/static/js/main.js"></script>
 {% endblock %}

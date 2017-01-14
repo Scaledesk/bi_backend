@@ -17,7 +17,7 @@ class KitchenAdmin(NestedModelAdmin):
 
 ##### KITCHEN END #####
 
-##### KITCHEN #####
+##### WARDROBE #####
 
 class WImageInline(NestedStackedInline):
     model=WImage
@@ -30,7 +30,7 @@ class WardrobeAdmin(NestedModelAdmin):
         WImageInline,
     ]
 
-##### END KITCHEN #####
+##### END WARDROBE #####
 
 
 
@@ -60,7 +60,9 @@ class WardrobeAdmin(NestedModelAdmin):
 #         TeamInline,
 #         UpdateInline,
 #     ]
+
 admin.site.register(KType)
+admin.site.register(KTheme)
 admin.site.register(Kitchen, KitchenAdmin)
 admin.site.register(KIncludes)
 admin.site.register(KAppliance)
@@ -70,13 +72,13 @@ admin.site.register(KColor)
 admin.site.register(KImage)
 
 
-admin.site.register(WType)
-admin.site.register(Wardrobe, WardrobeAdmin)
-admin.site.register(WIncludes)
-admin.site.register(WAppliance)
-admin.site.register(WMaterial)
-admin.site.register(WFinishing)
-admin.site.register(WColor)
-admin.site.register(WImage)
+# admin.site.register(WType)
+# admin.site.register(Wardrobe, WardrobeAdmin)
+# admin.site.register(WIncludes)
+# admin.site.register(WAppliance)
+# admin.site.register(WMaterial)
+# admin.site.register(WFinishing)
+# admin.site.register(WColor)
+# admin.site.register(WImage)
 
 # admin.site.register(ColorModel)

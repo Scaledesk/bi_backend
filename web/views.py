@@ -3,6 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+def TestView(request):
+    return render(request, 'kitchen/kitchen_by_type.html', None)
+
 def LandingView(request):
     return render(request, 'landing.html', None)
 

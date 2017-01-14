@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from django.db import models
 # from colorfield.fields import ColorField
 from autoslug import AutoSlugField
+from django.template.defaultfilters import slugify
 
 class BaseModel(models.Model):
     class Meta:
@@ -24,23 +25,73 @@ class KType(BaseModel):
             verbose_name_plural = 'Kitchen Types'
             ordering = ['name']
 
+class KTheme(BaseModel):
+    k_type = models.ForeignKey(KType, on_delete=models.CASCADE, related_name='k_type')
+    name = models.CharField(max_length=30, verbose_name='Theme Name')
+    slug = AutoSlugField(populate_from='name')
+
+    class Meta:
+        db_table = "%s_%s" % ('core', "kitchen_theme")
+
+    def __unicode__(self):
+        return (self.k_type.name + ' - ' + self.name)
+
+    class Meta:
+            db_table = "%s_%s" % ('core', "kitchen_theme")
+            verbose_name = 'Kitchen Theme'
+            verbose_name_plural = 'Kitchen Themes'
+            ordering = ['name']
+            unique_together = ('k_type', 'slug')
+
+
 class Kitchen(BaseModel):
-    type = models.ForeignKey(KType, on_delete=models.CASCADE, related_name='type')
+    theme = models.ForeignKey(KTheme, on_delete=models.CASCADE, related_name='theme')
     name = models.CharField(max_length=30, verbose_name='Name')
     desc = models.CharField(max_length=100, verbose_name="Description")
     l = models.IntegerField(verbose_name='length')
     b = models.IntegerField(verbose_name='breadth')
     h = models.IntegerField(verbose_name='height')
+    slug = models.SlugField(max_length=200, null=True, editable=False)
 
     def __unicode__(self):
-        return self.name
+        return (self.theme.name + '_' + self.name + '_' + str(self.l) + 'x' + str(self.b) + 'x' + str(self.h))
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify('-'.join((self.name, 'x'.join((str(self.l), str(self.b), str(self.h))))))
+        super(Kitchen, self).save(*args, **kwargs)
 
     class Meta:
         db_table = "%s_%s" % ('core', "kitchen")
         verbose_name = 'Kitchen'
         verbose_name_plural = 'Kitchens'
-        ordering = ['name', 'type']
-        unique_together = ['type', 'name']
+        ordering = ['name', 'theme']
+        unique_together = ('theme', 'slug', 'l', 'b', 'h')
+
+
+
+
+
+
+# class KitchenSize(BaseModel):
+#     kitchen = models.ForeignKey(Kitchen)
+#     l = models.IntegerField(verbose_name='length')
+#     b = models.IntegerField(verbose_name='breadth')
+#     h = models.IntegerField(verbose_name='height')
+#     slug = models.SlugField(max_length=200, unique=True, null=True, editable=False)
+#
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify('-'.join((self.kitchen.name, 'x'.join((str(self.l), str(self.b), str(self.h))))))
+#         super(KitchenSize, self).save(*args, **kwargs)
+#
+#     def __unicode__(self):
+#         return self.kitchen.slug + '-' + str(self.l) + 'x' + str(self.b) + 'x' + str(self.h)
+#
+#     class Meta:
+#         db_table = "%s_%s" % ('core', "kitchen_size")
+#         verbose_name = 'Kitchen Size'
+#         verbose_name_plural = 'Kitchen Sizes'
+#         ordering = ['kitchen']
+#         unique_together = ['l', 'b', 'h']
 
 class KIncludes(BaseModel):
     kitchen = models.ForeignKey(Kitchen, on_delete=models.CASCADE)
@@ -71,7 +122,7 @@ class KAppliance(BaseModel):
         db_table = "%s_%s" % ('core', "kitchen_appliance")
         verbose_name = 'Kitchen Apliance'
         verbose_name_plural = 'Kitchen Appliances'
-        ordering = ['name', 'kitchen']
+        ordering = ('name', 'kitchen')
 
 class KMaterial(BaseModel):
     name = models.CharField(max_length=20, unique=True)
@@ -82,7 +133,7 @@ class KMaterial(BaseModel):
         db_table = "%s_%s" % ('core', "kitchen_material")
         verbose_name = 'Kitchen material'
         verbose_name_plural = 'Kitchen Materials'
-        ordering = ['name', 'price']
+        ordering = ('name', 'price')
 
 class KFinishing(BaseModel):
     name = models.CharField(max_length=20)
