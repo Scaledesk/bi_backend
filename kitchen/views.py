@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from core.models import *
+from core.utils import *
 from pprint import pprint
 #
 # def ProductContextCreator(id):
@@ -15,19 +16,20 @@ def Test(request):
 
 def ServeType(request):
     context = {}
-    context['k_types'] = KType.objects.all()
+    context = AppendBasicContext(context)
     return render(request, 'kitchen/product_types.html', context)
 
 def ThemeContextCreator(k_type_slug):
     context = {}
     pprint(type(k_type_slug))
     k_type = KType.objects.get(slug=k_type_slug)
-    context['k_type']= k_type
+    # context['k_type']= k_type
     context['themes'] = KTheme.objects.filter(k_type=k_type)
     return context
 
 def ServeTheme(request, k_type_slug):
     context = ThemeContextCreator(k_type_slug)
+    context = AppendBasicContext(context)
     return render(request, 'kitchen/product_by_type.html', context)
 
 
@@ -46,7 +48,6 @@ def KitchenContextCreator(k_type_slug, theme_slug):
     # context['kitchens'] = kitchens
     # return context
 
-
     context = {}
     kitchens = []
     k_images = []
@@ -58,17 +59,13 @@ def KitchenContextCreator(k_type_slug, theme_slug):
         temp = kitchen.__dict__
         temp['image'] = KImage.objects.filter(kitchen=kitchen).first().image.url
         kitchens.append(temp)
-        # pprint(kitchen.name)
-        # k_images.append(KImage.objects.filter(kitchen=kitchen).first())
-    # pprint(k_images)
-    # context['k_images'] = k_images
-    pprint(kitchens)
     context['kitchens'] = kitchens
     return context
 
 def ServeKitchen(request, k_type_slug, theme_slug):
     context = None
     context = KitchenContextCreator(k_type_slug, theme_slug)
+    context = AppendBasicContext(context)
     return render(request, 'kitchen/product_by_theme.html', context)
 
 def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
@@ -94,8 +91,7 @@ def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
 
 def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):
     context = ProductContextCreator(k_type_slug, theme_slug, kitchen_slug)
-    pprint(k_images)
-    pprint('_______________________________________')
+    context = AppendBasicContext(context)
     return render(request, 'kitchen/kitchen_pdp.html', context=context)
 
 # def ProductContextCreator(kitchen):

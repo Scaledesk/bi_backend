@@ -62,7 +62,13 @@
                                 <div data-width="12" class="col-md-12 mega-col-nav">
                                     <div class="mega-inner">
                                         <ul class="mega-nav level1">
-                                            <li>
+
+                                          {% for k_type in k_types %}
+                                          <li>
+                                              <a href="{% url 'kitchen' %}{{k_type.slug}}/">{{ k_type.name }}</a>
+                                          </li>
+                                          {% endfor %}
+                                            <!-- <li>
                                                 <a href="{% url 'kitchen' %}l-shaped/">L SHAPED</a>
                                             </li>
                                             <li>
@@ -70,7 +76,7 @@
                                             </li>
                                             <li>
                                                 <a href="{% url 'kitchen' %}h-shaped/"">H SHAPED</a>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div>
                                 </div>

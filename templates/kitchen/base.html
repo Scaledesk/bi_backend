@@ -50,18 +50,25 @@
         <nav class="pull-right">
             <ul class="nav-collapse">
                 <li>
-                    <a href="landing.html">HOME</a>
+                    <a href="/">HOME</a>
 
                 </li>
                 <li>
-                    <a href="#">kitchen</a>
+                    <a href="{% url 'kitchen' %}">kitchen</a>
                     <div class="nav-child dropdown-menu mega-dropdown-menu">
                         <div class="mega-dropdown-inner">
                             <div class="row">
                                 <div data-width="12" class="col-md-12 mega-col-nav">
                                     <div class="mega-inner">
                                         <ul class="mega-nav level1">
-                                            <li>
+
+                                          {% for k_type in k_types %}
+                                          <li>
+                                              <a href="{% url 'kitchen' %}k_type.slug/">aaa{{ k_type.name }}</a>
+                                          </li>
+                                          {% endfor %}
+
+                                            <!-- <li>
                                                 <a href="productlisting%20(L%20Shape).html">L SHAPED</a>
                                             </li>
                                             <li>
@@ -69,7 +76,10 @@
                                             </li>
                                             <li>
                                                 <a href="productlisting%20(H%20Shape).html">H SHAPED</a>
-                                            </li>
+                                            </li> -->
+
+
+
                                         </ul>
                                     </div>
                                 </div>
