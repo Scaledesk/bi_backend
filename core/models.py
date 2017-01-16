@@ -11,6 +11,7 @@ class BaseModel(models.Model):
 ##### KITCHEN #####
 class KType(BaseModel):
     name = models.CharField(max_length=30, unique=True, verbose_name='Type Name')
+    image = models.ImageField(default = None)
     slug = AutoSlugField(populate_from='name', unique=True)
 
     class Meta:
