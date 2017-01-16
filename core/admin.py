@@ -19,16 +19,16 @@ class KitchenAdmin(NestedModelAdmin):
 
 ##### WARDROBE #####
 
-class WImageInline(NestedStackedInline):
-    model=WImage
-    extra=0
-    fk_name='wardrobe'
-
-class WardrobeAdmin(NestedModelAdmin):
-    """Wardrobe Admin class"""
-    inlines=[
-        WImageInline,
-    ]
+# class WImageInline(NestedStackedInline):
+#     model=WImage
+#     extra=0
+#     fk_name='wardrobe'
+#
+# class WardrobeAdmin(NestedModelAdmin):
+#     """Wardrobe Admin class"""
+#     inlines=[
+#         WImageInline,
+#     ]
 
 ##### END WARDROBE #####
 
