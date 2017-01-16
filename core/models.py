@@ -30,6 +30,8 @@ class KType(BaseModel):
 class KTheme(BaseModel):
     k_type = models.ForeignKey(KType, on_delete=models.CASCADE, related_name='k_type')
     name = models.CharField(max_length=30, verbose_name='Theme Name')
+    desc = models.CharField(max_length=100, verbose_name='Description')
+    image = models.ImageField()
     slug = AutoSlugField(populate_from='name')
 
     class Meta:
@@ -125,6 +127,7 @@ class KAppliance(BaseModel):
         verbose_name = 'Kitchen Apliance'
         verbose_name_plural = 'Kitchen Appliances'
         ordering = ('name', 'kitchen')
+        unique_together = ('kitchen', 'name')
 
 class KMaterial(BaseModel):
     name = models.CharField(max_length=20, unique=True)

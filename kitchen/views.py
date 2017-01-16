@@ -80,13 +80,13 @@ def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
     k_finishing = KFinishing.objects.all()
     k_appliance = KAppliance.objects.filter(kitchen=kitchen)
     k_includes = KIncludes.objects.filter(kitchen=kitchen)
-
+    k_appliances = KAppliance.objects.filter(kitchen=kitchen)
     context['kitchen'] = kitchen
     context['k_images'] = k_images
     context['k_material'] = k_material
     context['k_finishing'] = k_finishing
     context['k_includes'] = k_includes
-
+    context['k_appliances'] = k_appliances
     return context
 
 def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):

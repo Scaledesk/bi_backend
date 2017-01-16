@@ -1,4 +1,4 @@
-{% extends 'base2.html' %}
+{% extends 'base1.html' %}
 {% block custom_css %}
 
 {% endblock %}
@@ -318,11 +318,11 @@
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="tz-bestsellers-item">
                     <div class="bestsellers-thumb">
-                        <img src="/static/demos/Photoshop%20Images/kitchen6.png" alt="etiam id dignissim felis">
+                        <img src="{{ theme.image.url }}" alt="etiam id dignissim felis">
                         <div class="tz-bestsellers-content1">
                             <h6><a href="{{theme.slug}}">{{ theme.name }}</a></h6>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam malesuada adipiscing tincidunt. consectetur adipiscing elit.  Vestibulum molestie non felis feugiat aliquet. Etiam venenatis pellentesque orci, a porta nibh dapibus ac.
+                                {{ theme.desc }}
                             </p>
                                <span class="tz-bestsellers-meta">
                                     <a href="{{theme.slug}}" class="tzheart">

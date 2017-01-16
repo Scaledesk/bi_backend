@@ -1,15 +1,17 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bloom Interio</title>
+    <title>Bloom interio</title>
 
     {% block css %}
     <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/static/fonts/awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300,100,200,800" rel="stylesheet" />
     <link href="/static/css/owl.carousel.css" rel="stylesheet" />
+
     <link href="/static/css/owl.theme.css" rel="stylesheet" />
     <link rel='stylesheet' href='/static/rs-plugin/css/settings.css' />
     <!-- Support for HTML5 -->
@@ -36,11 +38,9 @@
 
 {% block header %}
 <header class="tz-header tz-header2">
-
-
     <div class="container">
         <h3 class="tz-logo pull-left">
-            <a href="#">
+            <a href="{% url "landing" %}">
                 <img src="/static/images/logo.png" alt="dekor">
             </a>
         </h3>
@@ -51,27 +51,30 @@
         <nav class="pull-right">
             <ul class="nav-collapse">
                 <li>
-                    <a href="landing.html">HOME</a>
+                    <a href="{% url 'landing' %}">HOME</a>
 
                 </li>
                 <li>
-                    <a href="#">kitchen</a>
+                    <a href="{% url 'kitchen' %}">kitchen</a>
                     <div class="nav-child dropdown-menu mega-dropdown-menu">
                         <div class="mega-dropdown-inner">
                             <div class="row">
                                 <div data-width="12" class="col-md-12 mega-col-nav">
                                     <div class="mega-inner">
                                         <ul class="mega-nav level1">
-                                            <li>
-                                                <a href="productlisting%20(L%20Shape).html">L SHAPED</a>
+                                           {% for k_type in k_types %}
+                                             <li>
+                                                 <a href="{% url 'kitchen' %}{{k_type.slug}}/">{{ k_type.name }}</a>
+                                             </li>
+                                           {% endfor %}  <!-- <li>
+                                                <a href="{% url 'kitchen' %}l-shaped">L SHAPED</a>
                                             </li>
                                             <li>
-                                                <a href="productlisting%20(U%20Shape).html">U SHAPED</a>
+                                                <a href="{% url 'kitchen' %}u-shaped">U SHAPED</a>
                                             </li>
                                             <li>
-                                                <a href="productlisting%20(H%20Shape).html">H SHAPED</a>
-                                            </li>
-
+                                                <a href="{% url 'kitchen' %}h-shaped">H SHAPED</a>
+                                            </li> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -106,31 +109,31 @@
 
                 </li>
                 <li>
-                    <a href="#">interior</a>
+                    <a href="{% url 'interior' %}">interior</a>
 
                 </li>
                 <li>
-                    <a href="#">about us</a>
+                    <a href="{% url 'about' %}">about us</a>
 
                 </li>
                 <li>
-                    <a href="#">contact</a>
+                    <a href="{% url 'contact' %}">contact</a>
 
                 </li>
             </ul>
         </nav>
     </div>
-
-
-
 </header>
 {% endblock %}
 
+
+
+
+
 {% block content %}
-
-THIS IS MAIN CONTENT AREA
-
+THIS IS WHERE THE MAIN CONTENT WILL GIVEN
 {% endblock %}
+
 
 {% block footer %}
 <footer>
@@ -161,27 +164,27 @@ THIS IS MAIN CONTENT AREA
                     </h3>
                     <ul class="nav-collapse">
                         <li class="footer-navi">
-                            <a href="#">Home</a>
+                            <a href="{% url 'landing' %}">Home</a>
 
 
                         </li>
                         <li class="footer-navi">
-                            <a href="#">kitchen</a>
+                            <a href="{% url 'kitchen' %}">kitchen</a>
                         </li>
                         <li class="footer-navi">
                             <a href="#">wardrobe</a>
 
                         </li>
                         <li class="footer-navi">
-                            <a href="#">interior</a>
+                            <a href="{% url 'interior' %}">interior</a>
 
                         </li>
                         <li class="footer-navi">
-                            <a href="#">about us</a>
+                            <a href="{% url 'about' %}">about us</a>
 
                         </li>
                         <li class="footer-navi">
-                            <a href="#">contact</a>
+                            <a href="{% url 'contact' %}">contact</a>
 
                         </li>
                     </ul>
@@ -219,11 +222,8 @@ THIS IS MAIN CONTENT AREA
 </footer><!--end class tz-footer-->
 {% endblock %}
 
-
-</body>
-
-
 {% block script %}
+
 <script src="/static/js/jquery.min.js"></script>
 <script>
     jQuery.noConflict();
@@ -236,6 +236,7 @@ THIS IS MAIN CONTENT AREA
 <script src="/static/js/jquery.isotope.min.js"></script>
 <script src="/static/js/custom-portfolio.js"></script>
 <script src="/static/js/custom.js"></script>
+<script src="/static/js/portfolio.js"></script>
 <script type='text/javascript' src='/static/rs-plugin/js/jquery.themepunch.tools.min.js'></script>
 <script type='text/javascript' src='/static/rs-plugin/js/jquery.themepunch.revolution.min.js'></script>
 <script type="text/javascript">
@@ -325,8 +326,10 @@ THIS IS MAIN CONTENT AREA
         jQuery('div.slotholder').prepend('<div class="bk-responsive-slide"></div>');
     })
 </script>
-{% endblock%}
+{% endblock %}
 
 {% block custom_script %}
 {% endblock %}
+
+</body>
 </html>
