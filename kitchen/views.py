@@ -31,11 +31,37 @@ def ServeTheme(request, k_type_slug):
 
 
 def KitchenContextCreator(k_type_slug, theme_slug):
+    # context = {}
+    # k_images = []
+    # #theme slug is not unuque. Its unique together with other attributes
+    # k_type = KType.objects.get(slug=k_type_slug)
+    # theme = KTheme.objects.get(k_type=k_type, slug=theme_slug)
+    # kitchens = Kitchen.objects.filter(theme=theme)
+    # for kitchen in kitchens:
+    #     pprint(kitchen.name)
+    #     k_images.append(KImage.objects.filter(kitchen=kitchen).first())
+    # pprint(k_images)
+    # context['k_images'] = k_images
+    # context['kitchens'] = kitchens
+    # return context
+
+
     context = {}
+    kitchens = []
+    k_images = []
     #theme slug is not unuque. Its unique together with other attributes
     k_type = KType.objects.get(slug=k_type_slug)
     theme = KTheme.objects.get(k_type=k_type, slug=theme_slug)
-    kitchens = Kitchen.objects.filter(theme=theme)
+    k_list = Kitchen.objects.filter(theme=theme)
+    for kitchen in k_list:
+        temp = kitchen.__dict__
+        temp['image'] = KImage.objects.filter(kitchen=kitchen).first().image.url
+        kitchens.append(temp)
+        # pprint(kitchen.name)
+        # k_images.append(KImage.objects.filter(kitchen=kitchen).first())
+    # pprint(k_images)
+    # context['k_images'] = k_images
+    pprint(kitchens)
     context['kitchens'] = kitchens
     return context
 
@@ -67,6 +93,8 @@ def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
 
 def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):
     context = ProductContextCreator(k_type_slug, theme_slug, kitchen_slug)
+    pprint(k_images)
+    pprint('_______________________________________')
     return render(request, 'kitchen/kitchen_pdp.html', context=context)
 
 # def ProductContextCreator(kitchen):
