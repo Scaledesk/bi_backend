@@ -15,11 +15,16 @@ class KType(BaseModel):
     image = models.ImageField(upload_to='kitchen/images/kitchen_types/')
     slug = AutoSlugField(populate_from='name', unique=True)
 
-    class Meta:
-        db_table = "%s_%s" % ('core', "kitchen_type")
-
     def __unicode__(self):
         return self.name
+
+    def delete(self, *args, **kwargs):
+        # You have to prepare what you need before delete the model
+        storage, path = self.image.storage, self.image.path
+        # Delete the model before the file
+        super(KType, self).delete(*args, **kwargs)
+        # Delete the file after the model
+        storage.delete(path)
 
     class Meta:
             db_table = "%s_%s" % ('core', "kitchen_type")
@@ -34,11 +39,16 @@ class KTheme(BaseModel):
     image = models.ImageField(upload_to='kitchen/images/kitchen_themes/')
     slug = AutoSlugField(populate_from='name')
 
-    class Meta:
-        db_table = "%s_%s" % ('core', "kitchen_theme")
-
     def __unicode__(self):
         return (self.k_type.name + ' - ' + self.name)
+
+    def delete(self, *args, **kwargs):
+        # You have to prepare what you need before delete the model
+        storage, path = self.image.storage, self.image.path
+        # Delete the model before the file
+        super(KTheme, self).delete(*args, **kwargs)
+        # Delete the file after the model
+        storage.delete(path)
 
     class Meta:
             db_table = "%s_%s" % ('core', "kitchen_theme")
@@ -64,17 +74,20 @@ class Kitchen(BaseModel):
         self.slug = slugify('-'.join((self.name, 'x'.join((str(self.l), str(self.b), str(self.h))))))
         super(Kitchen, self).save(*args, **kwargs)
 
+    def delete(self, *args, **kwargs):
+        # You have to prepare what you need before delete the model
+        storage, path = self.image.storage, self.image.path
+        # Delete the model before the file
+        super(Kitchen, self).delete(*args, **kwargs)
+        # Delete the file after the model
+        storage.delete(path)
+
     class Meta:
         db_table = "%s_%s" % ('core', "kitchen")
         verbose_name = 'Kitchen'
         verbose_name_plural = 'Kitchens'
         ordering = ['name', 'theme']
         unique_together = ('theme', 'slug', 'l', 'b', 'h')
-
-
-
-
-
 
 # class KitchenSize(BaseModel):
 #     kitchen = models.ForeignKey(Kitchen)
@@ -108,6 +121,14 @@ class KIncludes(BaseModel):
     def __unicode__(self):
         return self.name
 
+    def delete(self, *args, **kwargs):
+        # You have to prepare what you need before delete the model
+        storage, path = self.image.storage, self.image.path
+        # Delete the model before the file
+        super(KIncludes, self).delete(*args, **kwargs)
+        # Delete the file after the model
+        storage.delete(path)
+
     class Meta:
         db_table = "%s_%s" % ('core', 'kitchen_include')
         verbose_name = 'Kitchen Include'
@@ -122,6 +143,15 @@ class KAppliance(BaseModel):
 
     def __unicode__(self):
         return self.name
+
+    def delete(self, *args, **kwargs):
+        # You have to prepare what you need before delete the model
+        storage, path = self.image.storage, self.image.path
+        # Delete the model before the file
+        super(KAppliance, self).delete(*args, **kwargs)
+        # Delete the file after the model
+        storage.delete(path)
+
     class Meta:
         db_table = "%s_%s" % ('core', "kitchen_appliance")
         verbose_name = 'Kitchen Apliance'
@@ -158,6 +188,15 @@ class KColor(BaseModel):
 
     def __unicode__(self):
         return self.name
+
+    def delete(self, *args, **kwargs):
+        # You have to prepare what you need before delete the model
+        storage, path = self.image.storage, self.image.path
+        # Delete the model before the file
+        super(KColor, self).delete(*args, **kwargs)
+        # Delete the file after the model
+        storage.delete(path)
+
     class Meta:
         db_table = "%s_%s" % ('core', "kitchen_color")
         verbose_name = 'Kitchen Color'
@@ -173,8 +212,13 @@ class KImage(BaseModel):
     def __unicode__(self):
         return str(str(self.kitchen.name) + '_' + str(self.k_color.name) + '_' + str(self.id))
 
-        # return str(self.kitchen.name + '_' + self.id)
-        # db_table = "%s_%s" %  ('core', 'kitchen_image')
+    def delete(self, *args, **kwargs):
+        # You have to prepare what you need before delete the model
+        storage, path = self.image.storage, self.image.path
+        # Delete the model before the file
+        super(KImage, self).delete(*args, **kwargs)
+        # Delete the file after the model
+        storage.delete(path)
 
     class Meta:
         db_table = "%s_%s" % ('core', "kitchen_image")
