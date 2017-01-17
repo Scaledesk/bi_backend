@@ -182,7 +182,7 @@ class KFinishing(BaseModel):
         ordering = ['name']
 
 class KColor(BaseModel):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique=True)
     image = models.ImageField(upload_to='kitchen/images/kitchen_color/')
     price = models.IntegerField()
 

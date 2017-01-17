@@ -23,7 +23,7 @@ def ThemeContextCreator(k_type_slug):
     context = {}
     pprint(type(k_type_slug))
     k_type = KType.objects.get(slug=k_type_slug)
-    # context['k_type']= k_type
+    context['current_k_type']= k_type
     context['themes'] = KTheme.objects.filter(k_type=k_type)
     return context
 
