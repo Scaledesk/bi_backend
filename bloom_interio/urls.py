@@ -18,11 +18,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from web.views import *
-# from .views import *
+
 urlpatterns = [
     url(r'^test/', TestView, name='test'),
     url(r'^kitchen/', include('kitchen.urls')),
-    # url(r'^wardrobe/', include('wardrobe.urls')),
+    url(r'^wardrobe/', include('wardrobe.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^privacy-policy/', PrivacyPolicyView, name='privacy_policy'),
     url(r'^contact/', ContactView, name='contact'),
@@ -33,5 +33,3 @@ urlpatterns = [
     url(r'^terms-and-conditions/', TermsAndConditionsView, name='terms_and_conditions'),
     url(r'^$', LandingView, name='landing' )
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# urlpatterns.append(url(r'^', LandingView, name='landing'))

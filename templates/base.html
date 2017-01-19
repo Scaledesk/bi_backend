@@ -85,14 +85,20 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#">wardrobe</a>
+                    <a href="{% url 'wardrobe' %}">wardrobe</a>
                     <div class="nav-child dropdown-menu mega-dropdown-menu">
                         <div class="mega-dropdown-inner">
                             <div class="row">
                                 <div data-width="12" class="col-md-12 mega-col-nav">
                                     <div class="mega-inner">
                                         <ul class="mega-nav level1">
+
+                                            {% for w_type in w_types %}
                                             <li>
+                                                <a href="{% url 'wardrobe' %}{{w_type.slug}}/">{{ w_type.name }}</a>
+                                            </li>
+                                            {% endfor %}
+                                            <!-- <li>
                                                 <a href="3DOOR.html">3 DOOR</a>
                                             </li>
                                             <li>
@@ -100,7 +106,7 @@
                                             </li>
                                             <li>
                                                 <a href="5DOOR.html">5 DOOR</a>
-                                            </li>
+                                            </li> -->
 
                                         </ul>
                                     </div>
@@ -178,7 +184,7 @@
                             <a href="{% url 'landing' %}">kitchen</a>
                         </li>
                         <li class="footer-navi">
-                            <a href="">wardrobe</a>
+                            <a href="{% url 'wardrobe' %}">wardrobe</a>
 
                         </li>
                         <li class="footer-navi">

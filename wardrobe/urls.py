@@ -1,14 +1,10 @@
 from django.conf.urls import url, include
-from .views import *
+from wardrobe.views import *
 
 urlpatterns = [
-    url(r'^(?P<type>\d+)/', ServeType),
-    url(r'^(?P<id>\d+)/', ServeProduct),
-    # url(r'(?P<id>\d+)', ServeProduct),
-
-
-    # url(r'^asdf/', asdf),
-    # url(r'^kitchen/', include('kitchen.urls')),
-    # # url(r'^wardrobe/', include('wardrobe.urls')),
-    # url(r'^admin/', admin.site.urls),
+    # url(r'^test/', Test, name='test'),
+    url(r'^(?P<w_type_slug>[-\w]+)/(?P<theme_slug>[-\w]+)/(?P<wardrobe_slug>[-\w]+)/$', ServeProduct),
+    url(r'^(?P<w_type_slug>[-\w]+)/(?P<theme_slug>[-\w]+)/$', ServeWardrobe),
+    url(r'^(?P<w_type_slug>[-\w]+)/$', ServeTheme),
+    url(r'^$', ServeType, name='wardrobe')
 ]
