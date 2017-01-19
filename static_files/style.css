@@ -6023,6 +6023,12 @@ body .tz-grid-2 .tz-image-item{
     font-size: 13px;
     padding-right: 5px;
 }
+.custom-quote-form{
+position: inherit!important;
+width: 80%!important;
+margin: 0 auto!important;
+}
+
 .p-share{
     margin: 32px 0 0;
     color: #000000;
@@ -6032,7 +6038,7 @@ body .tz-grid-2 .tz-image-item{
     line-height: 15px;
     display: inline-block;
     border: 2px solid #000000;
-    padding: 12px 28px;
+    padding: 12px 9px;
     background: none;
     position: relative;
     overflow: hidden;
