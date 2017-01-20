@@ -85,8 +85,21 @@ def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
     context['k_appliances'] = k_appliances
     return context
 
+def ReloadFlex(request):
+    context={}
+    color = request.POST['color']
+    k_id = request.POST['k_id']
+    flex_images = KImage.objects.filter(kitchen = Kitchen.objects.get(id=id))
+    context['flex_images'] = flex_images
+    context['color'] = color
+    return render(request, 'reload_flex.html', context)
+
 def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):
     """ to serve final product based on type, theme and kitchen """
     context = ProductContextCreator(k_type_slug, theme_slug, kitchen_slug)
     context = AppendBasicContext(context)
     return render(request, 'kitchen/kitchen_pdp.html', context=context)
+
+def KitchenResponse(request):
+    """ to save the response received on kitchen product """
+    return HttpResponse(request.POST)

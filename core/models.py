@@ -96,7 +96,7 @@ class KIncludes(BaseModel):
     category = models.CharField(max_length=30)
     # items = models.CharField(max_length=30)
     brand = models.CharField(max_length=30)
-    # size = models.CharField(max_length=20)
+    # size = models.CharField(max_length=20, default='1*2*3')
     image = models.ImageField(upload_to='kitchen/images/kitchen_appliances/')
 
     def __unicode__(self):
@@ -117,7 +117,7 @@ class KIncludes(BaseModel):
 class KISub(BaseModel):
     k_includes = models.ForeignKey(KIncludes, on_delete = models.CASCADE)
     sub_category = models.CharField(max_length=30)
-    is_inculded = models.BooleanField(default=True)
+    is_included = models.BooleanField(default=True)
 
     def __unicode__(self):
         return  (self.k_includes.category + self.sub_category)
@@ -329,7 +329,7 @@ class WIncludes(BaseModel):
 class WISub(BaseModel):
     w_includes = models.ForeignKey(WIncludes, on_delete = models.CASCADE)
     sub_category = models.CharField(max_length=30)
-    is_inculded = models.BooleanField(default=True)
+    is_included = models.BooleanField(default=True)
 
     def __unicode__(self):
         return  (self.w_includes.category + self.sub_category)
