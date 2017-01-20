@@ -61,3 +61,42 @@ def TermsAndConditionsView(request):
     context = {}
     context = AppendBasicContext(context)
     return render(request, 'terms_and_conditions.html', context)
+
+
+def ContactRequestView(request): #user_email, activation_key, first_name
+    if request.method == 'POST':
+        from django.core.mail import send_mail
+        from bloom_interio.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
+
+        name = request.POST['name']
+        contact_no = request.POST['contact_no']
+        user_email = request.POST['user_email']
+        location = request.POST['address']
+        budget = request.POST['budget']
+
+        subject = 'contact request'
+        message = ('Name: ' + name + \
+            '\nContact No: ' + contact_no + \
+            '\nEmail: '+ user_email + \
+            '\nLocation: '+ location + \
+            '\nBudget: ' + budget)
+
+        if send_mail(subject, message, DEFAULT_FROM_EMAIL, [ADMIN_EMAIL]):
+            subject = 'Bloom Interio'
+            message = ('Hi ' + name + ',' \
+                '\n\nThanks for contacting us.'\
+                '\nWe will get back to you soon'\
+                '\n\nRegards,\nBloom Interio')
+
+            subject = 'Thanks for contacting us.'
+            message = ('Hi,\n\nThanks for contacting us. We will get back to you soon.\n\n' + \
+                    'Regards,\nAdmin')
+
+            send_mail(
+                subject,
+                message,
+                DEFAULT_FROM_EMAIL,
+                [user_email],
+                fail_silently=True,)
+
+            return HttpResponse('ho gya mail')

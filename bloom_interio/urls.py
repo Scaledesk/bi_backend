@@ -31,5 +31,6 @@ urlpatterns = [
     url(r'^interior/', InteriorView, name='interior'),
     url(r'^product-help/', ProductHelpView, name='product_help'),
     url(r'^terms-and-conditions/', TermsAndConditionsView, name='terms_and_conditions'),
-    url(r'^$', LandingView, name='landing' )
+    url(r'^contact-request/', ContactRequestView, name='contact-request'),
+    url(r'^$', LandingView, name='landing')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

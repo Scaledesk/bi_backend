@@ -431,3 +431,26 @@ class WImage(BaseModel):
         ordering = ['wardrobe', 'w_color']
 
 ##### WARDROBE END #####
+
+
+##### FROMS #####
+class KitchenResponse(BaseModel):
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    address = models.CharField(max_length=100)
+    phone_no = models.CharField(max_length=10)
+    kitchen = models.ForeignKey(Kitchen)
+    material = models.ForeignKey(KMaterial)
+    finishing = models.ForeignKey(KFinishing)
+    color = models.ForeignKey(KColor)
+
+class WardrobeReponse(BaseModel):
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    address = models.CharField(max_length=100)
+    phone_no = models.CharField(max_length=10)
+    wardrobe = models.ForeignKey(Wardrobe)
+    material = models.ForeignKey(WMaterial)
+    finishing = models.ForeignKey(WFinishing)
+    color = models.ForeignKey(WColor)
+##### END FORMS #####

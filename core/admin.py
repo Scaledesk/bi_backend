@@ -9,10 +9,16 @@ class KImageInline(NestedStackedInline):
     extra=1
     fk_name='kitchen'
 
+class KApplianceInline(NestedStackedInline):
+    model=KAppliance
+    extra=1
+    fk_name='kitchen'
+
 class KitchenAdmin(NestedModelAdmin):
     """Kitchen Admin class"""
     inlines=[
         KImageInline,
+        KApplianceInline,
     ]
 
 class KISubInline(NestedStackedInline):
@@ -34,10 +40,16 @@ class WImageInline(NestedStackedInline):
     extra=1
     fk_name='wardrobe'
 
+class WApplianceInline(NestedStackedInline):
+    model=WAppliance
+    extra=1
+    fk_name='wardrobe'
+
 class WardrobeAdmin(NestedModelAdmin):
     """Kitchen Admin class"""
     inlines=[
         WImageInline,
+        WApplianceInline,
     ]
 
 class WISubInline(NestedStackedInline):
@@ -52,54 +64,28 @@ class WIncludesAdmin(NestedModelAdmin):
 
 ##### END WARDROBE #####
 
-
-
-
-# class TeamInline(NestedStackedInline):
-#     """Class for the team inline"""
-#     model=Team
-#     extra=0
-#
-#
-# class UpdatePhotosInline(NestedStackedInline):
-#     model=UpdatePhotos
-#     extra=1
-#     fk_name='update'
-#
-#
-# class UpdateInline(NestedStackedInline):
-#     """Class for the inline of project Updates """
-#     model=Update
-#     extra=0
-#     inlines = [UpdatePhotosInline]
-#     fk_name='project'
-#
-# class ProjectAdmin(NestedModelAdmin):
-#     """Project Admin class"""
-#     inlines=[
-#         TeamInline,
-#         UpdateInline,
-#     ]
-#
 admin.site.register(KType)
 admin.site.register(KTheme)
 admin.site.register(Kitchen, KitchenAdmin)
 admin.site.register(KIncludes, KIncludesAdmin)
-admin.site.register(KISub)
-admin.site.register(KAppliance)
+# admin.site.register(KISub)
+# admin.site.register(KAppliance)
 admin.site.register(KMaterial)
 admin.site.register(KFinishing)
 admin.site.register(KColor)
-admin.site.register(KImage)
+# admin.site.register(KImage)
 
 
 admin.site.register(WType)
 admin.site.register(WTheme)
 admin.site.register(Wardrobe, WardrobeAdmin)
 admin.site.register(WIncludes, WIncludesAdmin)
-admin.site.register(WISub)
-admin.site.register(WAppliance)
+# admin.site.register(WISub)
+# admin.site.register(WAppliance)
 admin.site.register(WMaterial)
 admin.site.register(WFinishing)
 admin.site.register(WColor)
-admin.site.register(WImage)
+# admin.site.register(WImage)
+
+admin.site.register(KitchenResponse)
+admin.site.register(WardrobeReponse)
