@@ -103,3 +103,61 @@ def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):
 def KitchenResponse(request):
     """ to save the response received on kitchen product """
     return HttpResponse(request.POST)
+
+def ProductConsultation(request):
+    if request.method == 'POST':
+        from django.core.mail import send_mail
+        from bloom_interio.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
+
+        name = request.POST['name']
+        contact_no = request.POST['contact_no']
+        user_email = request.POST['user_email']
+        address = request.POST['address']
+        color = str(request.POST['color'])
+        finish = request.POST['finish']
+        material = request.POST['material']
+
+        kitchen_id = request.POST['kitchen']
+        kitchen = Kitchen.objects.get(id=kitchen_id)
+        dimension = str(kitchen.l) +'*'+ str(kitchen.b) +'*'+ str(kitchen.h)
+
+        kitchen_theme = kitchen.theme.name
+        kitchen_type = kitchen.theme.k_type.name
+
+
+        subject = 'Custom quote request'
+        message = ('Name: ' + name + \
+            '\nContact No: ' + contact_no + \
+            '\nEmail: '+ user_email + \
+            '\nAddress: '+ address + \
+            '\nKitchen Type: '+ kitchen_type + \
+            '\nKitchen Theme: '+ kitchen_theme + \
+            '\nKitchen: '+ kitchen.name + \
+            '\nDimension: '+ dimension + \
+            '\nMaterial: '+ material + \
+            '\nFinish: '+ finish + \
+            '\nColor: '+ color)
+
+        if send_mail(subject, message, DEFAULT_FROM_EMAIL, [ADMIN_EMAIL]):
+            subject = 'Bloom Interio'
+            message = ('Hi ' + name + ',' \
+                '\n\nThanks for contacting us.'\
+                '\nWe will get back to you soon'\
+                '\n\nRegards,\nBloom Interio')
+
+            subject = 'Thanks for contacting us.'
+            message = ('Hi,\n\nThanks for contacting us. We will get back to you soon.\n\n' + \
+                    'Regards,\nAdmin')
+
+            send_mail(
+                subject,
+                message,
+                DEFAULT_FROM_EMAIL,
+                [user_email],
+                fail_silently=True,)
+
+            return HttpResponse('ho gya mail')
+    return asdfasdfas
+    return HttpResponse(request.POST)
+
+    return HttpResponse(request.POST)
