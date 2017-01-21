@@ -956,30 +956,30 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
 {% endblock %}
 
 {% block custom_script %}
-<script>
-// $('#contact_request_form').submit(function(e) {
-//   alert('asdfad');
-//   e.preventDefault();
-//     $("#loader_contact_form").show();
-//     $.post("{% url 'contact-request' %}",
-//     {
-//         name: $("#name").val(),
-//         contact_no: $("#contact_no").val(),
-//         user_email: $("#user_email").val(),
-//         address: $("#addre4").val(),
-//         budget: $("#budger").val(),
-//     },
-//     function(data, status){
-//               $("#contact_form_loader").hide();
-//               if (data == 'True'){
-//                 alert("")
-//                 // $("#company_name_error" ).text( "This name is already assiociated with another company." );
-//               }else {
-//                 alert("Error!! You form is not submitted");
-//                 // $("#company_name_error" ).text( "" );
-//                 company_name_check = true;
-//               }
-//             });
-// });
+<script type='text/javascript'>
+$('#contact_request_form').submit(function() {
+  alert('asdfad');
+  // e.preventDefault();
+  //   $("#loader_contact_form").show();
+  //   $.post("{% url 'contact-request' %}",
+  //   {
+  //       name: $("#name").val(),
+  //       contact_no: $("#contact_no").val(),
+  //       user_email: $("#user_email").val(),
+  //       address: $("#addre4").val(),
+  //       budget: $("#budger").val(),
+  //   },
+  //   function(data, status){
+  //             $("#contact_form_loader").hide();
+  //             if (data == 'True'){
+  //               alert("")
+  //               // $("#company_name_error" ).text( "This name is already assiociated with another company." );
+  //             }else {
+  //               alert("Error!! You form is not submitted");
+  //               // $("#company_name_error" ).text( "" );
+  //               company_name_check = true;
+  //             }
+  //           });
+});
 </script>
 {% endblock %}

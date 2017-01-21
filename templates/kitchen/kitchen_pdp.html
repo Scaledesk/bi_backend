@@ -165,17 +165,17 @@
         <div class="color-swatch-wrapper">
           <ul id="color-swatch-attribute-92" class="is-disabled-attribute">
 
-            <li class="color-swatch-92-24 p-0 border-0">
-              <span class="swatch-title" info="Custom" style="width:25px; height:25px; line-height:25px; position:relative;">&nbsp;
-                <img class="image-base" id="all" name="all" src="/static/all.png" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;">
+            <li class="p-0 border-0">
+              <span class="swatch-title" id="color_0"  onclick="colorActive(0)" info="Custom" style="width:25px; height:25px; line-height:25px; position:relative; border: 2px solid green;">&nbsp;
+                <img class="image-base" id="c_0" name="c_0" src="/static/all.png" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;">
               </span>
             </li>
 
             {% for obj in k_images %}
 
-            <li class="color-swatch-92-24 p-0 border-0">
-              <span class="swatch-title" info="Custom" style="width:25px; height:25px; line-height:25px; position:relative;">&nbsp;
-                <img class="image-base" id="{{ obj.k_color.name }}" name="{{ obj.k_color.name }}" src="{{ obj.k_color.image.url }}" style="position: absolute; top: 0;left: 0;width: 100%;height: 100%;">
+            <li class="p-0 border-0">
+              <span class="swatch-title" id="color_{{ forloop.counter }}" onclick="colorActive( {{ forloop.counter }} )" info="Custom" style="width:25px; height:25px; line-height:25px; position:relative; border: 2px solid transparent;">&nbsp;
+                <img class="image-base" id="c_{{ forloop.counter }}" name="{{ obj.k_color.name }}" src="{{ obj.k_color.image.url }}" style="position: absolute; top: 0;left: 0;width: 100%;height: 100%;">
               </span>
             </li>
 
@@ -473,9 +473,6 @@
           </table>
         </form>
       </div><!--end class container-->
-
-
-
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -489,6 +486,22 @@
 
 {% block custom_script %}
 
+<script>
+var initial_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid transparent;";
+var selected_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid green;";
+// var total_colors = {{ k_images|length }};
+// var selected_color = "";
+var selected = 0;
+function colorActive(color_id){
+  document.getElementById("color_"+selected).style = initial_style;
+  selected = color_id;
+  document.getElementById("color_"+color_id).style = selected_style;
+  // var x = document.getElementById(color_id);
+  // var x = document.getElementById(color_id);
+  // x.style = selected_style;
+  // selected_color = document.getElementById('c_'+color_id);
 
+}
+</script>
 
 {% endblock %}

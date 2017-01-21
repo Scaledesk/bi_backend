@@ -829,8 +829,8 @@ input, select, textarea, button {
     text-align: center;
     margin: 1px;
     position: relative;
-    padding: 3px;
-    border: 1px solid #cccccc;
+    /*padding: 3px;*/
+    /*border: 1px solid #cccccc;*/
 }
 
 .color-swatch-wrapper ul li .swatch-title {
