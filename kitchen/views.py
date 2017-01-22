@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from core.models import *
 from core.utils import *
@@ -77,22 +77,33 @@ def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
             temp['ki_sub'] = KISub.objects.filter(k_includes = obj)
             k_includes.append(temp)
 
+    max_price = (kitchen.base_price + (kitchen.base_price*kitchen.max_change)/100)
+    min_price = (kitchen.base_price + (kitchen.base_price*kitchen.min_change)/100)
+
     context['kitchen'] = kitchen
     context['k_images'] = k_images
     context['k_material'] = k_material
     context['k_finishing'] = k_finishing
     context['k_includes'] = k_includes
     context['k_appliances'] = k_appliances
+    context['min_price'] = min_price
+    context['max_price'] = min_price
     return context
 
 def ReloadFlex(request):
+    """ajax request to reload the images of kitchen pdp """
     context={}
     color = request.POST['color']
-    k_id = request.POST['k_id']
-    flex_images = KImage.objects.filter(kitchen = Kitchen.objects.get(id=id))
-    context['flex_images'] = flex_images
-    context['color'] = color
-    return render(request, 'reload_flex.html', context)
+    kitchen_id = request.POST['kitchen_id']
+    flex_images = KImage.objects.filter(kitchen = Kitchen.objects.get(id=kitchen_id))
+    context['k_images'] = flex_images
+    # context['color'] = color
+    from django.template.loader import render_to_string
+    # return render(request, 'kitchen/reload_flex.html', context)
+    html = render_to_string('kitchen/reload_flex.html', context)
+    # pprint(html)
+    # html='<h1>asdfasdfadfa<h1>'
+    return HttpResponse(html)
 
 def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):
     """ to serve final product based on type, theme and kitchen """
@@ -114,6 +125,8 @@ def ProductConsultation(request):
         user_email = request.POST['user_email']
         address = request.POST['address']
         color = str(request.POST['color'])
+        if color == 'all':
+            color = 'None'
         finish = request.POST['finish']
         material = request.POST['material']
 
@@ -123,7 +136,6 @@ def ProductConsultation(request):
 
         kitchen_theme = kitchen.theme.name
         kitchen_type = kitchen.theme.k_type.name
-
 
         subject = 'Custom quote request'
         message = ('Name: ' + name + \
@@ -155,9 +167,4 @@ def ProductConsultation(request):
                 DEFAULT_FROM_EMAIL,
                 [user_email],
                 fail_silently=True,)
-
-            return HttpResponse('ho gya mail')
-    return asdfasdfas
-    return HttpResponse(request.POST)
-
-    return HttpResponse(request.POST)
+            return redirect("/thank-you/?source=kitchen")
