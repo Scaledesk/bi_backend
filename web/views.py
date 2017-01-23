@@ -1,12 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from core.models import *
 from core.utils import *
 # Create your views here.
 
-def TestView(request):
-    """ jut for testing purpose """
-    return render(request, 'kitchen/kitchen_by_type.html', None)
+# def TestView(request):
+#     """ jut for testing purpose """
+#     return render(request, 'kitchen/kitchen_by_type.html', None)
 
 def LandingView(request):
     """ To serve laning/home page """
@@ -98,5 +98,8 @@ def ContactRequestView(request): #user_email, activation_key, first_name
                 DEFAULT_FROM_EMAIL,
                 [user_email],
                 fail_silently=True,)
+            return redirect("/thank-you/?source=contact")
 
-            return HttpResponse('ho gya mail')
+def ThankYouView(request):
+    source = request.GET.get('source', None)
+    return render(request, "thank_you.html", {'source':source})
