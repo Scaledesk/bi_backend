@@ -68,15 +68,11 @@
                                               <a href="{% url 'kitchen' %}{{k_type.slug}}/">{{ k_type.name }}</a>
                                           </li>
                                           {% endfor %}
-                                            <!-- <li>
-                                                <a href="{% url 'kitchen' %}l-shaped/">L SHAPED</a>
-                                            </li>
-                                            <li>
-                                                <a href="{% url 'kitchen' %}u-shaped/">U SHAPED</a>
-                                            </li>
-                                            <li>
-                                                <a href="{% url 'kitchen' %}h-shaped/"">H SHAPED</a>
-                                            </li> -->
+
+                                          <li>
+                                              <a href="{% url 'kitchen_guide' %}/">Kitchen Guide</a>
+                                          </li>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -385,6 +381,14 @@ function getCookie(name) {
     return cookieValue;
 }
 </script>
+
+// to disable the submit button to prevent multiple submission
+<script type='text/javascript'>
+$('#contact_request_form').submit(function() {
+  $(this).find(':input[type=submit]').prop('disabled', true);
+});
+</script>
+
 {% endblock %}
 
 {% block custom_script %}

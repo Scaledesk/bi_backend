@@ -17,13 +17,10 @@
 
     <div class="row">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+          <div id="tz-shop-content" class="row">
 
-        <div calss="reload_flex" id="reload_flex">
-
-        <div id="tz-shop-content" class="row">
-
-
-
+####################################################################################
+<!-- <div calss="reload_flex" id="reload_flex"> -->
 
 
             <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
@@ -46,18 +43,21 @@
                 </ul>
               </div>
             </div>
+
+
+
+
+
+
+
           </div>
-
-
 
 
 
 
           <div class="col-lg-1 col-md-1">
-
           </div>
-        </div>
-
+        <!-- </div>         -->
         <div class="tzshop-summary">
 
           <h6 class="tz-title-details">KITCHEN DETAILS</h6>
@@ -465,7 +465,7 @@ function colorActive(color_id){
       $( '#reload_flex').html( returnedData );
       $("#reload_flex").page();
     }
-   });
+  });
 }
 
 function changeMaterial(){
@@ -485,11 +485,11 @@ function changeFinish(){
 }
 
 function reindex_array(array) {
-   var result = [];
-    for (var key in array) {
-        result.push(array[key]);
-    }
-    return result;
+  var result = [];
+  for (var key in array) {
+    result.push(array[key]);
+  }
+  return result;
 }
 
 function addAppliance(id){

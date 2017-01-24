@@ -70,6 +70,10 @@
                                              </li>
                                            {% endfor %}
 
+                                           <li>
+                                               <a href="{% url 'kitchen_guide' %}/">Kitchen Guide</a>
+                                           </li>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -315,6 +319,13 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
     jQuery(window).load(function(){
         jQuery('div.slotholder').prepend('<div class="bk-responsive-slide"></div>');
     })
+</script>
+
+// to disable the submit button to prevent multiple submission
+<script type='text/javascript'>
+$('#contact_request_form').submit(function() {
+  $(this).find(':input[type=submit]').prop('disabled', true);
+});
 </script>
 {% endblock %}
 

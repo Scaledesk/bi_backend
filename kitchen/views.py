@@ -9,6 +9,12 @@ from pprint import pprint
 #     """ view to testing  only"""
 #     return render(request, 'privacypolicy.html', None)
 
+def KitchenGuide(request):
+    """ view to guide page for kitchen """
+    context = {}
+    context = AppendBasicContext(context)
+    return render(request, 'kitchen/kitchen_guide.html', context)
+
 def ServeType(request):
     """ view to serve page containing kitchen types """
     context = {}

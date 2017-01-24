@@ -101,5 +101,8 @@ def ContactRequestView(request): #user_email, activation_key, first_name
             return redirect("/thank-you/?source=contact")
 
 def ThankYouView(request):
+    context = {}
+    context = AppendBasicContext(context)
     source = request.GET.get('source', None)
-    return render(request, "thank_you.html", {'source':source})
+    context['source'] = source
+    return render(request, "thank_you.html", context)
