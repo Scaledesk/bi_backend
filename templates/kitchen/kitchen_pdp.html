@@ -190,7 +190,7 @@
       </div>
       <div class="col-xs-6">
         <a href="#" class="p-share" >
-          <span data-toggle="modal" data-target="#myModal1" onClick="sendData()" >ADD APPLIANCES</span>
+          <span data-toggle="modal" data-target="#myModal1" >ADD APPLIANCES</span>
         </a>
       </div>
 
@@ -411,8 +411,7 @@
                   <!-- Product Code -->
                   <td class="product-name text-center ">
                     <form action="">
-                      <input type="checkbox" name="tick" value="tick"><br>
-
+                      <input type="checkbox" name="tick" id="appliance_{{obj.id}}" appliance_name="{{obj.name}}" onclick="addAppliance(appliance_{{obj.id}})"><br>
                     </form>
                   </td>
                   <!-- Remove from cart link -->
@@ -442,7 +441,7 @@
 <script>
 var initial_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid transparent;";
 var selected_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid green;";
-
+var appliance_array = []
 var color = ""
 var default_material = document.getElementById('select_material').value;
 var default_finish = document.getElementById('select_finish').value;
@@ -456,16 +455,16 @@ function colorActive(color_id){
 
 
   // code to relod the flex images on selecting colors
-  // $.ajax({
-  //   type: "POST",
-  //   url: "/kitchen/reload-flex/",
-  //   data: { kitchen_id:{{ kitchen.id }}, color:document.getElementById("c_"+color_id).getAttribute("name"), csrfmiddlewaretoken:getCookie('csrftoken') },
-  //   success: function( returnedData) {
-  //     // alert(returnedData)
-  //     $( '#reload_flex').html( returnedData );
-  //     $("#reload_flex").page();
-  //   }
-  //  });
+  $.ajax({
+    type: "POST",
+    url: "/kitchen/reload-flex/",
+    data: { kitchen_id:{{ kitchen.id }}, color:document.getElementById("c_"+color_id).getAttribute("name"), csrfmiddlewaretoken:getCookie('csrftoken') },
+    success: function( returnedData) {
+      // alert(returnedData)
+      $( '#reload_flex').html( returnedData );
+      $("#reload_flex").page();
+    }
+   });
 }
 
 function changeMaterial(){
@@ -484,6 +483,42 @@ function changeFinish(){
   }
 }
 
+function reindex_array(array) {
+   var result = [];
+    for (var key in array) {
+        result.push(array[key]);
+    }
+    return result;
+}
+
+function addAppliance(id){
+  // alert(document.getElementById(id));
+  item = id.getAttribute("appliance_name");
+  // alert(item)
+  // appliance_array.push(item);
+  // alert(appliance_array.toString());
+  // alert($.inArray(item, appliance_array))
+
+  if ($.inArray(item, appliance_array) != -1){
+    temp_array = [];
+    length = appliance_array.length;
+    for (var i =0; i<length; i++){
+      if (item != appliance_array[i]){
+        temp_array.push(appliance_array[i]);
+      }
+      appliance_array = temp_array;
+    }
+    appliance_array = reindex_array(appliance_array);
+    alert(appliance_array.toString());
+  }else {
+    alert('else')
+    appliance_array.push(item);
+    alert(appliance_array.toString());
+  }
+}
+
+
+
 $( "#select_material" ).change(function() {
   changeMaterial();
 });
@@ -496,6 +531,5 @@ $('#send_data_form').submit(function() {
   // to disable the submit button to prevent multiple submission
   $(this).find(':input[type=submit]').prop('disabled', true);
 });
-
 </script>
 {% endblock %}

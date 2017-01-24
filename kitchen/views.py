@@ -95,7 +95,10 @@ def ReloadFlex(request):
     context={}
     color = request.POST['color']
     kitchen_id = request.POST['kitchen_id']
-    flex_images = KImage.objects.filter(kitchen = Kitchen.objects.get(id=kitchen_id))
+    if color =='all':
+        flex_images = KImage.objects.filter(kitchen = Kitchen.objects.get(id=kitchen_id))
+    else:
+        flex_images = KImage.objects.filter(kitchen = Kitchen.objects.get(id=kitchen_id), k_color = KColor.objects.get(name=color))
     context['k_images'] = flex_images
     # context['color'] = color
     from django.template.loader import render_to_string

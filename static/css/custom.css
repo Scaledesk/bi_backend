@@ -829,8 +829,8 @@ input, select, textarea, button {
     text-align: center;
     margin: 1px;
     position: relative;
-    padding: 3px;
-    border: 1px solid #cccccc;
+    /*padding: 3px;*/
+    /*border: 1px solid #cccccc;*/
 }
 
 .color-swatch-wrapper ul li .swatch-title {
@@ -958,3 +958,23 @@ and (max-device-width: 480px) {
 
 
 }
+
+
+/*thankyou*/
+    .thank-banner {
+    background: url(/static/images/2.jpg) center no-repeat;
+    width: 100%;
+    background-size: cover;
+    height: 100vh;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+}
+.full-height {
+    height: 100vh;
+}
+/*thankyou end*/
