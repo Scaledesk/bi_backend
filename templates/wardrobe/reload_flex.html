@@ -1,0 +1,21 @@
+<div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+  <div id="slider" class="flexslider">
+    <ul class="slides">
+      {% for obj in w_images %}
+      <li>
+        <img src="{{obj.image.url}}" alt="Roses Deco Accent Chair" width="685" height="680"/>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div id="carousel">
+    <ul class="slides">
+      {% for obj in w_images %}
+      <li>
+        <img src="{{obj.image.url}}" alt="Roses Deco Accent Chair" width="80" height="60"/>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+</div>

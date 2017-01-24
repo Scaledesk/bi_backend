@@ -348,6 +348,7 @@
                 <input type="text" value="None" name="material" id="selected_material"  required="" hidden>
                 <input type="text" value="None" name="finish" id="selected_finish"  required="" hidden>
                 <input type="text" value="{{kitchen.id}}" name="kitchen" id="selected_kitchen"  required="" hidden>
+                <input type="text" value="None" name="selected_appliance" id="selected_appliance"  required="" hidden>
                 <div class="form-btn">
                   <button type="submit" class="btn hollow-btn1">Get Free Consultation</button>
                   <br>
@@ -515,6 +516,7 @@ function addAppliance(id){
     appliance_array.push(item);
     alert(appliance_array.toString());
   }
+  document.getElementById('selected_appliance').value = appliance_array.toString();
 }
 
 

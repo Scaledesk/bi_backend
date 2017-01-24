@@ -100,12 +100,8 @@ def ReloadFlex(request):
     else:
         flex_images = KImage.objects.filter(kitchen = Kitchen.objects.get(id=kitchen_id), k_color = KColor.objects.get(name=color))
     context['k_images'] = flex_images
-    # context['color'] = color
     from django.template.loader import render_to_string
-    # return render(request, 'kitchen/reload_flex.html', context)
     html = render_to_string('kitchen/reload_flex.html', context)
-    # pprint(html)
-    # html='<h1>asdfasdfadfa<h1>'
     return HttpResponse(html)
 
 def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):
@@ -114,9 +110,9 @@ def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):
     context = AppendBasicContext(context)
     return render(request, 'kitchen/kitchen_pdp.html', context=context)
 
-def KitchenResponse(request):
-    """ to save the response received on kitchen product """
-    return HttpResponse(request.POST)
+# def KitchenResponse(request):
+#     """ to save the response received on kitchen product """
+#     return HttpResponse(request.POST)
 
 def ProductConsultation(request):
     if request.method == 'POST':
@@ -139,6 +135,7 @@ def ProductConsultation(request):
 
         kitchen_theme = kitchen.theme.name
         kitchen_type = kitchen.theme.k_type.name
+        selected_appliance = request.POST['selected_appliance']
 
         subject = 'Custom quote request'
         message = ('Name: ' + name + \
@@ -151,7 +148,8 @@ def ProductConsultation(request):
             '\nDimension: '+ dimension + \
             '\nMaterial: '+ material + \
             '\nFinish: '+ finish + \
-            '\nColor: '+ color)
+            '\nColor: '+ color + \
+            '\nSelected Appliances: '+ selected_appliance)
 
         if send_mail(subject, message, DEFAULT_FROM_EMAIL, [ADMIN_EMAIL]):
             subject = 'Bloom Interio'
