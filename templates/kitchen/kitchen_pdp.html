@@ -17,11 +17,10 @@
 
     <div class="row">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-          <div id="tz-shop-content" class="row">
+        <div id="tz-shop-content" class="row">
 
-####################################################################################
-<!-- <div calss="reload_flex" id="reload_flex"> -->
-
+          <!-- reload flex start  -->
+          <div id="reload_flex">
 
             <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
               <div id="slider" class="flexslider">
@@ -44,20 +43,20 @@
               </div>
             </div>
 
+          </div><!-- reload flex end  -->
+
+
+        </div>
+        <div class="col-lg-1 col-md-1">
+        </div>
 
 
 
 
 
 
-          </div>
 
 
-
-
-          <div class="col-lg-1 col-md-1">
-          </div>
-        <!-- </div>         -->
         <div class="tzshop-summary">
 
           <h6 class="tz-title-details">KITCHEN DETAILS</h6>
@@ -442,8 +441,8 @@
 <script>
 var initial_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid transparent;";
 var selected_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid green;";
-var appliance_array = []
-var color = ""
+var appliance_array = [];
+var color = "";
 var default_material = document.getElementById('select_material').value;
 var default_finish = document.getElementById('select_finish').value;
 
@@ -484,42 +483,29 @@ function changeFinish(){
   }
 }
 
-function reindex_array(array) {
-  var result = [];
-  for (var key in array) {
-    result.push(array[key]);
-  }
-  return result;
-}
-
 function addAppliance(id){
-  // alert(document.getElementById(id));
-  item = id.getAttribute("appliance_name");
-  // alert(item)
-  // appliance_array.push(item);
-  // alert(appliance_array.toString());
-  // alert($.inArray(item, appliance_array))
+  var item = id.getAttribute("appliance_name");
+  var itemIndex = appliance_array.findIndex((x)=>{
+    return x===item;
+  });
+  // console.log('itemIndex'+itemIndex);
 
-  if ($.inArray(item, appliance_array) != -1){
-    temp_array = [];
-    length = appliance_array.length;
-    for (var i =0; i<length; i++){
-      if (item != appliance_array[i]){
-        temp_array.push(appliance_array[i]);
-      }
-      appliance_array = temp_array;
-    }
-    appliance_array = reindex_array(appliance_array);
-    alert(appliance_array.toString());
-  }else {
-    alert('else')
-    appliance_array.push(item);
-    alert(appliance_array.toString());
+  if(itemIndex>-1){
+    appliance_array.splice(itemIndex,1);
+    document.getElementById('selected_appliance').value = appliance_array.toString();
+    // return console.log('pulled'+appliance_array);
   }
-  document.getElementById('selected_appliance').value = appliance_array.toString();
+  appliance_array.push(item);
+    document.getElementById('selected_appliance').value = appliance_array.toString();
+  // return console.log('pushed'+appliance_array);
 }
+//
 
-
+// function freshStyle(stylesheet){
+//   var restyled = 'style.css';
+//     freshStyle(restyled);
+//    $('#mainStyle').attr('href',stylesheet);
+// }
 
 $( "#select_material" ).change(function() {
   changeMaterial();
