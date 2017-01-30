@@ -1,6 +1,0 @@
-Django==1.10.4
-django-autoslug==1.9.3
-django-nested-inline==0.3.6
-MySQL-python==1.2.5
-olefile==0.44
-Pillow==4.0.0
