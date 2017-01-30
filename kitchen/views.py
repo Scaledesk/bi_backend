@@ -15,6 +15,7 @@ def KitchenGuide(request):
     context = AppendBasicContext(context)
     return render(request, 'kitchen/kitchen_guide.html', context)
 
+
 def ServeType(request):
     """ view to serve page containing kitchen types """
     context = {}
