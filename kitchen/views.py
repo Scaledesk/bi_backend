@@ -107,7 +107,7 @@ def ReloadFlex(request):
         flex_images = KImage.objects.filter(kitchen = Kitchen.objects.get(id=kitchen_id), k_color = KColor.objects.get(name=color))
     context['k_images'] = flex_images
     from django.template.loader import render_to_string
-    html = render_to_string('kitchen/reload_flex.html', context)
+    html = render_to_string('kitchen/reload_flex1.html', context)
     return HttpResponse(html)
 
 def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):

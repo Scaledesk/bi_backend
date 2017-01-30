@@ -488,24 +488,80 @@ function addAppliance(id){
   var itemIndex = appliance_array.findIndex((x)=>{
     return x===item;
   });
-  // console.log('itemIndex'+itemIndex);
 
-  if(itemIndex>-1){
+  if(itemIndex){
+    alert("if")
     appliance_array.splice(itemIndex,1);
-    document.getElementById('selected_appliance').value = appliance_array.toString();
-    // return console.log('pulled'+appliance_array);
+    return alert(appliance_array.toString());
   }
+  alert("else")
   appliance_array.push(item);
-    document.getElementById('selected_appliance').value = appliance_array.toString();
-  // return console.log('pushed'+appliance_array);
+  return alert(appliance_array.toString());
 }
-//
 
-// function freshStyle(stylesheet){
-//   var restyled = 'style.css';
-//     freshStyle(restyled);
-//    $('#mainStyle').attr('href',stylesheet);
+// if ($.onArray(item, appliance_array) != -1){
+//   var item_index = appliance_array.findIndex(x)=>{
+//     return x === item;
+//   }
+//   appliance_array.
+// }else{
+//   appliance_array.push(item);
 // }
+// alert(appliance_array.toString());
+// }
+
+// fuction addAppliance(id){
+// item = id.getAttribute("appliance_name");
+//
+//
+//
+// if ($.onArray(item, appliance_array) != -1){
+//   var item_index = appliance_array.findIndex(x)=>{
+//     return x === item;
+//   }
+//   appliance_array.
+// }else{
+//   appliance_array.push(item);
+// }
+// alert(appliance_array.toString());
+// }
+
+// function reindex_array(array) {
+//   var result = [];
+//   for (var key in array) {
+//     result.push(array[key]);
+//   }
+//   return result;
+// }
+//
+// function addAppliance(id){
+//   // alert(document.getElementById(id));
+//   item = id.getAttribute("appliance_name");
+//   // alert(item)i
+//   // appliance_array.push(item);
+//   // alert(appliance_array.toString());
+//   // alert($.inArray(item, appliance_array))
+//
+//   if ($.inArray(item, appliance_array) != -1){
+//     temp_array = [];
+//     length = appliance_array.length;
+//     for (var i =0; i<length; i++){
+//       if (item != appliance_array[i]){
+//         temp_array.push(appliance_array[i]);
+//       }
+//       appliance_array = temp_array;
+//     }
+//     appliance_array = reindex_array(appliance_array);
+//     alert(appliance_array.toString());
+//   }else {
+//     alert('else')
+//     appliance_array.push(item);
+//     alert(appliance_array.toString());
+//   }
+//   document.getElementById('selected_appliance').value = appliance_array.toString();
+// }
+
+
 
 $( "#select_material" ).change(function() {
   changeMaterial();
