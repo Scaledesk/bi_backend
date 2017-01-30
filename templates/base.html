@@ -68,11 +68,15 @@
                                               <a href="{% url 'kitchen' %}{{k_type.slug}}/">{{ k_type.name }}</a>
                                           </li>
                                           {% endfor %}
-
-                                          <li>
-                                              <a href="{% url 'kitchen_guide' %}/">Kitchen Guide</a>
-                                          </li>
-
+                                            <!-- <li>
+                                                <a href="{% url 'kitchen' %}l-shaped/">L SHAPED</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'kitchen' %}u-shaped/">U SHAPED</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'kitchen' %}h-shaped/"">H SHAPED</a>
+                                            </li> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -231,9 +235,9 @@
 
 {% block script %}
 <script src="/static/js/jquery.min.js"></script>
-<!-- <script>
+<script>
     jQuery.noConflict();
-</script> -->
+</script>
 <script src="/static/js/bootstrap.min.js"></script>
 <script src="/static/js/jquery.parallax-1.1.3.js"></script>
 <script src="/static/js/owl.carousel.js"></script>
@@ -362,33 +366,6 @@
         });
     });
 </script>
-
-<!-- script added to get csrf_token for ajax requests -->
-<script>
-function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-</script>
-
-// to disable the submit button to prevent multiple submission
-<script type='text/javascript'>
-$('#contact_request_form').submit(function() {
-  $(this).find(':input[type=submit]').prop('disabled', true);
-});
-</script>
-
 {% endblock %}
 
 {% block custom_script %}

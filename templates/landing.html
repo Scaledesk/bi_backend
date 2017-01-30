@@ -11,7 +11,7 @@
       <ul>
         <li data-transition="fade" data-slotamount="7" data-masterspeed="300"  data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7" data-saveperformance="off" >
           <div class="fullscreen-bg">
-            <video loop muted autoplay poster="/static/demos/slider-re1.png" class="fullscreen-bg__video">
+            <video loop muted autoplay poster="demos/slider-re1.png" class="fullscreen-bg__video">
               <source src="/static/images/dummy.mp4" type="video/mp4">
 
               </video>
@@ -895,8 +895,12 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
 
 
 
+
+
+
+
             <!-- <form id="contact_request_form" class="cta-signup-form"> -->
-            <form id="contact_request_form" class="cta-signup-form" method="post" action="/contact-request/" enctype="multipart/form-data">
+            <form id="contact_request_form" class="contact_request_form" method="post" action="/contact-request/" enctype="multipart/form-data">
 
               <h2  class="text-center">Dream Kitchen</h2>
               <hr class="hr-color hr-style">
@@ -922,7 +926,7 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
 
 
               <div class="form-group"> <i class="fa fa-briefcase" aria-hidden="true"></i>
-                <input type="text" value="" name="budget" class="form-control input-lg form-input-custom" id="budget" placeholder="Budget" required>
+                <input type="text" value="" name="budget" class="form-control input-lg form-input-custom" id="budget" placeholder="Budget" required><img src="/static/loader.gif" alt="" id="contact_form_loader" hidden />
               </div>
 
               <div class="form-btn">
@@ -954,9 +958,28 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
 {% block custom_script %}
 <script type='text/javascript'>
 $('#contact_request_form').submit(function() {
-  // to disable the submit button to prevent multiple submission
-  $(this).find(':input[type=submit]').prop('disabled', true);
-
+  alert('asdfad');
+  // e.preventDefault();
+  //   $("#loader_contact_form").show();
+  //   $.post("{% url 'contact-request' %}",
+  //   {
+  //       name: $("#name").val(),
+  //       contact_no: $("#contact_no").val(),
+  //       user_email: $("#user_email").val(),
+  //       address: $("#addre4").val(),
+  //       budget: $("#budger").val(),
+  //   },
+  //   function(data, status){
+  //             $("#contact_form_loader").hide();
+  //             if (data == 'True'){
+  //               alert("")
+  //               // $("#company_name_error" ).text( "This name is already assiociated with another company." );
+  //             }else {
+  //               alert("Error!! You form is not submitted");
+  //               // $("#company_name_error" ).text( "" );
+  //               company_name_check = true;
+  //             }
+  //           });
 });
 </script>
 {% endblock %}

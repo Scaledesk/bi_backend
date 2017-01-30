@@ -87,5 +87,5 @@ admin.site.register(WFinishing)
 admin.site.register(WColor)
 # admin.site.register(WImage)
 
-# admin.site.register(KitchenResponse)
-# admin.site.register(WardrobeReponse)
+admin.site.register(KitchenResponse)
+admin.site.register(WardrobeReponse)

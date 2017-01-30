@@ -11705,3 +11705,8 @@ body.home-rtl .tz-recent-post li{
         visibility: visible;
     }
 }
+
+
+.myactive{
+  border: 3px solid #000;
+}
