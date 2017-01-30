@@ -5,9 +5,9 @@ from core.utils import *
 from pprint import pprint
 
 
-# def Test(request):
-#     """ view to testing  only"""
-#     return render(request, 'privacypolicy.html', None)
+def Test(request):
+    """ view to testing  only"""
+    return render(request, 'faq1.html', None)
 
 def KitchenGuide(request):
     """ view to guide page for kitchen """
