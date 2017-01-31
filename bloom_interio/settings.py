@@ -159,9 +159,10 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'tamyworld@gmail.com'
 EMAIL_HOST_PASSWORD ='lytxspoqppqotqzr'
 DEFAULT_FROM_EMAIL = 'tamyworld@gmail.com'
-DEFAULT_TO_EMAIL = ''
+# DEFAULT_TO_EMAIL = ''
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 #Website Detail
 # WEBSITE = 'http://127.0.0.1:8000/'
 ADMIN_EMAIL = 'deepaksinghbartwal@gmail.com'
+# ADMIN_EMAIL = 'pbdhull@gmail.com'

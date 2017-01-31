@@ -301,7 +301,6 @@ class Wardrobe(BaseModel):
         ordering = ['name', 'theme']
         unique_together = ('theme', 'slug', 'l', 'b', 'h')
 
-
 # class WIncludes(BaseModel):
 #     """ Model to save what wardrobe includes """
 #     wardrobe = models.ForeignKey(Wardrobe, on_delete=models.CASCADE)
@@ -347,7 +346,7 @@ class Wardrobe(BaseModel):
 #     name = models.CharField(max_length=30)
 #     desc = models.CharField(max_length=300)
 #     image = models.ImageField(upload_to='wardrobe/images/wardrobe_appliances/')
-# 
+#
 #     def __unicode__(self):
 #         return self.name
 #
