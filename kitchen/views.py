@@ -4,10 +4,18 @@ from core.models import *
 from core.utils import *
 from pprint import pprint
 
-
+#
 # def Test(request):
 #     """ view to testing  only"""
-#     return render(request, 'privacypolicy.html', None)
+#     context = {}
+#     context = AppendBasicContext(context)
+#     return render(request, 'privacypolicy.html', context)
+
+def KitchenInfo(request):
+    """ view to kitchen information """
+    context = {}
+    context = AppendBasicContext(context)
+    return render(request, 'kitchen/kitchen_info.html', context)
 
 def KitchenGuide(request):
     """ view to guide page for kitchen """

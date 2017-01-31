@@ -3,6 +3,7 @@ from kitchen.views import *
 
 urlpatterns = [
     # url(r'^test/', Test, name='test'),
+    url(r'^kitchen-info/', KitchenInfo, name='kitchen_info'),
     url(r'^kitchen-guide', KitchenGuide, name='kitchen_guide'),
     url(r'^reload-flex', ReloadFlex, name='reload_flex'),
     url(r'^product-consultation', ProductConsultation, name='kitchen_consultation'),
