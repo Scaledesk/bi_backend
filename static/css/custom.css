@@ -794,9 +794,9 @@ input, select, textarea, button {
     font-size: 12px;
     line-height: 20px;
     vertical-align: middle;
-    color: #666;
-    background: #fff;
-}
+    color: #818181;
+    background: #f5f5f5;
+    border-radius: 20px;
 
 .validation-advice {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);

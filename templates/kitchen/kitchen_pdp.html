@@ -27,7 +27,7 @@
                 <ul class="slides">
                   {% for obj in k_images %}
                   <li>
-                    <img src="{{obj.image.url}}" alt="Roses Deco Accent Chair" width="685" height="680"/>
+                    <img src="{{obj.image.url}}" alt="Roses Deco Accent Chair" width="685" height="430"/>
                   </li>
                   {% endfor %}
                 </ul>
@@ -147,7 +147,7 @@
           </div>
 
         </dd>
-        <dt><label class="required"><em>*</em>Select Color<span class="select-label" id="select_label_color">Brown Grey and Linen</span>
+        <dt><label class="required"><em>*</em>Select Color
 
         </label>
       </dt>
@@ -157,7 +157,7 @@
           <ul id="color-swatch-attribute-92" class="is-disabled-attribute">
 
             <li class="p-0 border-0">
-              <span class="swatch-title" id="color_0"  onclick="colorActive(0)" info="Custom" style="width:25px; height:25px; line-height:25px; position:relative; border: 2px solid green;">&nbsp;
+              <span class="swatch-title" id="color_0"  onclick="colorActive(0)" info="Custom" style="width:100%; height:width:100%; line-height:25px; position:relative; border: 2px solid green;">&nbsp;
                 <img class="image-base" id="c_0" name="all" src="/static/all.png" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;">
               </span>
             </li>
@@ -183,18 +183,19 @@
     <h3 class="module-title" id="base_price">{{ min_price }} to {{max_price}}</h3>
     <div class="row text-center">
       <div class="col-xs-6">
-        <a href="#" class="p-share">
-          <span  data-toggle="modal" data-target="#myModal">GET CUSTOM QUOTE</span>
-        </a>
+
+          <button type="button" class="btn btn-cust-frm"  data-toggle="modal" data-target="#myModal">GET CUSTOM QUOTE</button>
+
       </div>
       <div class="col-xs-6">
-        <a href="#" class="p-share" >
-          <span data-toggle="modal" data-target="#myModal1" >ADD APPLIANCES</span>
-        </a>
+
+        <!--  93FFE8-->
+          <button type="button" class="btn btn-cust-frm2" data-toggle="modal" data-target="#myModal1" >ADD APPLIANCES</button>
+
       </div>
 
     </div>
-    <p class="required">* Required Fields</p>
+    <a href="#"><p>Go To Info page</p></a>
   </div>
 </div>
 </div>
@@ -427,6 +428,8 @@
       </div><!--end class container-->
     </div>
     <div class="modal-footer">
+      <button type="button" class="btn btn-cust-frm"  data-toggle="modal" data-target="#myModal">GET CUSTOM QUOTE</button>
+
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
   </div>

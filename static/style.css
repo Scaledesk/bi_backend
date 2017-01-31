@@ -1226,6 +1226,7 @@ body .tp-rightarrow:hover{
 .tz-introduce-content{
     margin-top: 8px;
     margin-bottom: 0;
+    color: #7c797d;
 }
 .tz-view-more{
     color: #333333;
@@ -3063,7 +3064,7 @@ body .tz-view-style2:hover:after{
     text-align: center;
 }
 body .padding-ourblog{
-    padding: 51px 0 130px;
+    padding: 40px 0 60px;
 }
 .our-blog-item{
     background: #fff;
@@ -4431,8 +4432,18 @@ body .tz-rotate-skill p{
 */
 .tz-bestsellers2{
     text-align: center;
-    padding: 53px 0 45px;
+    padding: 25px 0 45px;
 }
+
+
+.li-color{
+    color:#6f797d;
+    line-height: 2.4;
+}
+.tz-introduce1 {
+    padding: 60px 0 20px;
+}
+
 .tz-bestsellers{
     padding: 55px 0 25px;
     text-align: center;
@@ -5340,7 +5351,7 @@ body ul.tz-love-words-slider  .owl-controls {
 * -----------------------------------------------------------------------------
 */
 .tzcustom-block{
-    padding: 66px 0;
+    padding: 1px 0;
 }
 .tz-attach{
     padding: 26px 0;
@@ -5388,7 +5399,7 @@ body .custom-right .tz-collection2{
     position: relative;
     background: #eeeeee;
   /*  padding: 71px 70px 120px 100px;*/
-    padding: 71px 0px 120px 0px;
+    padding: 40px 0px 70px 0px;
 }
 .tz-title-portfolio:after {
     background: #333333;
@@ -7303,6 +7314,7 @@ body .blog-gird-item2 .tzblog-meta  a{
     font-size: 16px;
     font-weight: 700;
     line-height: 19.2px;
+    margin-bottom: 12px;
     margin: 0;
     padding: 27px 0;
     position: relative;
@@ -9708,7 +9720,7 @@ body .kfrontstats .kcol-mid{
 
 .tz-footer-content1{
     background: #ffffff;
-    padding: 50px 0 78px;
+    padding: 50px 0 0;
 }
 
  .tz-footer-content{
@@ -9854,7 +9866,7 @@ body .kfrontstats .kcol-mid{
 }
 .tz-copyright{
     text-align: center;
-    padding: 15px 0 15px;
+    padding: 15px 0 1px;
     margin: 0;
     color: #000000;
     font-family: 'Raleway', sans-serif;
