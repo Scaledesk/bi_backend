@@ -302,68 +302,68 @@ class Wardrobe(BaseModel):
         unique_together = ('theme', 'slug', 'l', 'b', 'h')
 
 
-class WIncludes(BaseModel):
-    """ Model to save what wardrobe includes """
-    wardrobe = models.ForeignKey(Wardrobe, on_delete=models.CASCADE)
-    category = models.CharField(max_length=30)
-    # items = models.CharField(max_length=30)
-    brand = models.CharField(max_length=30)
-    # size = models.CharField(max_length=20)
-    image = models.ImageField(upload_to='wardrobe/images/wardrobe_appliances/')
-
-    def __unicode__(self):
-        return self.category
-
-    def delete(self, *args, **kwargs):
-        # onveriding delete method to ensure that file is deleted along with database entry
-        storage, path = self.image.storage, self.image.path
-        super(WIncludes, self).delete(*args, **kwargs)
-        storage.delete(path)
-
-    class Meta:
-        db_table = "%s_%s" % ('core', 'wardrobe_include')
-        verbose_name = 'Wardrobe Include'
-        verbose_name_plural = 'Wardrobe Includes'
-        ordering = ['wardrobe', 'category', 'brand']
-
-class WISub(BaseModel):
-    w_includes = models.ForeignKey(WIncludes, on_delete = models.CASCADE)
-    sub_category = models.CharField(max_length=30)
-    is_included = models.BooleanField(default=True)
-
-    def __unicode__(self):
-        return  (self.w_includes.category + self.sub_category)
-
-    class Meta:
-        db_table = "%s_%s" % ('core', "wardrobe_includes_sub_category")
-        verbose_name = 'Wardrobe Includes Sub-Category'
-        verbose_name_plural = 'Wardrobe Includes Sub-Categories'
-        ordering = ('w_includes', 'sub_category')
-        unique_together = ('w_includes', 'sub_category')
-
-class WAppliance(BaseModel):
-    """ Model to save what wardrobe appliances """
-    wardrobe = models.ForeignKey(Wardrobe, on_delete=models.CASCADE)
-    name = models.CharField(max_length=30)
-    desc = models.CharField(max_length=300)
-    image = models.ImageField(upload_to='wardrobe/images/wardrobe_appliances/')
-
-    def __unicode__(self):
-        return self.name
-
-    def delete(self, *args, **kwargs):
-        # onveriding delete method to ensure that file is deleted along with database entry
-        storage, path = self.image.storage, self.image.path
-        super(WAppliance, self).delete(*args, **kwargs)
-        storage.delete(path)
-
-    class Meta:
-        db_table = "%s_%s" % ('core', "wardrobe_appliance")
-        verbose_name = 'Wardrobe Appliance'
-        verbose_name_plural = 'Wardrobe Appliances'
-        ordering = ('name', 'wardrobe')
-        unique_together = ('wardrobe', 'name')
-
+# class WIncludes(BaseModel):
+#     """ Model to save what wardrobe includes """
+#     wardrobe = models.ForeignKey(Wardrobe, on_delete=models.CASCADE)
+#     category = models.CharField(max_length=30)
+#     # items = models.CharField(max_length=30)
+#     brand = models.CharField(max_length=30)
+#     # size = models.CharField(max_length=20)
+#     image = models.ImageField(upload_to='wardrobe/images/wardrobe_appliances/')
+#
+#     def __unicode__(self):
+#         return self.category
+#
+#     def delete(self, *args, **kwargs):
+#         # onveriding delete method to ensure that file is deleted along with database entry
+#         storage, path = self.image.storage, self.image.path
+#         super(WIncludes, self).delete(*args, **kwargs)
+#         storage.delete(path)
+#
+#     class Meta:
+#         db_table = "%s_%s" % ('core', 'wardrobe_include')
+#         verbose_name = 'Wardrobe Include'
+#         verbose_name_plural = 'Wardrobe Includes'
+#         ordering = ['wardrobe', 'category', 'brand']
+#
+# class WISub(BaseModel):
+#     w_includes = models.ForeignKey(WIncludes, on_delete = models.CASCADE)
+#     sub_category = models.CharField(max_length=30)
+#     is_included = models.BooleanField(default=True)
+#
+#     def __unicode__(self):
+#         return  (self.w_includes.category + self.sub_category)
+#
+#     class Meta:
+#         db_table = "%s_%s" % ('core', "wardrobe_includes_sub_category")
+#         verbose_name = 'Wardrobe Includes Sub-Category'
+#         verbose_name_plural = 'Wardrobe Includes Sub-Categories'
+#         ordering = ('w_includes', 'sub_category')
+#         unique_together = ('w_includes', 'sub_category')
+#
+# class WAppliance(BaseModel):
+#     """ Model to save what wardrobe appliances """
+#     wardrobe = models.ForeignKey(Wardrobe, on_delete=models.CASCADE)
+#     name = models.CharField(max_length=30)
+#     desc = models.CharField(max_length=300)
+#     image = models.ImageField(upload_to='wardrobe/images/wardrobe_appliances/')
+# 
+#     def __unicode__(self):
+#         return self.name
+#
+#     def delete(self, *args, **kwargs):
+#         # onveriding delete method to ensure that file is deleted along with database entry
+#         storage, path = self.image.storage, self.image.path
+#         super(WAppliance, self).delete(*args, **kwargs)
+#         storage.delete(path)
+#
+#     class Meta:
+#         db_table = "%s_%s" % ('core', "wardrobe_appliance")
+#         verbose_name = 'Wardrobe Appliance'
+#         verbose_name_plural = 'Wardrobe Appliances'
+#         ordering = ('name', 'wardrobe')
+#         unique_together = ('wardrobe', 'name')
+#
 class WMaterial(BaseModel):
     """ Model to save wardrobe material """
     name = models.CharField(max_length=20, unique=True)

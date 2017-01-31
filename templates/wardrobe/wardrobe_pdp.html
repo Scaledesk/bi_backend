@@ -187,128 +187,18 @@
           <button type="button" class="btn btn-cust-frm"  data-toggle="modal" data-target="#myModal">GET CUSTOM QUOTE</button>
 
       </div>
-      <div class="col-xs-6">
-
-        <!--  93FFE8-->
-          <button type="button" class="btn btn-cust-frm2" data-toggle="modal" data-target="#myModal1" >ADD APPLIANCES</button>
-
-      </div>
 
     </div>
     <a href="#"><p>Go To Info page</p></a>
   </div>
 </div>
 </div>
-<div class="row">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="tabs-style">
-      <ul class="nav nav-tabs" role="tablist" id="detailTab">
-        <li class="active"><a href="#infomation" role="tab" data-toggle="tab">What's Included</a></li>
 
-
-      </ul>
-      <div class="tab-content">
-        <div class="tab-pane active" id="infomation">
-          <div class="container">
-            <form method="post" action="#">
-              <table class="shop_table">
-                <thead>
-                  <tr>
-                    <th class="product-image">Image</th>
-                    <th class="name">Category</th>
-                    <th class="porduct-quantity">Brand</th>
-                    <th class="product-price">Sub-Category</th>
-                    <th class="product-total">Is Included</th>
-                  </tr>
-                </thead>
-                <tbody>
-
-                  {% for obj in w_includes %}
-                  {% for sub_obj in obj.wi_sub %}
-                  <tr class="cart_table_item">
-                    <!-- Product image-->
-                    <td class="product-img">
-                      <img alt="01" class="wp-post-image" src="{{obj.image.url}}">
-                    </td>
-                    <!-- Product brand -->
-                    <td class="product-subtotal">
-                      <span class="price">{{obj.category}}</span>
-                    </td>
-                    <!-- Quantity size -->
-                    <td class="product-quantity">
-                      <span>{{ obj.brand }}</span>
-                    </td>
-                    <!-- Quantity inputs -->
-                    <td class="product-price">
-                      <span class="price">{{sub_obj.sub_category}}</span>
-                    </td>
-
-
-                    <!-- Product Code -->
-                    {% if sub_obj.is_included %}
-                    <td class="product-name">
-                      <input type="checkbox" name="vehicle" value="Bike" disabled checked>
-                    </td>
-                    {% else %}
-                    <td class="product-name">
-                      <input type="checkbox" name="vehicle" value="Bike" disabled>
-                    </td>
-                    {% endif %}
-
-                    <!-- Remove from cart link -->
-                    <!-- <td class="product-remove">
-                    <a title="Remove this item" class="remove" href="#"><i class="fa fa-trash-o"></i></a>
-                  </td>-->
-                </tr>
-
-                {% endfor %}
-                {% endfor %}
-
-              </tbody>
-            </table>
-          </form>
-
-
-
-
-
-        </div><!--end class container-->
-      </div>
-      <!--   <div class="tab-pane" id="specifications">
-      <div class="tzrelated">
-      <div class="container">
-      <div class="row">
-
-      {% for obj in w_appliances %}
-
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-      <div class="tz-tzrelated">
-      <div class="tz-tzrelated-img">
-      <img alt="Nulla tortor nulla" src="{{ obj.image.url }}">
-
-    </div>
-    <h6><a href="#">{{ obj.desc }}</a></h6>
-    <span>{{ obj.name }}</span>
-  </div>
-</div>
-
-{% endfor %}
-
-
-</div>&lt;!&ndash;end class row&ndash;&gt;
-</div>&lt;!&ndash;end class container&ndash;&gt;
-</div>
-</div>-->
-</div>
 </div>
 </div>
 </div>
 </div><!--end class container-->
 </div><!--end class tzblog-wrap-->
-
-
-
-<!--modal of add appliance-->
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -348,7 +238,6 @@
                 <input type="text" value="None" name="material" id="selected_material"  required="" hidden>
                 <input type="text" value="None" name="finish" id="selected_finish"  required="" hidden>
                 <input type="text" value="{{wardrobe.id}}" name="wardrobe" id="selected_wardrobe"  required="" hidden>
-                <input type="text" value="None" name="selected_appliance" id="selected_appliance"  required="" hidden>
                 <div class="form-btn">
                   <button type="submit" class="btn hollow-btn1">Get Free Consultation</button>
                   <br>
@@ -444,7 +333,6 @@
 <script>
 var initial_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid transparent;";
 var selected_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid green;";
-var appliance_array = [];
 var color = "";
 var default_material = document.getElementById('select_material').value;
 var default_finish = document.getElementById('select_finish').value;
@@ -465,7 +353,7 @@ function colorActive(color_id){
     success: function( returnedData) {
       // alert(returnedData)
       $( '#reload_flex').html( returnedData );
-      $("#reload_flex").page();
+      // $("#reload_flex").page();
     }
   });
 }
@@ -486,22 +374,6 @@ function changeFinish(){
   }
 }
 
-function addAppliance(id){
-  var item = id.getAttribute("appliance_name");
-  var itemIndex = appliance_array.findIndex((x)=>{
-    return x===item;
-  });
-  // console.log('itemIndex'+itemIndex);
-  if(itemIndex>-1){
-    appliance_array.splice(itemIndex,1);
-    document.getElementById('selected_appliance').value = appliance_array.toString();
-    // return console.log('pulled'+appliance_array);
-  }else{
-    appliance_array.push(item);
-    document.getElementById('selected_appliance').value = appliance_array.toString();
-    // return console.log('pushed'+appliance_array);
-  }
-}
 
 $( "#select_material" ).change(function() {
   changeMaterial();

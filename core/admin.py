@@ -40,28 +40,28 @@ class WImageInline(NestedStackedInline):
     extra=1
     fk_name='wardrobe'
 
-class WApplianceInline(NestedStackedInline):
-    model=WAppliance
-    extra=1
-    fk_name='wardrobe'
-
+# class WApplianceInline(NestedStackedInline):
+#     model=WAppliance
+#     extra=1
+#     fk_name='wardrobe'
+#
 class WardrobeAdmin(NestedModelAdmin):
     """Kitchen Admin class"""
     inlines=[
         WImageInline,
-        WApplianceInline,
+        # WApplianceInline,
     ]
 
-class WISubInline(NestedStackedInline):
-    model = WISub
-    extra=1
-    fk_name='w_includes'
-
-class WIncludesAdmin(NestedModelAdmin):
-    inlines=[
-        WISubInline,
-    ]
-
+# class WISubInline(NestedStackedInline):
+#     model = WISub
+#     extra=1
+#     fk_name='w_includes'
+#
+# class WIncludesAdmin(NestedModelAdmin):
+#     inlines=[
+#         WISubInline,
+#     ]
+#
 ##### END WARDROBE #####
 
 admin.site.register(KType)
@@ -79,7 +79,7 @@ admin.site.register(KColor)
 admin.site.register(WType)
 admin.site.register(WTheme)
 admin.site.register(Wardrobe, WardrobeAdmin)
-admin.site.register(WIncludes, WIncludesAdmin)
+# admin.site.register(WIncludes, WIncludesAdmin)
 # admin.site.register(WISub)
 # admin.site.register(WAppliance)
 admin.site.register(WMaterial)

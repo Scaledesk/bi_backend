@@ -63,30 +63,30 @@ def ProductContextCreator(w_type_slug, theme_slug, wardrobe_slug):
     w_images = WImage.objects.filter(wardrobe=wardrobe)
     w_material = WMaterial.objects.all()
     w_finishing = WFinishing.objects.all()
-    w_appliance = WAppliance.objects.filter(wardrobe=wardrobe)
-    w_appliances = WAppliance.objects.filter(wardrobe=wardrobe)
+    # w_appliance = WAppliance.objects.filter(wardrobe=wardrobe)
+    # w_appliances = WAppliance.objects.filter(wardrobe=wardrobe)
 
-    w_includes = []
-    if WIncludes.objects.filter(wardrobe=wardrobe):
-        wi_list = WIncludes.objects.filter(wardrobe=wardrobe)
-        for obj in wi_list:
-            temp = obj.__dict__
-            temp['image'] = obj.image.url
-            temp['wi_sub'] = WISub.objects.filter(w_includes = obj)
-            w_includes.append(temp)
+    # w_includes = []
+    # if WIncludes.objects.filter(wardrobe=wardrobe):
+    #     wi_list = WIncludes.objects.filter(wardrobe=wardrobe)
+    #     for obj in wi_list:
+    #         temp = obj.__dict__
+    #         temp['image'] = obj.image.url
+    #         temp['wi_sub'] = WISub.objects.filter(w_includes = obj)
+    #         w_includes.append(temp)
 
-        max_price = (wardrobe.base_price + (wardrobe.base_price*wardrobe.max_change)/100)
-        min_price = (wardrobe.base_price + (wardrobe.base_price*wardrobe.min_change)/100)
+    max_price = (wardrobe.base_price + (wardrobe.base_price*wardrobe.max_change)/100)
+    min_price = (wardrobe.base_price + (wardrobe.base_price*wardrobe.min_change)/100)
 
-        context['wardrobe'] = wardrobe
-        context['w_images'] = w_images
-        context['w_material'] = w_material
-        context['w_finishing'] = w_finishing
-        context['w_includes'] = w_includes
-        context['w_appliances'] = w_appliances
-        context['min_price'] = min_price
-        context['max_price'] = max_price
-        return context
+    context['wardrobe'] = wardrobe
+    context['w_images'] = w_images
+    context['w_material'] = w_material
+    context['w_finishing'] = w_finishing
+    # context['w_includes'] = w_includes
+    # context['w_appliances'] = w_appliances
+    context['min_price'] = min_price
+    context['max_price'] = max_price
+    return context
 
 def ReloadFlex(request):
     """ajax request to reload the images of wardrobe pdp """
