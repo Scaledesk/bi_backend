@@ -85,8 +85,9 @@ def ProductContextCreator(w_type_slug, theme_slug, wardrobe_slug):
         context['w_includes'] = w_includes
         context['w_appliances'] = w_appliances
         context['min_price'] = min_price
-        context['max_price'] = min_price
-        return contextt
+        context['max_price'] = max_price
+        return context
+
 def ReloadFlex(request):
     """ajax request to reload the images of wardrobe pdp """
     context={}

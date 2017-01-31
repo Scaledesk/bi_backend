@@ -93,7 +93,7 @@ def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
     context['k_includes'] = k_includes
     context['k_appliances'] = k_appliances
     context['min_price'] = min_price
-    context['max_price'] = min_price
+    context['max_price'] = max_price
     return context
 
 def ReloadFlex(request):
