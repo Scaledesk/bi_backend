@@ -1,6 +1,50 @@
 {% extends 'base1.html' %}
 
 {% block custom_css %}
+<style>
+  .card-logo{
+    width: 96%;
+    height: 80px;
+    text-align: center;
+    background-color: rgba(234, 228, 228, 0.52);
+    border: 1px solid #ededed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    margin: 3px 5px;
+    overflow: hidden;
+  }
+
+
+
+  .carousel-control     		 { width:  4%; }
+  .carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
+  @media (max-width: 767px) {
+    .carousel-inner .active.left { left: -100%; }
+    .carousel-inner .next        { left:  100%; }
+    .carousel-inner .prev		 { left: -100%; }
+    .active > div { display:none; }
+    .active > div:first-child { display:block; }
+
+  }
+  @media (min-width: 767px) and (max-width: 992px ) {
+    .carousel-inner .active.left { left: -50%; }
+    .carousel-inner .next        { left:  50%; }
+    .carousel-inner .prev		 { left: -50%; }
+    .active > div { display:none; }
+    .active > div:first-child { display:block; }
+    .active > div:first-child + div { display:block; }
+  }
+  @media (min-width: 992px ) {
+    .carousel-inner .active.left { left: -16.7%; }
+    .carousel-inner .next        { left:  16.7%; }
+    .carousel-inner .prev		 { left: -16.7%; }
+  }
+</style>
+
+
 {% endblock %}
 
 {% block content %}
@@ -14,69 +58,69 @@
             <video loop muted autoplay poster="/static/demos/slider-re1.png" class="fullscreen-bg__video">
               <source src="/static/images/dummy.mp4" type="video/mp4">
 
-              </video>
-            </div>
-            <div class="tp-caption small_light_white sft stt tp-resizeme  tz-title-small"
-            data-x="center" data-hoffset="0"
-            data-y=z"center" data-voffset="-110"
-            data-speed="900"
-            data-start="500"
-            data-easing="Quad.easeInOut"
-            data-splitin="none"
-            data-splitout="none"
-            data-elementdelay="0.1"
-            data-endelementdelay="0.1"
-            data-endspeed="300"
-            data-endeasing="Quad.easeOut">take an
+            </video>
+          </div>
+          <div class="tp-caption small_light_white sft stt tp-resizeme  tz-title-small"
+               data-x="center" data-hoffset="0"
+               data-y=z"center" data-voffset="-110"
+               data-speed="900"
+               data-start="500"
+               data-easing="Quad.easeInOut"
+               data-splitin="none"
+               data-splitout="none"
+               data-elementdelay="0.1"
+               data-endelementdelay="0.1"
+               data-endspeed="300"
+               data-endeasing="Quad.easeOut">take an
           </div>
 
           <div class="tp-caption large_bold_white sfr str tp-resizeme  tz-title-large"
-          data-x="center" data-hoffset="0"
-          data-y="center" data-voffset="-40"
-          data-speed="900"
-          data-start="1000"
-          data-easing="Quad.easeOut"
-          data-splitin="none"
-          data-splitout="none"
-          data-elementdelay="0.1"
-          data-endelementdelay="0.1"
-          data-endspeed="300"
-          data-endeasing="Quad.easeOut">Additional
-        </div>
+               data-x="center" data-hoffset="0"
+               data-y="center" data-voffset="-40"
+               data-speed="900"
+               data-start="1000"
+               data-easing="Quad.easeOut"
+               data-splitin="none"
+               data-splitout="none"
+               data-elementdelay="0.1"
+               data-endelementdelay="0.1"
+               data-endspeed="300"
+               data-endeasing="Quad.easeOut">Additional
+          </div>
 
-        <div class="tp-caption large_bold_white randomrotate randomrotateout tp-resizeme  title-slider-big"
-        data-x="center" data-hoffset="0"
-        data-y="center" data-voffset="80"
-        data-speed="900"
-        data-start="1500"
-        data-easing="Quad.easeOut"
-        data-splitin="none"
-        data-splitout="none"
-        data-elementdelay="0.1"
-        data-endelementdelay="0.1"
-        data-endspeed="900"
-        data-endeasing="Quad.easeOut">10%OFF
-      </div>
+          <div class="tp-caption large_bold_white randomrotate randomrotateout tp-resizeme  title-slider-big"
+               data-x="center" data-hoffset="0"
+               data-y="center" data-voffset="80"
+               data-speed="900"
+               data-start="1500"
+               data-easing="Quad.easeOut"
+               data-splitin="none"
+               data-splitout="none"
+               data-elementdelay="0.1"
+               data-endelementdelay="0.1"
+               data-endspeed="900"
+               data-endeasing="Quad.easeOut">10%OFF
+          </div>
 
-      <div class="tp-caption medium_light_white sfb stb tp-resizeme  tz-content-lager"
-      data-x="center" data-hoffset="0"
-      data-y="center" data-voffset="190"
-      data-speed="900"
-      data-start="2000"
-      data-easing="Quad.easeOut"
-      data-splitin="none"
-      data-splitout="none"
-      data-elementdelay="0.1"
-      data-endelementdelay="0.1"
-      data-endspeed="300"
-      data-endeasing="Quad.easeOut">already discounted items!
+          <div class="tp-caption medium_light_white sfb stb tp-resizeme  tz-content-lager"
+               data-x="center" data-hoffset="0"
+               data-y="center" data-voffset="190"
+               data-speed="900"
+               data-start="2000"
+               data-easing="Quad.easeOut"
+               data-splitin="none"
+               data-splitout="none"
+               data-elementdelay="0.1"
+               data-endelementdelay="0.1"
+               data-endspeed="300"
+               data-endeasing="Quad.easeOut">already discounted items!
+          </div>
+        </li>
+
+
+      </ul>
     </div>
-  </li>
-
-
-</ul>
-</div>
-</div>
+  </div>
 </div><!--end class tzslider-->
 
 
@@ -340,8 +384,8 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
               <figure class="item-collection">
                 <img src="/static/demos/item-collection1.png" alt="Section Header">
                 <figcaption>
-                  <h6>Section Header</h6>
-                  <p>DEKOR is fully responsive and perfectly fits on any device.</p>
+                  <h6>Professional</h6>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, labore et dolore magna aliqua.</p>
                 </figcaption>
               </figure>
             </li>
@@ -349,8 +393,8 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
               <figure class="item-collection">
                 <img src="/static/demos/item-collection2.png" alt="Clean Code">
                 <figcaption>
-                  <h6>Clean Code</h6>
-                  <p>DEKOR has been built with the latest submission requirements based on the WordPres Codex.</p>
+                  <h6>Creative</h6>
+                  <p>Lorem ipsum dolor, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </figcaption>
               </figure>
             </li>
@@ -358,8 +402,8 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
               <figure class="item-collection">
                 <img src="/static/demos/item-collection3.png" alt="Section Header">
                 <figcaption>
-                  <h6>Section Header</h6>
-                  <p>DEKOR is fully responsive and perfectly fits on any device.</p>
+                  <h6>Flexible</h6>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do qua.</p>
                 </figcaption>
               </figure>
             </li>
@@ -374,8 +418,8 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
               <figure class="item-collection">
                 <img src="/static/demos/item-collection1.png" alt="Section Header">
                 <figcaption>
-                  <h6>Section Header</h6>
-                  <p>DEKOR is fully responsive and perfectly fits on any device.</p>
+                  <h6>Innovative</h6>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,idunt ut labore et dolore magna aliqua.</p>
                 </figcaption>
               </figure>
             </li>
@@ -383,8 +427,8 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
               <figure class="item-collection">
                 <img src="/static/demos/item-collection5.png" alt="Dummy Content">
                 <figcaption>
-                  <h6>Dummy Content</h6>
-                  <p>DEKOR has been built with the latest submission requirements based on the WordPres Codex.</p>
+                  <h6>Passionate</h6>
+                  <p>Lorem ipsum dolor sit amet,ut labore et dolore magna aliqua.</p>
                 </figcaption>
               </figure>
             </li>
@@ -392,8 +436,8 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
               <figure class="item-collection">
                 <img src="/static/demos/item-collection6.png" alt="Section Header">
                 <figcaption>
-                  <h6>Section Header</h6>
-                  <p>DEKOR is fully responsive and perfectly fits on any device.</p>
+                  <h6>Skilled</h6>
+                  <p>Lorem ipsum dolor sit amet dolore magna aliqua.</p>
                 </figcaption>
               </figure>
             </li>
@@ -588,16 +632,16 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
 <span>ACCESSORIES</span>
 </div>
 </div>-->
-</div><!--end class tzportfolio-pages-->
-<!--  <div class="tzpagenavi">
-<button class="tzpage-left">
-<i class="fa fa-angle-left"></i>
-</button>
-<button class="tzpage-right">
-<i class="fa fa-angle-right"></i>
-</button>
-</div>--><!--end class tzpagenavi-->
-</div><!--end class container-->
+    </div><!--end class tzportfolio-pages-->
+    <!--  <div class="tzpagenavi">
+    <button class="tzpage-left">
+    <i class="fa fa-angle-left"></i>
+    </button>
+    <button class="tzpage-right">
+    <i class="fa fa-angle-right"></i>
+    </button>
+    </div>--><!--end class tzpagenavi-->
+  </div><!--end class container-->
 </section><!--end class tzportfolio-wrap-->
 
 
@@ -605,6 +649,42 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
   <div class="container">
     <h3 class="tz-title-3">TESTIMONIALS</h3>
     <ul class="tz-love-words-slider">
+      <li>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <div class="tzcontent-for-words">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
+              </p>
+            </div>
+
+            <br>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
+                <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
+                <div class="tzauthor-for-words">
+
+                  <span>Jordan Henrion</span>
+                  <em>Graphic Designer</em>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+          </div>
+
+        </div>
+      </li>
       <li>
         <div class="row">
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -624,254 +704,275 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
         </div>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
       </div>
-    </div>-->
-    <br>
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-        <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
-        <div class="tzauthor-for-words">
+      </div>-->
+            <br>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
+                <img class="tzavata-for-words" src="/static/demos/say2.jpg" alt="Jordan Henrion">
+                <div class="tzauthor-for-words">
 
-          <span>Jordan Henrion</span>
-          <em>Graphic Designer</em>
+                  <span>Jordan Henrion</span>
+                  <em>Graphic Designer</em>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+          </div>
+
+        </div>
+      </li>
+      <li>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <div class="tzcontent-for-words">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
+              </p>
+            </div>
+            <!--  <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      </div>
+      </div>-->
+            <br>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
+                <img class="tzavata-for-words" src="/static/demos/say3.jpg" alt="Jordan Henrion">
+                <div class="tzauthor-for-words">
+
+                  <span>Jordan Henrion</span>
+                  <em>Graphic Designer</em>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+          </div>
+
+        </div>
+      </li>
+      <li>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <div class="tzcontent-for-words">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
+              </p>
+            </div>
+            <!--  <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      </div>
+      </div>-->
+            <br>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
+                <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
+                <div class="tzauthor-for-words">
+
+                  <span>Jordan Henrion</span>
+                  <em>Graphic Designer</em>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+          </div>
+
+        </div>
+      </li>
+      <li>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <div class="tzcontent-for-words">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
+              </p>
+            </div>
+            <!--  <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      </div>
+      </div>-->
+            <br>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
+                <img class="tzavata-for-words" src="/static/demos/say2.jpg" alt="Jordan Henrion">
+                <div class="tzauthor-for-words">
+
+                  <span>Jordan Henrion</span>
+                  <em>Graphic Designer</em>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+          </div>
+
+        </div>
+      </li>
+      <li>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <div class="tzcontent-for-words">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
+              </p>
+            </div>
+            <!--  <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+      </div>
+      </div>-->
+            <br>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
+                <img class="tzavata-for-words" src="/static/demos/say3.jpg" alt="Jordan Henrion">
+                <div class="tzauthor-for-words">
+
+                  <span>Jordan Henrion</span>
+                  <em>Graphic Designer</em>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+          </div>
+
+        </div>
+      </li>
+    </ul>
+  </div><!--end class container-->
+</section><!--end class tz-love-words2-->
+
+<!--logo carousel-->
+<section>
+
+  <div style="padding:20px;">
+    <div class="row">
+
+      <div class="col-md-10 col-md-offset-1">
+        <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel">
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="col-md-2 col-sm-6 col-xs-12"> <div class="card-logo">
+                <a href="#"><img src="/static/images/melt.png" class="img-responsive"></a>
+              </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col-md-2 col-sm-6 col-xs-12"><div class="card-logo">
+                <a href="#"><img src="/static/images/scaledesk.png" class="img-responsive"></a></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col-md-2 col-sm-6 col-xs-12"> <div class="card-logo">
+                <a href="#"><img src="/static/images/solomo.png" class="img-responsive"></a></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col-md-2 col-sm-6 col-xs-12"><div class="card-logo">
+                <a href="#"><img src="/static/images/zolo.png" class="img-responsive"></a></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col-md-2 col-sm-6 col-xs-12"><div class="card-logo">
+                <a href="#"><img src="/static/images/11.png" class="img-responsive"></a></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col-md-2 col-sm-6 col-xs-12"><div class="card-logo">
+                <a href="#"><img src="/static/images/17.png" class="img-responsive"></a></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col-md-2 col-sm-6 col-xs-12"> <div class="card-logo">
+                <a href="#"><img src="/static/images/scaledesk.png" class="img-responsive"></a></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col-md-2 col-sm-6 col-xs-12"> <div class="card-logo">
+                <a href="#"><img src="/static/images/zolo.png" class="img-responsive"></a></div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      </div>
-    </div>
-
-  </div>
-
-  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-  </div>
-
-</div>
-</li>
-<li>
-  <div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 
     </div>
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-      <div class="tzcontent-for-words">
-        <p>
-          “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
-        </p>
-      </div>
-      <!--  <div class="row">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-    <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
   </div>
-  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-</div>
-</div>-->
-<br>
-<div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-    <img class="tzavata-for-words" src="/static/demos/say2.jpg" alt="Jordan Henrion">
-    <div class="tzauthor-for-words">
 
-      <span>Jordan Henrion</span>
-      <em>Graphic Designer</em>
-    </div>
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  </div>
-</div>
+</section>
 
-</div>
 
-<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 
-</div>
-
-</div>
-</li>
-<li>
-  <div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-    </div>
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-      <div class="tzcontent-for-words">
-        <p>
-          “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
-        </p>
-      </div>
-      <!--  <div class="row">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-    <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
-  </div>
-  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-</div>
-</div>-->
-<br>
-<div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-    <img class="tzavata-for-words" src="/static/demos/say3.jpg" alt="Jordan Henrion">
-    <div class="tzauthor-for-words">
-
-      <span>Jordan Henrion</span>
-      <em>Graphic Designer</em>
-    </div>
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  </div>
-</div>
-
-</div>
-
-<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-</div>
-
-</div>
-</li>
-<li>
-  <div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-    </div>
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-      <div class="tzcontent-for-words">
-        <p>
-          “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
-        </p>
-      </div>
-      <!--  <div class="row">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-    <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
-  </div>
-  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-</div>
-</div>-->
-<br>
-<div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-    <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
-    <div class="tzauthor-for-words">
-
-      <span>Jordan Henrion</span>
-      <em>Graphic Designer</em>
-    </div>
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  </div>
-</div>
-
-</div>
-
-<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-</div>
-
-</div>
-</li>
-<li>
-  <div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-    </div>
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-      <div class="tzcontent-for-words">
-        <p>
-          “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
-        </p>
-      </div>
-      <!--  <div class="row">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-    <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
-  </div>
-  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-</div>
-</div>-->
-<br>
-<div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-    <img class="tzavata-for-words" src="/static/demos/say2.jpg" alt="Jordan Henrion">
-    <div class="tzauthor-for-words">
-
-      <span>Jordan Henrion</span>
-      <em>Graphic Designer</em>
-    </div>
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  </div>
-</div>
-
-</div>
-
-<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-</div>
-
-</div>
-</li>
-<li>
-  <div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-    </div>
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-      <div class="tzcontent-for-words">
-        <p>
-          “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
-        </p>
-      </div>
-      <!--  <div class="row">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-    <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
-  </div>
-  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-</div>
-</div>-->
-<br>
-<div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-    <img class="tzavata-for-words" src="/static/demos/say3.jpg" alt="Jordan Henrion">
-    <div class="tzauthor-for-words">
-
-      <span>Jordan Henrion</span>
-      <em>Graphic Designer</em>
-    </div>
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-  </div>
-</div>
-
-</div>
-
-<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-</div>
-
-</div>
-</li>
-</ul>
-</div><!--end class container-->
-</section><!--end class tz-love-words2-->
+<!--logo carousel end-->
 
 <section>
   <div class="tz-footer-content1 hero-section">
@@ -953,10 +1054,34 @@ data-endeasing="Power4.easeInOut"><a  href="#" class="learn-more-styl2"><span>LE
 
 {% block custom_script %}
 <script type='text/javascript'>
-$('#contact_request_form').submit(function() {
-  // to disable the submit button to prevent multiple submission
-  $(this).find(':input[type=submit]').prop('disabled', true);
+  $('#contact_request_form').submit(function() {
+    // to disable the submit button to prevent multiple submission
+    $(this).find(':input[type=submit]').prop('disabled', true);
 
-});
+  });
 </script>
+
+<script type='text/javascript'>
+  $(document).ready(function(){
+    $('.carousel[data-type="multi"] .item').each(function(){
+      var next = $(this).next();
+      if (!next.length) {
+        next = $(this).siblings(':first');
+      }
+      next.children(':first-child').clone().appendTo($(this));
+
+      for (var i=0;i<4;i++) {
+        next=next.next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+
+        next.children(':first-child').clone().appendTo($(this));
+      }
+    });
+  });
+</script>
+
+
+
 {% endblock %}
