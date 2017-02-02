@@ -382,54 +382,115 @@
       <div class="modal-body">
 
 
-        <div class="container">
-          <form method="post" action="#">
-            <table class="shop_table">
-              <thead>
-                <tr>
-                  <th class="product-image">Image</th>
-                  <th class="product-total">Name</th>
-                  <th class="porduct-quantity">Description</th>
-                  <th class="name text-center">Click to Include</th>
-                </tr>
-              </thead>
-              <tbody>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="tabs-style">
+              <ul class="nav nav-tabs" role="tablist" id="detailTab">
+                <li class="active"><a href="#appliances" role="tab" data-toggle="tab">Add Appliances</a></li>
+                <li><a href="#quotes" role="tab" data-toggle="tab">Get Custom Quotes</a></li>
 
-                {% for obj in k_appliances %}
-                <tr class="cart_table_item">
-                  <!-- Product image-->
-                  <td class="product-img">
-                    <img alt="01" class="wp-post-image" src="{{obj.image.url}}">
-                  </td>
-                  <!-- Product brand -->
-                  <td class="product-subtotal ">
-                    <span class="price">{{obj.name}}</span>
-                  </td>
-                  <!-- Quantity size -->
-                  <td class="product-quantity text-center">
-                    <span>{{ obj.desc }}</span>
-                  </td>
-                  <!-- Product Code -->
-                  <td class="product-name text-center ">
-                    <form action="">
-                      <input type="checkbox" name="tick" id="appliance_{{obj.id}}" appliance_name="{{obj.name}}" onclick="addAppliance(appliance_{{obj.id}})"><br>
-                    </form>
-                  </td>
-                  <!-- Remove from cart link -->
-                  <!-- <td class="product-remove">
-                  <a title="Remove this item" class="remove" href="#"><i class="fa fa-trash-o"></i></a>
-                </td>-->
-              </tr>
-              {% endfor %}
 
-            </tbody>
-          </table>
-        </form>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="appliances">
+                  <div class="container">
+                    <form method="post" action="#">
+                      <table class="shop_table">
+                        <thead>
+                        <tr>
+                          <th class="product-image">Image</th>
+                          <th class="product-total">Name</th>
+                          <th class="porduct-quantity">Description</th>
+                          <th class="name text-center">Click to Include</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for obj in k_appliances %}
+                        <tr class="cart_table_item">
+                          <!-- Product image-->
+                          <td class="product-img">
+                            <img alt="01" class="wp-post-image" src="{{obj.image.url}}">
+                          </td>
+                          <!-- Product brand -->
+                          <td class="product-subtotal ">
+                            <span class="price">{{obj.name}}</span>
+                          </td>
+                          <!-- Quantity size -->
+                          <td class="product-quantity text-center">
+                            <span>{{ obj.desc }}</span>
+                          </td>
+                          <!-- Product Code -->
+                          <td class="product-name text-center ">
+                            <form action="">
+                              <input type="checkbox" name="tick" id="appliance_{{obj.id}}" appliance_name="{{obj.name}}" onclick="addAppliance(appliance_{{obj.id}})"><br>
+                            </form>
+                          </td>
+                          <!-- Remove from cart link -->
+                          <!-- <td class="product-remove">
+                          <a title="Remove this item" class="remove" href="#"><i class="fa fa-trash-o"></i></a>
+                        </td>-->
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                      </table>
+                  </div>
+                </div>
+                <div class="tab-pane" id="quotes">
+                  <div class="row">
+                    <div class="col-xs-pull-12">
+                      <div class="cta-form cta-light custom-quote-form">
+
+                        <form id="send_data_form" class="send_data_form" method="post" action="/kitchen/product-consultation/" enctype="multipart/form-data">
+                          <!-- <form id="cta-signup-form" class="cta-signup-form"> -->
+                          <h2 class="text-center">Dream Kitchen</h2>
+                          <hr class="hr-color hr-style">
+                          <div id="mc-error-cta"><i class="fa fa-exclamation-triangle"></i> Please enter a value</div>
+                          <div id="mc-success-cta"><i class="fa fa-envelope"></i> Awesome! We have sent you a confirmation email</div>
+                          {% csrf_token %}
+                          <div class="form-group">
+                            <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required="">
+                          </div>
+                          <div class="form-group">
+                            <input type="contact_no" value="" name="contact_no" class="form-control input-lg form-input-custom" id="contact_no" placeholder="Contact No." required="">
+                          </div>
+                          <div class="form-group">
+                            <input type="email" value="" name="user_email" class="form-control input-lg form-input-custom" id="email" placeholder="Email" required="">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" value="" name="address" class="form-control input-lg form-input-custom" id="address" placeholder="Address" required="">
+                          </div>
+                          <input type="text" value="all" name="color" id="selected_color"  required="" hidden>
+                          <input type="text" value="None" name="material" id="selected_material"  required="" hidden>
+                          <input type="text" value="None" name="finish" id="selected_finish"  required="" hidden>
+                          <input type="text" value="{{kitchen.id}}" name="kitchen" id="selected_kitchen"  required="" hidden>
+                          <input type="text" value="None" name="selected_appliance" id="selected_appliance"  required="" hidden>
+                         <div class="row">
+                           <div class="col-md-12 text-center">
+                          <div class="form-btn">
+                            <button type="submit" class="btn hollow-btn1">Get Free Consultation</button>
+                            <br>
+                          </div>
+                         </div>
+
+                        </form>
+
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
       </div><!--end class container-->
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-cust-frm"  data-toggle="modal" data-target="#myModal">GET CUSTOM QUOTE</button>
-
+     
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
   </div>
