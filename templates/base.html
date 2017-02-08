@@ -182,10 +182,10 @@
                             <a href="{% url 'wardrobe' %}">Wardrobe</a>
                         </li>
                         <li class="footer-navi">
-                            <a href="{% url 'faq' %}">FAQ</a>
+                            <a href="{% url 'faq' %}">FAQs</a>
                         </li>
                         <li class="footer-navi">
-                            <a href="{% url 'terms_and_conditions' %}">Terms and Conditions</a>
+                            <a href="{% url 'terms_and_conditions' %}">Terms & Conditions</a>
                         </li>
                         <li class="footer-navi">
                             <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
@@ -200,8 +200,13 @@
                     </h3>
                     <div class="tzwidget-contact">
                         <address>
-                            Bloom Interio
-                            No. 1216, 12th Floor, Jmd Megapolis, Sohna Road,, Vipul World, Sector 48, Gurugram, Haryana 122018
+                            <i class="fa fa-phone" aria-hidden="true"></i>&nbsp; 0124-4932525</br>
+                            <i class="fa fa-envelope" aria-hidden="true" style="font-size: 12px;"></i>&nbsp; hello@bloominterio.in </br>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; Bloom Interio
+                            No. 1216, 12th Floor,<br>&nbsp;&nbsp;&nbsp;
+                            Jmd Megapolis, Sohna Road, Sector 48,<br>&nbsp;&nbsp;&nbsp;
+                            Gurugram, Haryana 122018
+
                         </address>
                         <!-- <span>
                               +44 (0) 123 456 7891
@@ -376,8 +381,6 @@ function getCookie(name) {
     return cookieValue;
 }
 </script>
-
-// to disable the submit button to prevent multiple submission
 <script type='text/javascript'>
 $('#contact_request_form').submit(function() {
   $(this).find(':input[type=submit]').prop('disabled', true);

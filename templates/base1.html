@@ -42,13 +42,13 @@
     <div class="container">
         <h3 class="tz-logo pull-left">
             <a href="{% url "landing" %}">
-                <img src="/static/images/logo.png" alt="dekor">
+                <img src="/static/images/logo.png" alt="bloom">
             </a>
         </h3>
         <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu pull-right" type="button">
             <i class="fa fa-bars"></i>
         </button>
-        <button class="pull-right tz-search1"><span class="border-no"> <i class="fa fa-phone"> +91-123456789</i></span></button>
+        <button class="pull-right tz-search1"><span class="border-no"> <i class="fa fa-phone"> +91-9212300596</i></span></button>
         <nav class="pull-right">
             <ul class="nav-collapse">
                 <li>
@@ -165,10 +165,10 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
                             <a href="{% url 'wardrobe' %}">Wardrobe</a>
                         </li>
                         <li class="footer-navi">
-                            <a href="{% url 'faq' %}">FAQ</a>
+                            <a href="{% url 'faq' %}">FAQs</a>
                         </li>
                         <li class="footer-navi">
-                            <a href="{% url 'terms_and_conditions' %}">Terms and Conditions</a>
+                            <a href="{% url 'terms_and_conditions' %}">Terms & Conditions</a>
                         </li>
                         <li class="footer-navi">
                             <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
@@ -183,8 +183,14 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
                     </h3>
                     <div class="tzwidget-contact">
                         <address>
-                            Bloom Interio
-                            No. 1216, 12th Floor, Jmd Megapolis, Sohna Road,, Vipul World, Sector 48, Gurugram, Haryana 122018
+
+                            <i class="fa fa-phone" aria-hidden="true"></i>&nbsp; 0124-4932525</br>
+                            <i class="fa fa-envelope" aria-hidden="true" style="font-size: 12px;"></i>&nbsp; hello@bloominterio.in </br>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; Bloom Interio
+                            No. 1216, 12th Floor,<br>&nbsp;&nbsp;&nbsp;
+                            Jmd Megapolis, Sohna Road, Sector 48,<br>&nbsp;&nbsp;&nbsp;
+                            Gurugram, Haryana 122018
+
                         </address>
                         <!-- <span>
                               +44 (0) 123 456 7891
@@ -311,7 +317,6 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
     })
 </script>
 
-// to disable the submit button to prevent multiple submission
 <script type='text/javascript'>
 $('#contact_request_form').submit(function() {
   $(this).find(':input[type=submit]').prop('disabled', true);
