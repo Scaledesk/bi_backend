@@ -77,6 +77,8 @@ def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
     kitchen = Kitchen.objects.get(theme=theme, slug=kitchen_slug)
 
     k_images = KImage.objects.filter(kitchen=kitchen)
+    color_ids = k_images.values_list('k_color__id', flat=True).distinct()
+    k_color = KColor.objects.filter(id__in=color_ids)
     k_material = KMaterial.objects.all()
     k_finishing = KFinishing.objects.all()
     k_appliance = KAppliance.objects.filter(kitchen=kitchen)
@@ -95,6 +97,7 @@ def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
     min_price = (kitchen.base_price + (kitchen.base_price*kitchen.min_change)/100)
 
     context['kitchen'] = kitchen
+    context['k_color'] = k_color
     context['k_images'] = k_images
     context['k_material'] = k_material
     context['k_finishing'] = k_finishing
@@ -115,7 +118,7 @@ def ReloadFlex(request):
         flex_images = KImage.objects.filter(kitchen = Kitchen.objects.get(id=kitchen_id), k_color = KColor.objects.get(name=color))
     context['k_images'] = flex_images
     from django.template.loader import render_to_string
-    html = render_to_string('kitchen/reload_flex1.html', context)
+    html = render_to_string('kitchen/reload_flex.html', context)
     return HttpResponse(html)
 
 def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):
