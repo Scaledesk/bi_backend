@@ -15,6 +15,9 @@ class KType(BaseModel):
     """ Model to save Kitchen Types """
     name = models.CharField(max_length=30, unique=True, verbose_name='Type Name')
     image = models.ImageField(upload_to='kitchen/images/kitchen_types/')
+    thumbnails = models.ImageField(upload_to='kitchen/images/kitchen_types/', default='kitchen/images/kitchen_types/thumbnail.jpg')
+    price = models.IntegerField(default=1)
+    no_of_wall = models.IntegerField(default=1)
     slug = AutoSlugField(populate_from='name', unique=True)
 
     def __unicode__(self):

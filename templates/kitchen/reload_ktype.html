@@ -1,0 +1,24 @@
+<!-- <div class="container"> -->
+  <div class="row">
+    <img src="{{k_type.image}}" alt="Image" width="100%" height="auto"/>
+  </div>
+  <div class="row">
+    {% for obj in no_of_wall %}
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="height">Height {{forloop.counter}}</label>
+        <input type="number" value="0" name="height{{forloop.counter}}" class="form-control" onchange="calculatePrice({{k_type.price}},{{k_type.no_of_wall}})" id="height{{forloop.counter}}" placeholder="height" required>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      Result:
+    </div>
+    <div id="k_result" class="col-md-4">
+    </div>
+  </div>
+<!-- </div> -->
