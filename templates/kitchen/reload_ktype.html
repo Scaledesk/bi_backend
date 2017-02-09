@@ -7,7 +7,7 @@
     <div class="col-md-4">
       <div class="form-group">
         <label for="height">Height {{forloop.counter}}</label>
-        <input type="number" value="0" name="height{{forloop.counter}}" class="form-control" onchange="calculatePrice({{k_type.price}},{{k_type.no_of_wall}})" id="height{{forloop.counter}}" placeholder="height" required>
+        <input type="number" value="0" name="height{{forloop.counter}}" class="form-control form-input-custom" onchange="calculatePrice({{k_type.price}},{{k_type.no_of_wall}})" id="height{{forloop.counter}}" placeholder="height" required>
       </div>
     </div>
     {% endfor %}

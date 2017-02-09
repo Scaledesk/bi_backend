@@ -1060,4 +1060,38 @@ and (max-device-width: 480px) {
 .p-0{
     padding:0!important;
 }
+
+
+.result{
+    height: 50px;
+    width: 190px;
+    background: rgba(246, 246, 246, 0.64);
+    text-align: center;
+    color: #5ca4a4;
+    font-size: 18px;
+    font-weight: 600;
+    border: 1px solid #5ca4a4;
+    padding: 10px;
+}
+
+.f-w{
+    color:#fff!important;
+}
+
+
+.appointment-btn {
+    color: #f1805f;
+    background: #fff;
+    border: 1px solid #f1805f;
+    font-weight: 600;
+    padding: 10px;
+    transition: all .5s ease;
+}
+.appointment-btn:hover,.appointment-btn:focus {
+    color: #fff;
+    background: #f1805f;
+    border: 1px solid #fff;
+
+}
+
 /*thankyou end*/
