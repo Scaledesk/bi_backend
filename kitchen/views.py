@@ -121,6 +121,17 @@ def ReloadFlex(request):
     html = render_to_string('kitchen/reload_flex.html', context)
     return HttpResponse(html)
 
+def ReloadKitchenType(request):
+    # request.POST['ktype_id']
+    type_id = request.POST['ktype_id']
+    context={}
+    k_type =  KType.objects.get(id=type_id)
+    context['k_type'] =k_type
+    context['no_of_wall'] = range(k_type.no_of_wall)
+    from django.template.loader import render_to_string
+    html = render_to_string('kitchen/reload_ktype.html', context)
+    return HttpResponse(html)
+
 def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):
     """ to serve final product based on type, theme and kitchen """
     context = ProductContextCreator(k_type_slug, theme_slug, kitchen_slug)
