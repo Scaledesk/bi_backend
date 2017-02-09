@@ -1056,4 +1056,8 @@ and (max-device-width: 480px) {
 .full-height {
     height: 100vh;
 }
+
+.p-0{
+    padding:0!important;
+}
 /*thankyou end*/
