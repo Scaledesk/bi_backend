@@ -440,34 +440,6 @@
 </section><!--end class tzportfolio-wrap-->
 
 
-<section class="tzportfolio-wrap">
-  <div class="container">
-    <h3 class="tz-title-portfolio">
-     Kitchen Calculator
-    </h3>
-    <div class="row">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 hidden-xs" style="position:relative;">
-      <!-- <form> -->
-       <div class="form-group">
-         <!-- <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required> -->
-         <select name="kitchen_type" id="k_type" name="k_type" onchange="loadkitchenDescription(this)" id="select_kitchen" class="form-control">
-           <option>Choose an Option...</option>
-           {% for obj in k_types %}
-            <option value="{{obj.id}}">{{obj.name}}</option>
-           {% endfor %}
-
-
-         </select>
-       </div>
-     <!-- </form> -->
-      </div>
-
-      <div id="k_type_detail" class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-      </div>
-    </div>
-  </div>
-</section><!--end class tzportfolio-wrap-->
-
 
 <div class="tz-our-blog padding-ourblog" style="background: #fabc59 !important;">
     <div class="container">
@@ -485,78 +457,13 @@
                   {% for obj in k_types %}
                   <option value="{{obj.id}}">{{obj.name}}</option>
                   {% endfor %}
-
-
                 </select>
               </div>
               <!-- </form> -->
+            </div>
+            <div id="k_type_detail">
 
             </div>
-            <div class="col-md-5 text-center">
-
-             <!-- <a href="#" class="tz-button-dekor"><span>STEP-2 </span></a>-->
-                <p class="f-w"  style="float:left;"> <b>ENTER THE SIZE OF WALLS</b></p>
-
-              <div class="row">
-                <div class="col-xs-12">
-              <div style="width:400px;">
-                <img alt="Aliquam a sollicitudin" src="/static/demos/Photoshop%20Images/quartz.jpg" height="150" width="100%">
-
-
-              </div>
-                </div>
-              </div>
-
-              <br>
-
-              <div class="row">
-                <div  style="width:430px;">
-                <div class="col-xs-4">
-                  <div class="form-group">
-                    <label for="height">Size 1</label>
-                    <input type="number" value="0" name="height1" class="form-control form-input-custom" onchange="calculatePrice(500,2)" id="height1" placeholder="height" required="">
-                  </div>
-                </div>
-
-                <div class="col-xs-4">
-                  <div class="form-group">
-                    <label for="height">Size 2</label>
-                    <input type="number" value="0" name="height1" class="form-control form-input-custom" onchange="calculatePrice(500,2)" id="height1" placeholder="height" required="">
-                  </div>
-                </div>
-
-                <div class="col-xs-4">
-                  <div class="form-group">
-                    <label for="height">Size 3</label>
-                    <input type="number" value="0" name="height1" class="form-control form-input-custom" onchange="calculatePrice(500,2)" id="height1" placeholder="height" required="">
-                  </div>
-                </div>
-              </div>
-
-            </div>
-</div>
-            <div class="col-md-4 text-center">
-              <div class="row">
-                <div class="col-xs-12">
-                <p class="f-w"  style="float:left;"> <b>ESTIMATED COST</b></p>
-              </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12">
-              <div class="result">6789</div>
-              </div>
-              </div>
-              <br>
-
-              <div class="row">
-                <div class="col-xs-12 text-left">
-                  <button type="button" class="btn btn-default appointment-btn">BOOK AN APPOINTMENT</button>
-              </div>
-
-
-            </div>
-        </div>
     </div>
 </div>
   </div>
