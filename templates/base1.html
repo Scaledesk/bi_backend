@@ -83,7 +83,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="{% url 'wardrobe' %}">wardrobe</a>
+                    <a href="#">wardrobe</a>
                     <div class="nav-child dropdown-menu mega-dropdown-menu">
                         <div class="mega-dropdown-inner">
                             <div class="row">
@@ -91,11 +91,10 @@
                                     <div class="mega-inner">
                                         <ul class="mega-nav level1">
 
-                                          {% for w_type in w_types %}
+
                                             <li>
-                                                <a href="{% url 'wardrobe' %}{{w_type.slug}}/">{{ w_type.name }}</a>
+                                                <a href="{% url 'wardrobe' %}">Wardrobe Guide</a>
                                             </li>
-                                          {% endfor %}
 
                                         </ul>
                                     </div>
@@ -160,6 +159,11 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
                     </h3>
                     <ul class="nav-collapse">
                         <li class="footer-navi">
+                            <a href="{% url 'landing' %}">Home</a>
+
+
+                        </li>
+                        <li class="footer-navi">
                             <a href="{% url 'landing' %}">Kitchen</a>
                         </li>
                         <li class="footer-navi">
@@ -201,6 +205,8 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa  fa-pinterest-p" aria-hidden="true"></i></a>
                             </span>
                     </div>
                 </div>
@@ -208,7 +214,7 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
         </div>
     </div>
     <div class="tz-copyright theme-white">
-        <p>© 2017 Bloom Interio, Designed by Scaledesk Web Studio.</p>
+        <p>© 2017 Bloom Interio, Designed by <a href="http://www.scaledesk.com/" style="text-decoration:none; color:#07c8fa;">Scaledesk Web Studio.</a> </p>
     </div>
 </footer><!--end class tz-footer-->
 {% endblock %}

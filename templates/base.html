@@ -47,7 +47,7 @@
         <button data-target=".nav-collapse" class="btn-navbar pull-right  tz_icon_menu" type="button">
             <i class="fa fa-bars"></i>
         </button>
-        <button class="pull-right tz-search1"> <span class="border-no1"> <i class="fa fa-phone"> +91-123456789</i></span></button>
+        <button class="pull-right tz-search1"> <span class="border-no1"> <i class="fa fa-phone"> +91-9212300596</i></span></button>
         <nav class="pull-right">
             <ul class="nav-collapse">
                 <li>
@@ -81,7 +81,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="{% url 'wardrobe' %}">wardrobe</a>
+                    <a href="#">wardrobe</a>
                     <div class="nav-child dropdown-menu mega-dropdown-menu">
                         <div class="mega-dropdown-inner">
                             <div class="row">
@@ -89,20 +89,10 @@
                                     <div class="mega-inner">
                                         <ul class="mega-nav level1">
 
-                                            {% for w_type in w_types %}
                                             <li>
-                                                <a href="{% url 'wardrobe' %}{{w_type.slug}}/">{{ w_type.name }}</a>
+                                                <a href="{% url 'wardrobe' %}">Wardrobe Guide</a>
                                             </li>
-                                            {% endfor %}
-                                            <!-- <li>
-                                                <a href="3DOOR.html">3 DOOR</a>
-                                            </li>
-                                            <li>
-                                                <a href="4DOOR.html">4 DOOR</a>
-                                            </li>
-                                            <li>
-                                                <a href="5DOOR.html">5 DOOR</a>
-                                            </li> -->
+
 
                                         </ul>
                                     </div>
@@ -110,6 +100,7 @@
                             </div>
                         </div>
                     </div>
+
                 </li>
                 <li>
                     <a href="{% url 'interior' %}">interior</a>
@@ -212,10 +203,12 @@
                               +44 (0) 123 456 7891
                          </span>-->
                         <!--  <a href="#">dummy@gmail.com</a>-->
-                            <span class="tzwidget-social">
+                             <span class="tzwidget-social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
                             </span>
                     </div>
                 </div>
@@ -223,7 +216,8 @@
         </div>
     </div>
     <div class="tz-copyright theme-white">
-        <p>© 2017 Bloom Interio, Designed by Scaledesk Web Studio.</p>
+        <p>© 2017 Bloom Interio, Designed by <a href="http://www.scaledesk.com/" style="text-decoration:none; color:#07c8fa;">Scaledesk Web Studio.</a> </p>
+
     </div>
 </footer><!--end class tz-footer-->
 {% endblock %}
