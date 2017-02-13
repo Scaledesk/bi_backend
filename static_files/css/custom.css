@@ -382,6 +382,54 @@ a:hover, a:focus {
     font-size: 30px;
 }
 
+
+.banner-btn{
+    margin-top:30px;
+    padding:10px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 1px;
+    transition: all .3s ease;
+
+}
+
+.banner-btn:hover,.banner-btn:focus{
+    background:#fff;
+    color: #444;
+    outline:none;
+    border:1px solid transparent;
+
+}
+
+.tzwidget-social a:nth-child(1):hover{
+    background-color: #3b5998!important;
+}
+
+.tzwidget-social a:nth-child(2):hover{
+    background-color: #1da1f2!important;
+}
+
+
+.tzwidget-social a:nth-child(3):hover{
+    background-color: #dd4b39!important;
+}
+
+
+
+.tzwidget-social a:nth-child(4):hover{
+    background-color: #e1306c!important;
+}
+
+
+.tzwidget-social a:nth-child(5):hover{
+    background-color: #bd081c!important;
+}
+
+
+
 /* ==========================================================================
    30.Signup Page
    ========================================================================== */
@@ -647,7 +695,7 @@ input[type="file"]{
     font-weight: 600;
     /* margin: 0 auto; */
     line-height: 14px;
-    margin: 0px 110px 8px;
+    margin: 5px 70px 8px;
     padding: 15px 20px;
     text-decoration: none !important;
     position: relative;
@@ -872,6 +920,12 @@ input, select, textarea, button {
     display: block;
     overflow: hidden;
 }
+
+/*rewrite css for responsiveness*/
+/*.flex-active-slide{
+    width:320px!important;
+
+}*/
 
 
 

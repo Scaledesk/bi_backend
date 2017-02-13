@@ -557,8 +557,10 @@ body header.tz-header-animation{
 
 /*------------Header 3-----------*/
 body .tz-header3{
-    background: #fff;
-    padding: 27px 0 28px;
+
+    background: #f6f6f6;
+    /*padding: 27px 0 28px;*/
+    padding-bottom: 0px;
 }
 body .tz-header3 ul.nav-collapse li a{
     color: #000000;
