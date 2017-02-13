@@ -821,7 +821,7 @@ input[type="file"]{
 
 .border-no{
     border: 1px solid #f5f5f5;
-   padding:12px;
+   padding:10px;
 
 }
 
@@ -920,6 +920,12 @@ input, select, textarea, button {
     display: block;
     overflow: hidden;
 }
+
+/*rewrite css for responsiveness*/
+/*.flex-active-slide{
+    width:320px!important;
+
+}*/
 
 
 
