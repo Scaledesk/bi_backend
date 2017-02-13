@@ -65,7 +65,7 @@
 
           </div>
 
-          <div class="tp-caption large_bold_white sfr str tp-resizeme tz-content-lager "
+          <div class="tp-caption large_bold_white sfr str tp-resizeme tz-content-lager hidden-xs hidden-sm "
                data-x="center" data-hoffset="0"
                data-y="center" data-voffset="-40"
                data-speed="900"
@@ -80,12 +80,12 @@
           </div>
 
 
-          <div class="tp-caption large_bold_white randomrotate randomrotateout tp-resizeme  tz-title-large start" data-x="center" data-hoffset="0" data-y="center" data-voffset="80" data-speed="900" data-start="1500" data-easing="Quad.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="900" data-endeasing="Quad.easeOut" style="min-height: 0px; min-width: 0px; line-height: 0px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 100px; left: 147.5px; top: 363px; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1); transition: all 0s ease 0s;"> Just a corner to cook!<br style="min-height: 0px; min-width: 0px; line-height: 88px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 100px; transition: all 0s ease 0s;">
+          <div class="tp-caption large_bold_white randomrotate randomrotateout tp-resizeme  tz-title-large start hidden-xs hidden-sm" data-x="center" data-hoffset="0" data-y="center" data-voffset="80" data-speed="900" data-start="1500" data-easing="Quad.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="900" data-endeasing="Quad.easeOut" style="min-height: 0px; min-width: 0px; line-height: 0px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 100px; left: 147.5px; top: 363px; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1); transition: all 0s ease 0s;"> Just a corner to cook!<br style="min-height: 0px; min-width: 0px; line-height: 88px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 100px; transition: all 0s ease 0s;">
           </div>
 
 
 
-          <div class="tp-caption black sfb tp-resizeme start" data-x="center" data-hoffset="0" data-y="center" data-voffset="125" data-speed="1100" data-start="500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="min-height: 0px; min-width: 0px; line-height: 19px; border-width: 0px; margin: 0px auto; padding: 0px; letter-spacing: 0px; font-size: 19px; left: 567.5px; top: 323px; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1); transition: all 0s ease 0s;">
+          <div class="tp-caption black sfb tp-resizeme start hidden-xs hidden-sm" data-x="center" data-hoffset="0" data-y="center" data-voffset="125" data-speed="1100" data-start="500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="min-height: 0px; min-width: 0px; line-height: 19px; border-width: 0px; margin: 0px auto; padding: 0px; letter-spacing: 0px; font-size: 19px; left: 567.5px; top: 323px; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1); transition: all 0s ease 0s;">
             <a href="{% url 'kitchen' %}"><button type="button" class="btn btn-default banner-btn">Explore Our Kitchens</button></a>
           </div>
         </li>
@@ -461,7 +461,91 @@
   </div>
 
 
-<script>
+
+<!--modal content-->
+
+<!-- Modal1 -->
+<div id="myModalL" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 95%;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <!--<h4 class="modal-title">Modal Header</h4>-->
+      </div>
+      <div class="modal-body">
+
+        <!--
+        form-->
+
+
+
+        <div class="row">
+          <div class="col-xs-pull-12">
+            <div class="cta-form cta-light custom-quote-form">
+
+              <form id="send_data_form" class="send_data_form" method="post" action="/kitchen/product-consultation/" enctype="multipart/form-data">
+                <!-- <form id="cta-signup-form" class="cta-signup-form"> -->
+                <h2  class="text-center">Get Your Dream Kitchen</h2>
+                <hr class="hr-color hr-style">
+                <div id="mc-error-cta"><i class="fa fa-exclamation-triangle"></i> Please enter a value</div>
+                <div id="mc-success-cta"><i class="fa fa-envelope"></i> Awesome! We have sent you a confirmation email</div>
+                {% csrf_token %}
+                <div class="form-group">
+                  <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required="">
+                </div>
+                <div class="form-group">
+                  <input type="contact_no" value="" name="contact_no" class="form-control input-lg form-input-custom" id="contact_no" placeholder="Contact No." required="">
+                </div>
+                <div class="form-group">
+                  <input type="email" value="" name="user_email" class="form-control input-lg form-input-custom" id="email" placeholder="Email" required="">
+                </div>
+                <div class="form-group">
+                  <input type="text" value="" name="address" class="form-control input-lg form-input-custom" id="address" placeholder="Address" required="">
+                </div>
+                <input type="text" value="all" name="color" id="selected_color"  required="" hidden>
+                <input type="text" value="None" name="material" id="selected_material"  required="" hidden>
+                <input type="text" value="None" name="finish" id="selected_finish"  required="" hidden>
+                <input type="text" value="{{kitchen.id}}" name="kitchen" id="selected_kitchen"  required="" hidden>
+                <input type="text" value="None" name="selected_appliance" id="selected_appliance"  required="" hidden>
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <div class="form-btn">
+                      <button type="submit" class="btn hollow-btn1" >Book Free Consultation Now</button>
+                      <br>
+                    </div>
+                  </div>
+
+                  </div>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!--       form end-->
+
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true" style="font-size: 20px;"></i></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+      <script>
 
 function getCookie(name) {
     var cookieValue = null;
@@ -769,8 +853,12 @@ function calculatePrice(price,no_of_wall){
 
 <!--logo carousel-->
 <section>
+  <br/>
 
-  <div style="padding:20px;">
+  <h3 class="tz-title-3">BRANDS WE USE</h3>
+  <div style="padding:20px 20px 75px 20px;">
+
+
     <div class="row">
 
       <div class="col-md-10 col-md-offset-1">
@@ -917,6 +1005,9 @@ function calculatePrice(price,no_of_wall){
     </div>
   </div>
 </section>
+
+
+
 
 
 {% endblock %}

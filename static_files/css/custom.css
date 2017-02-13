@@ -921,6 +921,12 @@ input, select, textarea, button {
     overflow: hidden;
 }
 
+/*rewrite css for responsiveness*/
+/*.flex-active-slide{
+    width:320px!important;
+
+}*/
+
 
 
 
