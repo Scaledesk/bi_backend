@@ -164,7 +164,7 @@
           </ul>
         </div>
         <div class="col-lg-4 colg-md-4 col-sm-4 col-xs-12">
-          <img class="collection-icon" src="/static/demos/icon-f.png" alt="collection">
+          <img class="collection-icon img-responsive" src="/static/demos/icon-f.png" alt="collection">
         </div>
         <div class="col-lg-4 colg-md-4 col-sm-4 col-xs-12">
           <ul class="tz-collection tz-collection2">
@@ -235,7 +235,7 @@
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
         <div class="our-blog-item">
           <div class="blog-thumb">
-            <img src="/static/demos/Services/kitchen.jpg" alt="Suspendisse cursus urna">
+            <img src="/static/demos/Services/kitchen.jpg" class="img-responsive" alt="Suspendisse cursus urna">
           </div>
           <h6>Kitchen</h6>
           <div class="our-blog-ds">
@@ -262,7 +262,7 @@
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
         <div class="our-blog-item">
           <div class="blog-thumb">
-            <img src="/static/demos/Services/wardrobe.jpg" alt="molestie sed tristique">
+            <img src="/static/demos/Services/wardrobe.jpg" class="img-responsive" alt="molestie sed tristique">
 
           </div>
           <h6>Wardrobe</h6>
@@ -289,7 +289,7 @@
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
         <div class="our-blog-item">
           <div class="blog-thumb">
-            <img src="/static/demos/Services/interior.jpg" alt="Nunc quis tincidunt ipsum">
+            <img src="/static/demos/Services/interior.jpg" class="img-responsive" alt="Nunc quis tincidunt ipsum">
           </div>
           <h6>Interior</h6>
           <div class="our-blog-ds">
@@ -335,7 +335,7 @@
       <div class="element chair ">
         <div class="tz-inner">
           <div class="tz-image-item">
-            <img alt="Aliquam a sollicitudin" src="/static/demos/Photoshop%20Images/Barbecuegrill.jpg">
+            <img alt="Aliquam a sollicitudin" class="img-responsive" src="/static/demos/Photoshop%20Images/Barbecuegrill.jpg">
 
 
           </div>
@@ -347,7 +347,7 @@
       <div class="element lounge ">
         <div class="tz-inner">
           <div class="tz-image-item">
-            <img alt="Phasellus blandit enim" src="/static/demos/Photoshop%20Images/drawer.jpg">
+            <img alt="Phasellus blandit enim" class="img-responsive" src="/static/demos/Photoshop%20Images/drawer.jpg">
 
 
           </div>
@@ -359,7 +359,7 @@
       <div class="element chair ">
         <div class="tz-inner">
           <div class="tz-image-item">
-            <img alt="Aliquam a sollicitudin" src="/static/demos/Photoshop%20Images/quartz.jpg">
+            <img alt="Aliquam a sollicitudin" class="img-responsive" src="/static/demos/Photoshop%20Images/quartz.jpg">
 
 
           </div>
@@ -371,7 +371,7 @@
       <div class="element lounge">
         <div class="tz-inner">
           <div class="tz-image-item">
-            <img alt="Curabitur in fermentum" src="/static/demos/Photoshop%20Images/folding.jpg">
+            <img alt="Curabitur in fermentum" class="img-responsive" src="/static/demos/Photoshop%20Images/folding.jpg">
 
 
           </div>
@@ -382,7 +382,7 @@
       <div class="element chair">
         <div class="tz-inner">
           <div class="tz-image-item">
-            <img alt="Nullam viverra enim" src="/static/demos/Photoshop%20Images/Cupcoffeemaker.jpg">
+            <img alt="Nullam viverra enim" class="img-responsive" src="/static/demos/Photoshop%20Images/Cupcoffeemaker.jpg">
 
 
           </div>
@@ -394,7 +394,7 @@
       <div class="element lounge">
         <div class="tz-inner">
           <div class="tz-image-item">
-            <img alt="Curabitur in fermentum" src="/static/demos/Photoshop%20Images/hinges.jpg">
+            <img alt="Curabitur in fermentum" class="img-responsive" src="/static/demos/Photoshop%20Images/hinges.jpg">
 
 
           </div>
@@ -406,7 +406,7 @@
       <div class="element chair">
         <div class="tz-inner">
           <div class="tz-image-item">
-            <img alt="Nullam viverra enim" src="/static/demos/Photoshop%20Images/plateholder.jpg">
+            <img alt="Nullam viverra enim" class="img-responsive" src="/static/demos/Photoshop%20Images/plateholder.jpg">
 
 
           </div>
@@ -418,7 +418,7 @@
       <div class="element lounge">
         <div class="tz-inner">
           <div class="tz-image-item">
-            <img alt="Curabitur in fermentum" src="/static/demos/Photoshop%20Images/organizer.jpg">
+            <img alt="Curabitur in fermentum" class="img-responsive" src="/static/demos/Photoshop%20Images/organizer.jpg">
 
 
           </div>
@@ -433,39 +433,11 @@
 
 
 
-<div class="tz-our-blog padding-ourblog" style="background: #fabc59 !important;">
-    <div class="container">
-        <h4 class="tz-title-3">KITCHEN CALCULATOR</h4>
-      <br>
-        <div class="row">
-            <div class="col-md-3 text-center">
-           <!--   <a href="#" class="tz-button-dekor"><span>STEP-1 </span></a>-->
-                <p class="f-w" style="float:left;"><b>CHOOSE YOUR KITCHEN</b></p>
-              <!-- <form> -->
-              <div class="form-group" style="width:220px;">
-                <!-- <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required> -->
-                <select name="kitchen_type" id="k_type" name="k_type" onchange="loadkitchenDescription(this)" id="select_kitchen" class="form-control input-lg form-input-custom">
-                  <option>Choose an Option...</option>
-                  {% for obj in k_types %}
-                  <option value="{{obj.id}}">{{obj.name}}</option>
-                  {% endfor %}
-                </select>
-              </div>
-              <!-- </form> -->
-            </div>
-            <div id="k_type_detail">
-
-            </div>
-    </div>
-</div>
-  </div>
-
-
 
 <!--modal content-->
 
 <!-- Modal1 -->
-<div id="myModalL" class="modal fade" role="dialog">
+<div id="mycalci" class="modal fade" role="dialog">
   <div class="modal-dialog" style="width: 95%;">
 
     <!-- Modal content-->
@@ -480,50 +452,98 @@
         form-->
 
 
-
         <div class="row">
-          <div class="col-xs-pull-12">
-            <div class="cta-form cta-light custom-quote-form">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="tabs-style">
+              <ul class="nav nav-tabs" role="tablist" id="detailTab">
+                <li class="active"><a href="#calci" role="tab" data-toggle="tab">Kitchen Cost Calculator</a></li>
+                <li><a href="#quotes" role="tab" data-toggle="tab">Get Custom Quotes</a></li>
 
-              <form id="send_data_form" class="send_data_form" method="post" action="/kitchen/product-consultation/" enctype="multipart/form-data">
-                <!-- <form id="cta-signup-form" class="cta-signup-form"> -->
-                <h2  class="text-center">Get Your Dream Kitchen</h2>
-                <hr class="hr-color hr-style">
-                <div id="mc-error-cta"><i class="fa fa-exclamation-triangle"></i> Please enter a value</div>
-                <div id="mc-success-cta"><i class="fa fa-envelope"></i> Awesome! We have sent you a confirmation email</div>
-                {% csrf_token %}
-                <div class="form-group">
-                  <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required="">
-                </div>
-                <div class="form-group">
-                  <input type="contact_no" value="" name="contact_no" class="form-control input-lg form-input-custom" id="contact_no" placeholder="Contact No." required="">
-                </div>
-                <div class="form-group">
-                  <input type="email" value="" name="user_email" class="form-control input-lg form-input-custom" id="email" placeholder="Email" required="">
-                </div>
-                <div class="form-group">
-                  <input type="text" value="" name="address" class="form-control input-lg form-input-custom" id="address" placeholder="Address" required="">
-                </div>
-                <input type="text" value="all" name="color" id="selected_color"  required="" hidden>
-                <input type="text" value="None" name="material" id="selected_material"  required="" hidden>
-                <input type="text" value="None" name="finish" id="selected_finish"  required="" hidden>
-                <input type="text" value="{{kitchen.id}}" name="kitchen" id="selected_kitchen"  required="" hidden>
-                <input type="text" value="None" name="selected_appliance" id="selected_appliance"  required="" hidden>
-                <div class="row">
-                  <div class="col-md-12 text-center">
-                    <div class="form-btn">
-                      <button type="submit" class="btn hollow-btn1" >Book Free Consultation Now</button>
+
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="calci">
+
+                  <div class="tz-our-blog padding-ourblog" style="background: #fabc59 !important;">
+                    <div class="container">
+                      <h4 class="tz-title-3">KITCHEN CALCULATOR</h4>
                       <br>
+                      <div class="row">
+                        <div class="col-md-3 text-center">
+                          <!--   <a href="#" class="tz-button-dekor"><span>STEP-1 </span></a>-->
+                          <p class="f-w" style="float:left;"><b>CHOOSE YOUR KITCHEN</b></p>
+                          <!-- <form> -->
+                          <div class="form-group" style="width:220px;">
+                            <!-- <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required> -->
+                            <select name="kitchen_type" id="k_type" name="k_type" onchange="loadkitchenDescription(this)" id="select_kitchen" class="form-control input-lg form-input-custom">
+                              <option>Choose an Option...</option>
+                              {% for obj in k_types %}
+                              <option value="{{obj.id}}">{{obj.name}}</option>
+                              {% endfor %}
+                            </select>
+                          </div>
+                          <!-- </form> -->
+                        </div>
+                        <div id="k_type_detail">
+
+                        </div>
+                      </div>
                     </div>
                   </div>
 
+                </div>
+                <div class="tab-pane" id="quotes">
+                  <div class="row">
+                    <div class="col-xs-pull-12">
+                      <div class="cta-form cta-light custom-quote-form">
+
+                        <form id="send_data_form" class="send_data_form" method="post" action="/kitchen/product-consultation/" enctype="multipart/form-data">
+                          <!-- <form id="cta-signup-form" class="cta-signup-form"> -->
+                          <h2  class="text-center">Get Your Dream Kitchen</h2>
+                          <hr class="hr-color hr-style">
+                          <div id="mc-error-cta"><i class="fa fa-exclamation-triangle"></i> Please enter a value</div>
+                          <div id="mc-success-cta"><i class="fa fa-envelope"></i> Awesome! We have sent you a confirmation email</div>
+                          {% csrf_token %}
+                          <div class="form-group">
+                            <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required="">
+                          </div>
+                          <div class="form-group">
+                            <input type="contact_no" value="" name="contact_no" class="form-control input-lg form-input-custom" id="contact_no" placeholder="Contact No." required="">
+                          </div>
+                          <div class="form-group">
+                            <input type="email" value="" name="user_email" class="form-control input-lg form-input-custom" id="email" placeholder="Email" required="">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" value="" name="address" class="form-control input-lg form-input-custom" id="address" placeholder="Address" required="">
+                          </div>
+                          <input type="text" value="all" name="color" id="selected_color"  required="" hidden>
+                          <input type="text" value="None" name="material" id="selected_material"  required="" hidden>
+                          <input type="text" value="None" name="finish" id="selected_finish"  required="" hidden>
+                          <input type="text" value="{{kitchen.id}}" name="kitchen" id="selected_kitchen"  required="" hidden>
+                          <input type="text" value="None" name="selected_appliance" id="selected_appliance"  required="" hidden>
+                          <div class="row">
+                            <div class="col-md-12 text-center">
+                              <div class="form-btn">
+                                <button type="submit" class="btn hollow-btn1">Book Free Consultation Now</button>
+                                <br>
+                              </div>
+                            </div>
+                            </div>
+
+                        </form>
+
+                      </div>
+                    </div>
                   </div>
 
-              </form>
-
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+
+
+
+        </div><!--end class container-->
 
 
 
@@ -608,7 +628,7 @@ function calculatePrice(price,no_of_wall){
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-                <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
+                <img class="tzavata-for-words img-responsive" src="/static/demos/say1.jpg" alt="Jordan Henrion">
                 <div class="tzauthor-for-words">
 
                   <span>Jordan Henrion</span>
@@ -652,7 +672,7 @@ function calculatePrice(price,no_of_wall){
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-                <img class="tzavata-for-words" src="/static/demos/say2.jpg" alt="Jordan Henrion">
+                <img class="tzavata-for-words img-responsive" src="/static/demos/say2.jpg" alt="Jordan Henrion">
                 <div class="tzauthor-for-words">
 
                   <span>Jordan Henrion</span>
@@ -696,7 +716,7 @@ function calculatePrice(price,no_of_wall){
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-                <img class="tzavata-for-words" src="/static/demos/say3.jpg" alt="Jordan Henrion">
+                <img class="tzavata-for-words img-responsive" src="/static/demos/say3.jpg" alt="Jordan Henrion">
                 <div class="tzauthor-for-words">
 
                   <span>Jordan Henrion</span>
@@ -740,7 +760,7 @@ function calculatePrice(price,no_of_wall){
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-                <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
+                <img class="tzavata-for-words img-responsive" src="/static/demos/say1.jpg" alt="Jordan Henrion">
                 <div class="tzauthor-for-words">
 
                   <span>Jordan Henrion</span>
@@ -784,7 +804,7 @@ function calculatePrice(price,no_of_wall){
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-                <img class="tzavata-for-words" src="/static/demos/say2.jpg" alt="Jordan Henrion">
+                <img class="tzavata-for-words img-responsive" src="/static/demos/say2.jpg" alt="Jordan Henrion">
                 <div class="tzauthor-for-words">
 
                   <span>Jordan Henrion</span>
@@ -828,7 +848,7 @@ function calculatePrice(price,no_of_wall){
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-                <img class="tzavata-for-words" src="/static/demos/say3.jpg" alt="Jordan Henrion">
+                <img class="tzavata-for-words img-responsive" src="/static/demos/say3.jpg" alt="Jordan Henrion">
                 <div class="tzauthor-for-words">
 
                   <span>Jordan Henrion</span>
@@ -1006,6 +1026,18 @@ function calculatePrice(price,no_of_wall){
   </div>
 </section>
 
+<!--
+
+floating button
+-->
+
+<div class="float-btn">
+
+    <button class="myfloat" data-toggle="modal" data-target="#mycalci">
+    Kitchen Cost Calculator
+    </button>
+
+</div>
 
 
 

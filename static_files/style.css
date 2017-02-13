@@ -169,7 +169,7 @@ Tags: ajax contact form, animation, blog, bootstrap, business, corporate, css3, 
 @media (max-width: 991px) {
     .off-canvas {
         width: 100%;
-        overflow-x: hidden;
+       /* overflow-x: hidden;*/
         position: relative;
     }
     .off-canvas body {

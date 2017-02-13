@@ -169,7 +169,7 @@ Tags: ajax contact form, animation, blog, bootstrap, business, corporate, css3, 
 @media (max-width: 991px) {
     .off-canvas {
         width: 100%;
-        overflow-x: hidden;
+       /* overflow-x: hidden;*/
         position: relative;
     }
     .off-canvas body {
@@ -5123,7 +5123,7 @@ body .tz-love-slider  .owl-controls.clickable .owl-page:hover span {
 * -----------------------------------------------------------------------------
 */
 .tz-love-words2{
-   padding: 44px 0 45px;
+   padding: 44px 0 45px!important;
 }
 .tz-love-words-slider{
     list-style: none;
