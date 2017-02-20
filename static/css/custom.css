@@ -927,11 +927,68 @@ input, select, textarea, button {
 
 }*/
 
-.float-btn{
+.float-btn {
     position: fixed;
-    right: -34px;
+   /* right: -6%;*/
+    right: 0%;
     bottom: 60px;
-    z-index: 2;
+    z-index: 99;
+    transition: all .5s ease-in-out;
+
+}
+
+.calci-select{
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+.calci-select:focus{
+    border-color: #fff;
+    box-shadow: none;
+}
+
+.calci-option{
+    background-color: #666666;
+    color: #fff;
+    border-color: #fff;
+}
+
+.calci-option:focus{
+border-color: #fff;
+    box-shadow: none;
+}
+.calci-option:hover{
+    background-color: #222222;
+
+}
+
+.right-border{
+    border-right: 1px solid #fff;
+    height: 240px;
+}
+
+/* Mobile*/
+
+
+    @media only screen and (max-width:320px){
+        .right-border{
+            border-right: none;
+            height: 0;
+        }
+
+    }
+
+
+#mycalci{
+    top: 54px;
+}
+
+
+
+
+.float-btn:hover{
+   /* right: 0%;*/
 }
 
 .float-btn > .myfloat{
@@ -941,13 +998,18 @@ input, select, textarea, button {
     height: 55px;
     text-align: center;
     line-height: 20px;
+    text-decoration: none;
     border: none;
     font-size:14px;
     text-transform: capitalize;
     color: #fff;
     font-weight: bolder;
-    border-radius: 25px;
-    transform: rotate(90deg);
+    -webkit-border-top-left-radius: 25px;
+    -webkit-border-bottom-left-radius: 25px;
+        border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+
+    /*transform: rotate(90deg);*/
     display:block;
 }
 
@@ -1158,9 +1220,9 @@ and (max-device-width: 480px) {
 
 
 .appointment-btn {
-    color: #f1805f;
-    background: #fff;
-    border: 1px solid #f1805f;
+    color: #ffffff;
+    background: #6dd3d1;
+    border: 1px solid #ffffff;
     font-weight: 600;
     padding: 10px;
     transition: all .5s ease;
@@ -1171,5 +1233,10 @@ and (max-device-width: 480px) {
 /*    border: 1px solid #fff;*/
 
 }
+
+#mycalci .modal-header{
+    border-bottom: none;
+}
+
 
 /*thankyou end*/
