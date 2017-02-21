@@ -1,41 +1,48 @@
 
 
 
-<div class="col-md-5 text-center">
+<div class="col-md-5 text-center right-border">
 
  <!-- <a href="#" class="tz-button-dekor"><span>STEP-2 </span></a>-->
-    <p class="f-w"  style="float:left;"> <b>ENTER THE SIZE OF WALLS</b></p>
+    <p class="f-w" style="float:left;font-size: 19px;"> <b>Enter The Size Of Walls</b></p>
   <div class="row">
     <div class="col-xs-12">
   <div style="width:400px;">
 
-    <img alt="Aliquam a sollicitudin" src="/media/{{k_type.image}}" class="img-responsive" height="150" width="100%">
+    <img alt="Aliquam a sollicitudin" src="/media/{{k_type.thumbnails}}" height="180" width="100%">
 
 
   </div>
     </div>
   </div>
 
-  <br>
 
-  <div class="row">
-    <div  style="width:430px;">
-
-    {% for obj in no_of_wall %}
-    <div class="col-xs-4">
-      <div class="form-group">
-        <label for="height">Size {{forloop.counter}}</label>
-        <input type="number" value="0" name="height{{forloop.counter}}" class="form-control form-input-custom" onchange="calculatePrice({{k_type.price}},{{k_type.no_of_wall}})" id="height{{forloop.counter}}" placeholder="height" required="">
-      </div>
-    </div>
-    {% endfor %}
-
-
-  </div>
-
-</div>
 </div>
 <div class="col-md-4 text-center">
+
+<br>
+    <div class="row">
+        <div  style="width:430px;">
+
+            {% for obj in no_of_wall %}
+            <div class="col-xs-4">
+                <div class="form-group">
+                    <label for="height">Wall {{forloop.counter}}</label>
+                    <input type="number" value="0" name="height{{forloop.counter}}" class="form-control form-input-custom calci-select" onchange="calculatePrice({{k_type.price}},{{k_type.no_of_wall}})" id="height{{forloop.counter}}" placeholder="height" required="">
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+
+    </div>
+    <div class="row">
+
+    <div class="col-xs-12 text-left">
+        <button type="button" class="btn btn-default appointment-btn" >Get estimated cost</button>
+    </div>
+    </div>
   <div class="row">
     <div class="col-xs-12">
     <p class="f-w"  style="float:left;"> <b>ESTIMATED COST</b></p>
@@ -48,9 +55,9 @@
   </div>
   </div>
   <br>
-  <div class="row">
+<!--  <div class="row">
     <div class="col-xs-12 text-left">
       <button type="button" class="btn btn-default appointment-btn" data-toggle="modal" data-target="#myModalL">BOOK AN APPOINTMENT</button>
   </div>
-</div>
+</div>-->
 </div>
