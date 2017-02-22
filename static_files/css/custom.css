@@ -693,10 +693,10 @@ input[type="file"]{
     font-family: 'Raleway', sans-serif;
     font-size: 15px;
     font-weight: 600;
-    /* margin: 0 auto; */
+     margin: 0 auto;
     line-height: 14px;
-    margin: 5px 70px 8px;
-    padding: 15px 20px;
+/*    margin: 5px 70px 8px;*/
+    padding: 20px 30px;
     text-decoration: none !important;
     position: relative;
     border: 1px solid #343434;

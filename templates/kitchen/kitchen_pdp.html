@@ -28,7 +28,7 @@
                 <ul class="slides">
                   {% for obj in k_images %}
                   <li>
-                    <img src="{{obj.image.url}}" class="img-responsive" alt="Roses Deco Accent Chair" width="685" height="430"/>
+                    <img src="{{obj.image.url}}"  alt="Roses Deco Accent Chair" width="655" height="420" style="max-width: 100%;"/>
                   </li>
                   {% endfor %}
                 </ul>
@@ -38,7 +38,7 @@
                 <ul class="slides">
                   {% for obj in k_images %}
                   <li>
-                    <img src="{{obj.image.url}}" class="img-responsive" alt="Roses Deco Accent Chair" width="80" height="60"/>
+                    <img src="{{obj.image.url}}"  alt="Roses Deco Accent Chair" width="80" height="60"/>
                   </li>
                   {% endfor %}
                 </ul>
@@ -179,7 +179,7 @@
         <br class="clearfloat">
       </dd>
     </dl>
-    <h3 class="module-title" id="base_price">{{ min_price }} to {{max_price}}</h3>
+    <h3 class="module-title" id="base_price"><i class="fa fa-inr" aria-hidden="true"></i> {{ min_price }} to {{max_price}}</h3>
     <div class="row text-center">
       <div class="col-xs-6">
 
@@ -194,7 +194,7 @@
       </div>
 
     </div>
-    <a href="/kitchen/kitchen-info/"><p>Go To Info page</p></a>
+
   </div>
 </div>
 </div>
