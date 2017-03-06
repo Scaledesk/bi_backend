@@ -530,7 +530,9 @@
                             <select name="kitchen_type" id="k_type" name="k_type" onchange="loadkitchenDescription(this)" id="select_kitchen" class="form-control input-lg form-input-custom calci-select">
                               <option class="calci-option">Choose an Option...</option>
                               {% for obj in k_types %}
-                              <option value="{{obj.id}}" class="calci-option">{{obj.name}}</option>
+                                {% if obj.name != 'Island Kitchen' %}
+                                  <option value="{{obj.id}}" class="calci-option">{{obj.name}}</option>
+                                {% endif %}
                               {% endfor %}
                             </select>
                           </div>
@@ -652,6 +654,9 @@ function calculatePrice(price,no_of_wall){
   }
   var r = val*price
   document.getElementById('k_result').innerHTML = r;
+}
+function removeResult(){
+  document.getElementById('k_result').innerHTML = '';
 }
 </script>
 
