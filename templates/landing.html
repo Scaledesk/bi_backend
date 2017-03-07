@@ -48,8 +48,62 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="tzslider">
+  <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper fullscreen-container">
+    <div id="rev_slider_2_1" class="rev_slider fullscreenbanner">
+      <ul>
+        <li data-transition="fade" data-slotamount="7" data-masterspeed="300"  data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7" data-saveperformance="off" >
+          <img src="/static/images/homebanner.jpg" class="img-responsive"  alt="thumb-slider"  data-bgposition="center top" data-bgfit="100% 100%" data-bgrepeat="no-repeat">
+          <div class="tp-caption small_light_white sft stt tp-resizeme  tz-title-small"
+               data-x="center" data-hoffset="0"
+               data-y="center" data-voffset="-110"
+               data-speed="900"
+               data-start="500"
+               data-easing="Quad.easeInOut"
+               data-splitin="none"
+               data-splitout="none"
+               data-elementdelay="0.1"
+               data-endelementdelay="0.1"
+               data-endspeed="300"
+               data-endeasing="Quad.easeOut">Kitchen is
+          </div>
+
+          <div class="tp-caption large_bold_white sfr str tp-resizeme  tz-title-large"
+               data-x="center" data-hoffset="0"
+               data-y="center" data-voffset="-40"
+               data-speed="900"
+               data-start="1000"
+               data-easing="Quad.easeOut"
+               data-splitin="none"
+               data-splitout="none"
+               data-elementdelay="0.1"
+               data-endelementdelay="0.1"
+               data-endspeed="300"
+               data-endeasing="Quad.easeOut">not just a Corner
+          </div>
+
+          <div class="tp-caption large_bold_white randomrotate randomrotateout tp-resizeme  title-slider-big"
+               data-x="center" data-hoffset="0"
+               data-y="center" data-voffset="80"
+               data-speed="900"
+               data-start="1500"
+               data-easing="Quad.easeOut"
+               data-splitin="none"
+               data-splitout="none"
+               data-elementdelay="0.1"
+               data-endelementdelay="0.1"
+               data-endspeed="900"
+               data-endeasing="Quad.easeOut"> to cook
+          </div>
+
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div><!--end class tzslider-->
+
+<!--<div class="tzslider">
   <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper fullscreen-container">
     <div id="rev_slider_2_1" class="rev_slider fullscreenbanner">
       <ul>
@@ -57,11 +111,12 @@
           <div class="fullscreen-bg">
 
 
-            <video loop muted autoplay poster="/static/demos/slider-re1.png" class="fullscreen-bg__video">
+           <video loop muted autoplay poster="/static/demos/slider-re1.png" class="fullscreen-bg__video">
               <source src="/static/images/dummy.mov" type="video/mp4">
 
             </video>
 
+&ndash;&gt;
 
           </div>
 
@@ -94,7 +149,7 @@
       </ul>
     </div>
   </div>
-</div><!--end class tzslider-->
+</div>--><!--end class tzslider-->
 
 
 
@@ -120,7 +175,8 @@
                     </div>
                     <div class="col-xs-9 col-md-10">
                   <h6>Professional</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, labore et dolore magna aliqua.</p>
+                  <p>We have trained professional designers from
+                    top colleges.</p>
                     </div>
                   </div>
                 </figcaption>
@@ -138,7 +194,7 @@
                     <div class="col-xs-9 col-md-10">
 
                   <h6>Creative</h6>
-                  <p>Lorem ipsum dolor, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p>we provide you the most creative designs as per your wish list.</p>
                     </div>
                   </div>
                 </figcaption>
@@ -155,7 +211,8 @@
                     </div>
                     <div class="col-xs-9 col-md-10">
                   <h6>Flexible</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do qua.</p>
+                  <p>We are flexible and work according to the needs and demands of the
+                    clients.</p>
                     </div>
                   </div>
                 </figcaption>
@@ -176,7 +233,8 @@
                   <div class="row">
                     <div class="col-xs-9 col-md-10">
                   <h6>Innovative</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut labore.</p>
+                  <p>We believe in educating what we excel in and hence
+                    all our designs are innovative..</p>
                     </div>
                     <div class="col-xs-3 col-md-2">
 
@@ -194,7 +252,7 @@
                   <div class="row">
                     <div class="col-xs-9 col-md-10">
                   <h6>Passionate</h6>
-                  <p>Lorem ipsum dolor sit amet,ut labore et dolore magna aliqua.</p>
+                  <p>We're passionate about creating modular designs..</p>
                       </div>
                     <div class="col-xs-3 col-md-2">
                       <i class="fa fa-heart-o bg-yellow-icon" aria-hidden="true"></i>
@@ -212,7 +270,7 @@
                                 <div class="col-xs-9 col-md-10">
 
                   <h6>Skilled</h6>
-                  <p>Lorem ipsum dolor sit amet dolore magna aliqua.</p>
+                  <p>Our team has been skilled and trained as per indutry standards..</p>
                                 </div>
                                 <div class="col-xs-3 col-md-2">
                                   <i class="fa fa-tasks bg-red-icon" aria-hidden="true"></i>
@@ -242,18 +300,12 @@
             <div class="our-blog-bk">
               <div class="entry-ourblog">
                 <h6><a href="{% url 'kitchen' %}">Kitchen</a></h6>
-               <!-- <span class="createby">
-                  Posted by <a href="#">Dekok</a>
-                </span>-->
+
                 <p>
-                  Earlier this year we gave ourselves a challenge:  to packaging coffee and create something that we could share with our clients and friends - and so, Wishbone Brew was born.
-                </p>
-                <p>
-                  the traditional approach to packaging coffee and create something.
+                  Rediscover kitchen and gourmet cooking experience with Bloom Interio. From modular to contemporary to a luxurious kitchen space to cook the best meals.
                 </p>
 
-               <!-- <a class="tz-readmore" href="singlePost-image.html">READ MORE <i class="fa fa-caret-right"></i></a>
-              -->
+             <p> Bloom Interio will help you change the dynamics of your scullery.</p>
               </div>
             </div>
           </div>
@@ -274,10 +326,10 @@
                   Posted by <a href="#">Dekok</a>
                 </span>-->
                 <p>
-                  Earlier this year we gave ourselves a challenge:  to packaging coffee and create something that we could share with our clients and friends - and so, Wishbone Brew was born.
+                  It’s time to step in your own Narnia closet, enumerate your styling experience by recreating your wardrobe into a stylish one; we offer you an extensive range of wardrobes for all the residue spaces in your home.
                 </p>
                 <p>
-                  the traditional approach to packaging coffee and create something.
+                  Bloom Interio specializes in free standing, built -in and walk -in wardrobes.
                 </p>
 
               <!--  <a class="tz-readmore" href="singlePost-image.html">READ MORE <i class="fa fa-caret-right"></i></a>
@@ -300,10 +352,10 @@
                   Posted by <a href="#">Dekok</a>
                 </span>-->
                 <p>
-                  Earlier this year we gave ourselves a challenge:  to packaging coffee and create something that we could share with our clients and friends - and so, Wishbone Brew was born.
+                  Bloom Interio proudly hosts a team of Architects, Interior Designers and Furniture Designers to create a perfect space. We offer you design services to redesign your adobe into your dream house.
                 </p>
                 <p>
-                  the traditional approach to packaging coffee and create something.
+                  Our specialists will deal and design each nook and corner of your house to suit your style and needs.
                 </p>
 
              <!--   <a class="tz-readmore" href="singlePost-image.html">READ MORE <i class="fa fa-caret-right"></i></a>
