@@ -48,8 +48,62 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="tzslider">
+  <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper fullscreen-container">
+    <div id="rev_slider_2_1" class="rev_slider fullscreenbanner">
+      <ul>
+        <li data-transition="fade" data-slotamount="7" data-masterspeed="300"  data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7" data-saveperformance="off" >
+          <img src="/static/images/homebanner.jpg" class="img-responsive"  alt="thumb-slider"  data-bgposition="center top" data-bgfit="100% 100%" data-bgrepeat="no-repeat">
+          <div class="tp-caption small_light_white sft stt tp-resizeme  tz-title-small"
+               data-x="center" data-hoffset="0"
+               data-y="center" data-voffset="-110"
+               data-speed="900"
+               data-start="500"
+               data-easing="Quad.easeInOut"
+               data-splitin="none"
+               data-splitout="none"
+               data-elementdelay="0.1"
+               data-endelementdelay="0.1"
+               data-endspeed="300"
+               data-endeasing="Quad.easeOut">Kitchen is
+          </div>
+
+          <div class="tp-caption large_bold_white sfr str tp-resizeme  tz-title-large"
+               data-x="center" data-hoffset="0"
+               data-y="center" data-voffset="-40"
+               data-speed="900"
+               data-start="1000"
+               data-easing="Quad.easeOut"
+               data-splitin="none"
+               data-splitout="none"
+               data-elementdelay="0.1"
+               data-endelementdelay="0.1"
+               data-endspeed="300"
+               data-endeasing="Quad.easeOut">not just a Corner
+          </div>
+
+          <div class="tp-caption large_bold_white randomrotate randomrotateout tp-resizeme  title-slider-big"
+               data-x="center" data-hoffset="0"
+               data-y="center" data-voffset="80"
+               data-speed="900"
+               data-start="1500"
+               data-easing="Quad.easeOut"
+               data-splitin="none"
+               data-splitout="none"
+               data-elementdelay="0.1"
+               data-endelementdelay="0.1"
+               data-endspeed="900"
+               data-endeasing="Quad.easeOut"> to cook
+          </div>
+
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div><!--end class tzslider-->
+
+<!--<div class="tzslider">
   <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper fullscreen-container">
     <div id="rev_slider_2_1" class="rev_slider fullscreenbanner">
       <ul>
@@ -57,11 +111,12 @@
           <div class="fullscreen-bg">
 
 
-            <video loop muted autoplay poster="/static/demos/slider-re1.png" class="fullscreen-bg__video">
+           <video loop muted autoplay poster="/static/demos/slider-re1.png" class="fullscreen-bg__video">
               <source src="/static/images/dummy.mov" type="video/mp4">
 
             </video>
 
+&ndash;&gt;
 
           </div>
 
@@ -94,7 +149,7 @@
       </ul>
     </div>
   </div>
-</div><!--end class tzslider-->
+</div>--><!--end class tzslider-->
 
 
 
@@ -120,7 +175,8 @@
                     </div>
                     <div class="col-xs-9 col-md-10">
                   <h6>Professional</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, labore et dolore magna aliqua.</p>
+                  <p>We have trained professional designers from
+                    top colleges.</p>
                     </div>
                   </div>
                 </figcaption>
@@ -138,7 +194,7 @@
                     <div class="col-xs-9 col-md-10">
 
                   <h6>Creative</h6>
-                  <p>Lorem ipsum dolor, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p>we provide you the most creative designs as per your wish list.</p>
                     </div>
                   </div>
                 </figcaption>
@@ -155,7 +211,8 @@
                     </div>
                     <div class="col-xs-9 col-md-10">
                   <h6>Flexible</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do qua.</p>
+                  <p>We are flexible and work according to the needs and demands of the
+                    clients.</p>
                     </div>
                   </div>
                 </figcaption>
@@ -176,7 +233,8 @@
                   <div class="row">
                     <div class="col-xs-9 col-md-10">
                   <h6>Innovative</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut labore.</p>
+                  <p>We believe in educating what we excel in and hence
+                    all our designs are innovative..</p>
                     </div>
                     <div class="col-xs-3 col-md-2">
 
@@ -194,7 +252,7 @@
                   <div class="row">
                     <div class="col-xs-9 col-md-10">
                   <h6>Passionate</h6>
-                  <p>Lorem ipsum dolor sit amet,ut labore et dolore magna aliqua.</p>
+                  <p>We're passionate about creating modular designs..</p>
                       </div>
                     <div class="col-xs-3 col-md-2">
                       <i class="fa fa-heart-o bg-yellow-icon" aria-hidden="true"></i>
@@ -212,7 +270,7 @@
                                 <div class="col-xs-9 col-md-10">
 
                   <h6>Skilled</h6>
-                  <p>Lorem ipsum dolor sit amet dolore magna aliqua.</p>
+                  <p>Our team has been skilled and trained as per indutry standards..</p>
                                 </div>
                                 <div class="col-xs-3 col-md-2">
                                   <i class="fa fa-tasks bg-red-icon" aria-hidden="true"></i>
@@ -242,18 +300,12 @@
             <div class="our-blog-bk">
               <div class="entry-ourblog">
                 <h6><a href="{% url 'kitchen' %}">Kitchen</a></h6>
-               <!-- <span class="createby">
-                  Posted by <a href="#">Dekok</a>
-                </span>-->
+
                 <p>
-                  Earlier this year we gave ourselves a challenge:  to packaging coffee and create something that we could share with our clients and friends - and so, Wishbone Brew was born.
-                </p>
-                <p>
-                  the traditional approach to packaging coffee and create something.
+                  Rediscover kitchen and gourmet cooking experience with Bloom Interio. From modular to contemporary to a luxurious kitchen space to cook the best meals.
                 </p>
 
-               <!-- <a class="tz-readmore" href="singlePost-image.html">READ MORE <i class="fa fa-caret-right"></i></a>
-              -->
+             <p> Bloom Interio will help you change the dynamics of your scullery.</p>
               </div>
             </div>
           </div>
@@ -274,10 +326,10 @@
                   Posted by <a href="#">Dekok</a>
                 </span>-->
                 <p>
-                  Earlier this year we gave ourselves a challenge:  to packaging coffee and create something that we could share with our clients and friends - and so, Wishbone Brew was born.
+                  It’s time to step in your own Narnia closet, enumerate your styling experience by recreating your wardrobe into a stylish one; we offer you an extensive range of wardrobes for all the residue spaces in your home.
                 </p>
                 <p>
-                  the traditional approach to packaging coffee and create something.
+                  Bloom Interio specializes in free standing, built -in and walk -in wardrobes.
                 </p>
 
               <!--  <a class="tz-readmore" href="singlePost-image.html">READ MORE <i class="fa fa-caret-right"></i></a>
@@ -300,10 +352,10 @@
                   Posted by <a href="#">Dekok</a>
                 </span>-->
                 <p>
-                  Earlier this year we gave ourselves a challenge:  to packaging coffee and create something that we could share with our clients and friends - and so, Wishbone Brew was born.
+                  Bloom Interio proudly hosts a team of Architects, Interior Designers and Furniture Designers to create a perfect space. We offer you design services to redesign your adobe into your dream house.
                 </p>
                 <p>
-                  the traditional approach to packaging coffee and create something.
+                  Our specialists will deal and design each nook and corner of your house to suit your style and needs.
                 </p>
 
              <!--   <a class="tz-readmore" href="singlePost-image.html">READ MORE <i class="fa fa-caret-right"></i></a>
@@ -344,18 +396,6 @@
         </div>
       </div>
 
-      <div class="element lounge ">
-        <div class="tz-inner">
-          <div class="tz-image-item">
-            <img alt="Phasellus blandit enim" class="img-responsive" src="/static/demos/Photoshop%20Images/belt%20holder.jpg">
-
-
-          </div>
-          <h6><a href="single-portfolio-full-width-slider.html">Belt Holder</a></h6>
-
-        </div>
-      </div>
-
       <div class="element chair ">
         <div class="tz-inner">
           <div class="tz-image-item">
@@ -368,17 +408,8 @@
         </div>
       </div>
 
-      <div class="element lounge">
-        <div class="tz-inner">
-          <div class="tz-image-item">
-            <img alt="Curabitur in fermentum" class="img-responsive" src="/static/demos/Photoshop%20Images/mirror.jpg">
 
 
-          </div>
-          <h6><a href="">Mirror</a></h6>
-
-        </div>
-      </div>
       <div class="element chair">
         <div class="tz-inner">
           <div class="tz-image-item">
@@ -387,18 +418,6 @@
 
           </div>
           <h6><a href="single-portfolio-full-width-slider.html">wicker Basket</a></h6>
-
-        </div>
-      </div>
-
-      <div class="element lounge">
-        <div class="tz-inner">
-          <div class="tz-image-item">
-            <img alt="Curabitur in fermentum" class="img-responsive" src="/static/demos/Photoshop%20Images/organizer2.jpg">
-
-
-          </div>
-          <h6><a href="single-portfolio-full-width-slider.html">Organizer</a></h6>
 
         </div>
       </div>
@@ -414,6 +433,67 @@
 
         </div>
       </div>
+      <div class="element chair ">
+        <div class="tz-inner">
+          <div class="tz-image-item">
+            <img alt="Aliquam a sollicitudin" class="img-responsive" src="/static/demos/Photoshop%20Images/builtinmicrowave.jpg">
+
+
+          </div>
+          <h6><a href="">Built-in Microwave</a></h6>
+
+        </div>
+      </div>
+
+      <div class="element chair ">
+        <div class="tz-inner">
+          <div class="tz-image-item">
+            <img alt="Aliquam a sollicitudin" class="img-responsive" src="/static/demos/Photoshop%20Images/tandom-box.jpg">
+
+
+          </div>
+          <h6><a href="">Tandom Box</a></h6>
+
+        </div>
+      </div>
+      <div class="element lounge ">
+        <div class="tz-inner">
+          <div class="tz-image-item">
+            <img alt="Phasellus blandit enim" class="img-responsive" src="/static/demos/Photoshop%20Images/belt%20holder.jpg">
+
+
+          </div>
+          <h6><a href="single-portfolio-full-width-slider.html">Belt Holder</a></h6>
+
+        </div>
+      </div>
+
+      <div class="element lounge">
+        <div class="tz-inner">
+          <div class="tz-image-item">
+            <img alt="Curabitur in fermentum" class="img-responsive" src="/static/demos/Photoshop%20Images/mirror.jpg">
+
+
+          </div>
+          <h6><a href="">Mirror</a></h6>
+
+        </div>
+      </div>
+
+
+      <div class="element lounge">
+        <div class="tz-inner">
+          <div class="tz-image-item">
+            <img alt="Curabitur in fermentum" class="img-responsive" src="/static/demos/Photoshop%20Images/organizer2.jpg">
+
+
+          </div>
+          <h6><a href="single-portfolio-full-width-slider.html">Organizer</a></h6>
+
+        </div>
+      </div>
+
+
 
       <div class="element lounge">
         <div class="tz-inner">
@@ -427,17 +507,7 @@
         </div>
       </div>
 
-      <div class="element chair ">
-        <div class="tz-inner">
-          <div class="tz-image-item">
-            <img alt="Aliquam a sollicitudin" class="img-responsive" src="/static/demos/Photoshop%20Images/builtinmicrowave.jpg">
 
-
-          </div>
-          <h6><a href="">Built-in Microwave</a></h6>
-
-        </div>
-      </div>
 
       <div class="element lounge">
         <div class="tz-inner">
@@ -452,17 +522,7 @@
       </div>
 
 
-      <div class="element chair ">
-        <div class="tz-inner">
-          <div class="tz-image-item">
-            <img alt="Aliquam a sollicitudin" class="img-responsive" src="/static/demos/Photoshop%20Images/tandom-box.jpg">
 
-
-          </div>
-          <h6><a href="">Tandom Box</a></h6>
-
-        </div>
-      </div>
 
       <div class="element lounge">
         <div class="tz-inner">
@@ -479,7 +539,6 @@
     </div>
   </div><!--end class container-->
 </section><!--end class tzportfolio-wrap-->
-
 
 
 
@@ -530,7 +589,9 @@
                             <select name="kitchen_type" id="k_type" name="k_type" onchange="loadkitchenDescription(this)" id="select_kitchen" class="form-control input-lg form-input-custom calci-select">
                               <option class="calci-option">Choose an Option...</option>
                               {% for obj in k_types %}
-                              <option value="{{obj.id}}" class="calci-option">{{obj.name}}</option>
+                                {% if obj.name != 'Island Kitchen' %}
+                                  <option value="{{obj.id}}" class="calci-option">{{obj.name}}</option>
+                                {% endif %}
                               {% endfor %}
                             </select>
                           </div>
@@ -575,7 +636,7 @@
                           <input type="text" value="None" name="selected_appliance" id="selected_appliance"  required="" hidden>
                           <div class="row">
                             <div class="col-md-12 col-xs-6 text-center">
-                              <div class="form-btn">
+                              <div class="form-btn text-center">
                                 <button type="submit" class="btn hollow-btn1">Book Free Consultation Now</button>
                                 <br>
                               </div>
@@ -653,6 +714,9 @@ function calculatePrice(price,no_of_wall){
   var r = val*price
   document.getElementById('k_result').innerHTML = r;
 }
+function removeResult(){
+  document.getElementById('k_result').innerHTML = '';
+}
 </script>
 
 
@@ -668,7 +732,7 @@ function calculatePrice(price,no_of_wall){
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
             <div class="tzcontent-for-words">
               <p>
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
+                “Great work!! We were very impressed with Bloom Interio team. They stuck to a difficult deadline and did excellent work for our new home. Highly Recommended!”
               </p>
             </div>
 
@@ -680,8 +744,8 @@ function calculatePrice(price,no_of_wall){
                 <img class="tzavata-for-words img-responsive" src="/static/demos/say1.jpg" alt="Jordan Henrion">
                 <div class="tzauthor-for-words">
 
-                  <span>Jordan Henrion</span>
-                  <em>Graphic Designer</em>
+                  <span> J. Ahamad</span>
+
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -704,7 +768,7 @@ function calculatePrice(price,no_of_wall){
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
             <div class="tzcontent-for-words">
               <p>
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
+                “Bloom Interio is an exceptionally smart, hard working and professional Interior Design firm. Mr. Dhull went the extra mile to deliver excellent design for our new kitchen! Bloom Interio team is very professional and committed to quality!”
               </p>
             </div>
             <!--  <div class="row">
@@ -724,8 +788,8 @@ function calculatePrice(price,no_of_wall){
                 <img class="tzavata-for-words img-responsive" src="/static/demos/say2.jpg" alt="Jordan Henrion">
                 <div class="tzauthor-for-words">
 
-                  <span>Jordan Henrion</span>
-                  <em>Graphic Designer</em>
+                  <span>P.Shukla</span>
+
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -748,7 +812,7 @@ function calculatePrice(price,no_of_wall){
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
             <div class="tzcontent-for-words">
               <p>
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
+                “Priyanka and her team are true professionals with great follow up and attention to detail. They have a great design aesthetic and sense of style and we are very happy with the end result!  I would highly recommend Bloom Interio to anyone looking for interior design!”
               </p>
             </div>
             <!--  <div class="row">
@@ -768,8 +832,8 @@ function calculatePrice(price,no_of_wall){
                 <img class="tzavata-for-words img-responsive" src="/static/demos/say3.jpg" alt="Jordan Henrion">
                 <div class="tzauthor-for-words">
 
-                  <span>Jordan Henrion</span>
-                  <em>Graphic Designer</em>
+                  <span>G. Srivastava</span>
+
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -784,138 +848,7 @@ function calculatePrice(price,no_of_wall){
 
         </div>
       </li>
-      <li>
-        <div class="row">
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 
-          </div>
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-            <div class="tzcontent-for-words">
-              <p>
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
-              </p>
-            </div>
-            <!--  <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-          <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
-        </div>
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-      </div>
-      </div>-->
-            <br>
-            <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-                <img class="tzavata-for-words img-responsive" src="/static/demos/say1.jpg" alt="Jordan Henrion">
-                <div class="tzauthor-for-words">
-
-                  <span>Jordan Henrion</span>
-                  <em>Graphic Designer</em>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-          </div>
-
-        </div>
-      </li>
-      <li>
-        <div class="row">
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-          </div>
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-            <div class="tzcontent-for-words">
-              <p>
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
-              </p>
-            </div>
-            <!--  <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-          <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
-        </div>
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-      </div>
-      </div>-->
-            <br>
-            <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-                <img class="tzavata-for-words img-responsive" src="/static/demos/say2.jpg" alt="Jordan Henrion">
-                <div class="tzauthor-for-words">
-
-                  <span>Jordan Henrion</span>
-                  <em>Graphic Designer</em>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-          </div>
-
-        </div>
-      </li>
-      <li>
-        <div class="row">
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-          </div>
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-            <div class="tzcontent-for-words">
-              <p>
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio massa, facilisis sit amet felis a, venenatis fringilla neque. Integer justo nibh, cursus malesuada commodo vitae, faucibus a dui. Ut pretium eros interdum neque viverra imperdiet. Suspendisse potenti. Pellentesque egestas massa libero, Suspendisse potenti. Pellentesque egestas massa libero”
-              </p>
-            </div>
-            <!--  <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-          <img class="tzavata-for-words" src="/static/demos/say1.jpg" alt="Jordan Henrion">
-        </div>
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-      </div>
-      </div>-->
-            <br>
-            <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-                <img class="tzavata-for-words img-responsive" src="/static/demos/say3.jpg" alt="Jordan Henrion">
-                <div class="tzauthor-for-words">
-
-                  <span>Jordan Henrion</span>
-                  <em>Graphic Designer</em>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
-          </div>
-
-        </div>
-      </li>
     </ul>
   </div><!--end class container-->
 </section><!--end class tz-love-words2-->
@@ -1051,7 +984,7 @@ function calculatePrice(price,no_of_wall){
                 <input type="text" value="" name="budget" class="form-control input-lg form-input-custom" id="budget" placeholder="Budget" required>
               </div>
 
-              <div class="form-btn">
+              <div class="form-btn text-center">
                 <button type="submit" class="btn hollow-btn1">Book Free Consultation Now</button>
 
                 <br>

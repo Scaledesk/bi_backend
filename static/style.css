@@ -683,7 +683,7 @@ body .tz-love-slider .owl-controls.clickable .owl-page:hover span{background:#6d
 .tz-love-words-slider{list-style:none;padding:0;margin:64px 0 49px;}
 .tzcontent-for-words{position:relative;background:#eeeeee;padding:20px 30px 25px;margin-right:20px;}
 .tzcontent-for-words p{padding:0;margin:0;color:#555555;font-family:'Raleway', sans-serif;font-size:13px;font-weight:400;line-height:26px;text-decoration:none !important;}
-.tzavata-for-words{width:60px;height:60px;margin-bottom:10px;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;}
+.tzavata-for-words{width:60px;height:60px; margin: 10px auto;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;}
 .tzauthor-for-words{background:#6dd3d1;padding:8px 15px 9px;margin-left:10px;}
 .tzauthor-for-words span{display:block;padding:0;margin:0;color:#fff;font-family:'Raleway', sans-serif;font-size:18px;font-weight:600;line-height:21px;}
 .tzauthor-for-words em{display:block;padding:0;margin:0;color:#fff;font-family:'Raleway', sans-serif;font-size:13px;font-weight:300;line-height:21px;}
