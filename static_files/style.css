@@ -131,7 +131,7 @@ body .tz-header ul li ul.menu-item-shop{padding:10px 0 39px;}
 .tz-header ul li .nav-child ul li ul.mega-nav li a:hover{color:#999999;}
 .tz-header ul li .nav-child ul li i{padding-right:10px;}
 .tz-header ul li .nav-child ul li a:after{display:none;}
-.tz-header ul li .nav-child ul li a{color:#666666;display:block;font-family:"Raleway",sans-serif;font-size:14px;font-weight:400;line-height:40.6px;margin:0;padding:0 32px;position:relative;text-decoration:none;text-transform:none;text-align:left;}
+.tz-header ul li .nav-child ul li a{/*color:#666666*/ color: rgba(172, 139, 62, 0.79);display:block;font-family:"Raleway",sans-serif;font-size:14px;font-weight:400;line-height:40.6px;margin:0;padding:0 32px;position:relative;text-decoration:none;text-transform:none;text-align:left;}
 .tz-header ul.nav-collapse li a.menu-title:after{display:none !important;}
 .tz-header ul.nav-collapse li a.menu-title{color:#999999;display:block;font-family:"Raleway",sans-serif;font-size:20px;font-weight:400;line-height:24px;margin:0;padding:32px 32px 0;position:relative;text-decoration:none;text-transform:none;text-align:left;background:#222222;}
 .entry-shop-menu{display:block;padding:11px 0 12px;}
