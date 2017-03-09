@@ -249,10 +249,44 @@
 </div><!--end class tzslider-->
 
 
+
+
+
+<section class="tz-bestsellers2">
+    <div class="container">
+        <h3 class="tz-title-3">Kitchen Types</h3>
+        <div class="row">
+
+          {% for k_type in k_types %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="tz-bestsellers-item">
+                    <div class="bestsellers-thumb">
+                        <img src="{{ k_type.image.url }}" class="img-responsive" alt="Aliquam dolor elit">
+                        <div class="tz-bestsellers-content1">
+                            <h6><a href="{{ k_type.slug }}">{{ k_type.name }}</a></h6>
+                            <!-- <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam malesuada adipiscing tincidunt. consectetur adipiscing elit.  Vestibulum molestie non felis feugiat aliquet. Etiam venenatis pellentesque orci, a porta nibh dapibus ac.
+                            </p> -->
+                                <span class="tz-bestsellers-meta">
+                                    <a href="{{ k_type.slug }}" class="tztasks">
+                                       <i class="fa fa-tasks"></i>
+                                    </a>
+                                </span>
+                        </div>
+                    </div>
+                    <h6><a href="{{ k_type.slug }}">{{ k_type.name }}</a></h6>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div><!--end class container-->
+</section><!--end class tz-bestsellers2-->
+
 <section class="theme-white tzcustom-block style-border">
     <div class="container">
         <h3 class="tz-title-3">OUR FEATURES</h3>
-       <div class="row tzcustom-row">
+        <div class="row tzcustom-row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 custom-right">
                 <ul class="tz-collection collection-left tz-collection2">
                     <li>
@@ -426,40 +460,6 @@
         </div><!--end class row-->
     </div><!--end class container-->
 </section><!--end class tzcustom-block-->
-
-
-
-
-<section class="tz-bestsellers2">
-    <div class="container">
-        <h3 class="tz-title-3">Kitchen Types</h3>
-        <div class="row">
-
-          {% for k_type in k_types %}
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="tz-bestsellers-item">
-                    <div class="bestsellers-thumb">
-                        <img src="{{ k_type.image.url }}" class="img-responsive" alt="Aliquam dolor elit">
-                        <div class="tz-bestsellers-content1">
-                            <h6><a href="{{ k_type.slug }}">{{ k_type.name }}</a></h6>
-                            <!-- <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam malesuada adipiscing tincidunt. consectetur adipiscing elit.  Vestibulum molestie non felis feugiat aliquet. Etiam venenatis pellentesque orci, a porta nibh dapibus ac.
-                            </p> -->
-                                <span class="tz-bestsellers-meta">
-                                    <a href="{{ k_type.slug }}" class="tztasks">
-                                       <i class="fa fa-tasks"></i>
-                                    </a>
-                                </span>
-                        </div>
-                    </div>
-                    <h6><a href="{{ k_type.slug }}">{{ k_type.name }}</a></h6>
-                </div>
-            </div>
-            {% endfor %}
-
-        </div>
-    </div><!--end class container-->
-</section><!--end class tz-bestsellers2-->
 
 
 <section>
