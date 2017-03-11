@@ -33,7 +33,7 @@ class KType(BaseModel):
             db_table = "%s_%s" % ('core', "kitchen_type")
             verbose_name = 'Kitchen Type'
             verbose_name_plural = 'Kitchen Types'
-            ordering = ['name']
+            ordering = ['id']
 
 class KTheme(BaseModel):
     """ Model to save sub-category of Kitchen Types """
