@@ -175,8 +175,9 @@
                     </div>
                     <div class="col-xs-9 col-md-10">
                   <h6>Professional</h6>
-                  <p>We have trained professional designers from
-                    top colleges.</p>
+                  <p> Bloom Interio is proud to have a squad which includes trained professionals from the bet architecture colleges, interior designers,</p>
+                  <p class="full-text" style="display:none;"> furniture designers, ergonomists and graphic designers. Along with that we have a team of people from everyday walks of life, who try our products before we float them in the market and comment on their feasibility.</p>
+                  <p class="more-text" style="color:#f1805f;">More..</p>
                     </div>
                   </div>
                 </figcaption>
@@ -194,7 +195,9 @@
                     <div class="col-xs-9 col-md-10">
 
                   <h6>Creative</h6>
-                  <p>we provide you the most creative designs as per your wish list.</p>
+                  <p>We are high on creative content. Our skilled professionals will create the house just as you imagined.</p>
+                  <p class="full-text" style="display:none;">Be it including the best modular kitchen, or hassle free interior services, we provide you the most creative designs for matching your wish list.</p>
+                  <p class="more-text" style="color:#f1805f;">More..</p>
                     </div>
                   </div>
                 </figcaption>
@@ -211,8 +214,9 @@
                     </div>
                     <div class="col-xs-9 col-md-10">
                   <h6>Flexible</h6>
-                  <p>We are flexible and work according to the needs and demands of the
-                    clients.</p>
+                  <p>Belonging to the startup generation , we are flexible and work according to the needs and demands of the clients, be it creating your</p>
+                  <p class="full-text" style="display:none;"> dream house or providing  after working hours meeting , we believe in client satisfaction and are hence tensile according   to your needs .</p>
+                  <p class="more-text" style="color:#f1805f;">More..</p>
                     </div>
                   </div>
                 </figcaption>
@@ -233,8 +237,9 @@
                   <div class="row">
                     <div class="col-xs-9 col-md-10">
                   <h6>Innovative</h6>
-                  <p>We believe in educating what we excel in and hence
-                    all our designs are innovative..</p>
+                  <p> Being a part of the technologically advanced world , we believe in educating what we excel in and</p>
+                  <p class="full-text" style="display:none;"> hence all our designs are innovative , made with critical thinks and hours of brain storming , not only do we provide the client with a wider vision but also ace design one step ahead in this world .</p>
+                  <p class="more-text" style="color:#f1805f;">More..</p>
                     </div>
                     <div class="col-xs-3 col-md-2">
 
@@ -252,7 +257,9 @@
                   <div class="row">
                     <div class="col-xs-9 col-md-10">
                   <h6>Passionate</h6>
-                  <p>We're passionate about creating modular designs..</p>
+                  <p>Our team is passionate about what we do!  we co create each design , be it a modular kitchen or a modular</p>
+                  <p class="full-text" style="display:none;"> bathroom , each spec and corner of your interior designed home will be crafted with love . Luxury is now affordable, our team of designers help in providing luxurious interior hardware’s and luxurious cabinets to suit your requirements.</p>
+                  <p class="more-text" style="color:#f1805f;">More..</p>
                       </div>
                     <div class="col-xs-3 col-md-2">
                       <i class="fa fa-heart-o bg-yellow-icon" aria-hidden="true"></i>
@@ -270,7 +277,9 @@
                                 <div class="col-xs-9 col-md-10">
 
                   <h6>Skilled</h6>
-                  <p>Our team has been skilled and trained as per indutry standards..</p>
+                  <p>We are proud to host one of the top teams of designers on Gurgaon , our team has been skilled and trained </p>
+                  <p class="full-text" style="display:none;">so that they can provide you the best interior design services in the city, from bathrooms to modular kitchens to contemporary kitchens and even luxurious kitchen and its cabinets .</p>
+                  <p class="more-text" style="color:#f1805f;">More..</p>
                                 </div>
                                 <div class="col-xs-3 col-md-2">
                                   <i class="fa fa-tasks bg-red-icon" aria-hidden="true"></i>
@@ -1141,6 +1150,8 @@ floating button
     $(this).find(':input[type=submit]').prop('disabled', true);
 
   });
+
+
 </script>
 
 <script type='text/javascript'>
@@ -1161,6 +1172,15 @@ floating button
         next.children(':first-child').clone().appendTo($(this));
       }
     });
+  });
+
+  $(".more-text").click(function(){
+      if($(this).text()=='More..'){
+        $(this).text("Less..");
+      } else {
+        $(this).text("More..");
+      }
+      $(this).siblings('.full-text').toggle();
   });
 </script>
 
