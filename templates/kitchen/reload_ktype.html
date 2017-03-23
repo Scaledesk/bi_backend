@@ -22,13 +22,13 @@
 
 <br>
     <div class="row">
-        <div  style="width:430px;">
+        <div>
 
             {% for obj in no_of_wall %}
             <div class="col-xs-4">
                 <div class="form-group">
                     <label for="height">Wall {{forloop.counter}}</label>
-                    <input type="number" value="0" name="height{{forloop.counter}}" class="form-control form-input-custom calci-select" onchange="calculatePrice({{k_type.price}},{{k_type.no_of_wall}})" id="height{{forloop.counter}}" placeholder="height" required="">
+                    <input type="number" value="0" onfocus="removeResult()" name="height{{forloop.counter}}" class="form-control form-input-custom calci-select"  id="height{{forloop.counter}}" placeholder="height" required="">
                 </div>
             </div>
             {% endfor %}
@@ -40,7 +40,7 @@
     <div class="row">
 
     <div class="col-xs-12 text-left">
-        <button type="button" class="btn btn-default appointment-btn" >Get estimated cost</button>
+        <button type="button" class="btn btn-default appointment-btn" onclick="calculatePrice({{k_type.price}},{{k_type.no_of_wall}})" >Get estimated cost</button>
     </div>
     </div>
   <div class="row">
