@@ -9,16 +9,15 @@ class KImageInline(NestedStackedInline):
     extra=1
     fk_name='kitchen'
 
-class KApplianceInline(NestedStackedInline):
-    model=KAppliance
-    extra=1
-    fk_name='kitchen'
+# class KApplianceInline(NestedStackedInline):
+#     model=KAppliance
+#     extra=1
+#     fk_name='kitchen'
 
 class KitchenAdmin(NestedModelAdmin):
     """Kitchen Admin class"""
     inlines=[
         KImageInline,
-        KApplianceInline,
     ]
 
 class KISubInline(NestedStackedInline):
@@ -69,7 +68,7 @@ admin.site.register(KTheme)
 admin.site.register(Kitchen, KitchenAdmin)
 admin.site.register(KIncludes, KIncludesAdmin)
 # admin.site.register(KISub)
-# admin.site.register(KAppliance)
+admin.site.register(KAppliance)
 admin.site.register(KMaterial)
 admin.site.register(KFinishing)
 admin.site.register(KColor)

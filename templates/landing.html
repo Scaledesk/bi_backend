@@ -572,7 +572,9 @@
                     <!-- <form> -->
                     <div class="form-group" style="width:220px;">
                       <!-- <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required> -->
-                      <select name="kitchen_type" id="mob_k_type" name="mob_k_type" onchange="loadkitchenDescriptionMob(this)" id="select_kitchen" class="form-control input-lg form-input-custom calci-select">
+
+                      <select name="kitchen_type" style="height: 60px;" id="mob_k_type" name="mob_k_type" onchange="loadkitchenDescriptionMob(this)" id="select_kitchen" class="form-control input-lg form-input-custom calci-select">
+
                         <option class="calci-option">Choose an Option...</option>
                         {% for obj in k_types %}
                           {% if obj.name != 'Island Kitchen' %}

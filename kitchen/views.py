@@ -81,8 +81,8 @@ def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
     k_color = KColor.objects.filter(id__in=color_ids)
     k_material = KMaterial.objects.all()
     k_finishing = KFinishing.objects.all()
-    k_appliance = KAppliance.objects.filter(kitchen=kitchen)
-    k_appliances = KAppliance.objects.filter(kitchen=kitchen)
+    # k_appliance = KAppliance.objects.filter(kitchen=kitchen)
+    k_appliances = KAppliance.objects.all()
 
     k_includes = []
     if KIncludes.objects.filter(kitchen=kitchen):

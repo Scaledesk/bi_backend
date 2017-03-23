@@ -134,7 +134,7 @@ class KISub(BaseModel):
 
 class KAppliance(BaseModel):
     """ Model to save what kitchen appliances """
-    kitchen = models.ForeignKey(Kitchen, on_delete=models.CASCADE)
+    # kitchen = models.ForeignKey(Kitchen, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     desc = models.CharField(max_length=300)
     image = models.ImageField(upload_to='kitchen/images/kitchen_appliances/')
@@ -152,8 +152,8 @@ class KAppliance(BaseModel):
         db_table = "%s_%s" % ('core', "kitchen_appliance")
         verbose_name = 'Kitchen Appliance'
         verbose_name_plural = 'Kitchen Appliances'
-        ordering = ('name', 'kitchen')
-        unique_together = ('kitchen', 'name')
+        # ordering = ('name', 'kitchen')
+        # unique_together = ('kitchen', 'name')
 
 class KMaterial(BaseModel):
     """ Model to save kitchen material """
