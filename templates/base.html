@@ -91,7 +91,11 @@
                                 <div data-width="12" class="col-md-12 mega-col-nav">
                                     <div class="mega-inner">
                                         <ul class="mega-nav level1">
-
+                                            {% for w_type in w_types %}
+                                                <li>
+                                                    <a href="{% url 'wardrobe' %}{{w_type.slug}}/">{{ w_type.name }}</a>
+                                                </li>
+                                            {% endfor %}
                                             <li>
                                                 <a href="{% url 'wardrobe' %}">Wardrobe Guide</a>
                                             </li>
