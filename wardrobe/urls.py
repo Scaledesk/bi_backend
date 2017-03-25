@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^(?P<w_type_slug>[-\w]+)/(?P<theme_slug>[-\w]+)/(?P<wardrobe_slug>[-\w]+)/$', ServeProduct),
     url(r'^(?P<w_type_slug>[-\w]+)/(?P<theme_slug>[-\w]+)/$', ServeWardrobe),
     url(r'^(?P<w_type_slug>[-\w]+)/$', ServeTheme),
-    url(r'^$', ServeType, name='wardrobe')
+    url(r'^$', ServeWardrobeInfo, name='wardrobe'),
+    url(r'^guid-info$', ServeType, name='wardrobe-guid')
 ]

@@ -15,6 +15,16 @@ def ServeType(request):
     context = AppendBasicContext(context)
     return render(request, 'wardrobe/product_types.html', context)
 
+
+
+
+def ServeWardrobeInfo(request):
+    """ to serve wardrobe data """
+    context = {}
+    context = AppendBasicContext(context)
+    return render(request, 'wardrobe/warbrobe_info.html', context)
+
+
 def ThemeContextCreator(w_type_slug):
     """ to create context data for serving theme """
     context = {}
