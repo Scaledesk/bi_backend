@@ -765,7 +765,7 @@ body .tz-grid-2 .tz-image-item{height:524px;}
 .tzfa-heart:hover:after{transform:scale(1.2);-moz-transform:scale(1.2);-webkit-transform:scale(1.2);-ms-transform:scale(1.2);-o-transform:scale(1.2);opacity:0;}
 .tz-inner:hover a.tzfa-search{left:50%;bottom:50%;}
 .tz-inner:hover a.tzfa-heart{right:50%;top:50%;}
-.tz-inner:hover .tz-image-item:after{background:rgba(51,51,51,0.8);}
+.tz-inner:hover .tz-image-item:after{background:rgba(51,51,51,0);}
 .tz-inner:hover .tz-image-item img{transform:scale(1.3) translate3d(5px, 0, 0);-moz-transform:scale(1.3) translate3d(5px, 0, 0);-webkit-transform:scale(1.3) translate3d(5px, 0, 0);-ms-transform:scale(1.3) translate3d(5px, 0, 0);-o-transform:scale(1.3) translate3d(5px, 0, 0);}
 .tzpagenavi{width:100%;text-align:center;margin-top:46px;}
 .tzpagenavi button:first-child{margin-right:10px;}
