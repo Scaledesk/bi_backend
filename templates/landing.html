@@ -179,9 +179,6 @@
 </div>--><!--end class tzslider-->
 
 
-
-
-
 <section class="tz-why-choose theme-gray">
   <div class="tz-choose-content tz-choose-content2">
     <div class="container">
@@ -577,112 +574,13 @@
   </div><!--end class container-->
 </section><!--end class tzportfolio-wrap-->
 
-<section>
- <div class="container">
 
-  <div class="row hidden-md hidden-lg hidden-sm">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <div class="tabs-style">
-        <ul class="nav nav-tabs" role="tablist" id="detailTab">
-          <li class="active"><a href="#calci" role="tab" data-toggle="tab">Kitchen Cost Calculator</a></li>
-          <li><a href="#quotes" role="tab" data-toggle="tab">Get Custom Quotes</a></li>
-
-
-        </ul>
-        <div class="tab-content">
-          <div class="tab-pane active" id="calci">
-
-            <div class="tz-our-blog padding-ourblog" style="background:radial-gradient(#d8c87a , #c4a146), #fff !important;">
-              <div class="container">
-
-                <div class="row">
-                  <div class="col-md-3 text-center right-border">
-                    <!--   <a href="#" class="tz-button-dekor"><span>STEP-1 </span></a>-->
-                    <p class="f-w" style="float:left;font-size: 19px;"><b>Choose Your Kitchen</b></p>
-                    <!-- <form> -->
-                    <div class="form-group" style="width:220px;">
-                      <!-- <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required> -->
-
-                      <select name="kitchen_type" style="height: 60px;" id="mob_k_type" name="mob_k_type" onchange="loadkitchenDescriptionMob(this)" id="select_kitchen" class="form-control input-lg form-input-custom calci-select">
-
-                        <option class="calci-option">Choose an Option...</option>
-                        {% for obj in k_types %}
-                          {% if obj.name != 'Island Kitchen' %}
-                            <option value="{{obj.id}}" class="calci-option">{{obj.name}}</option>
-                          {% endif %}
-                        {% endfor %}
-                      </select>
-                    </div>
-                    <!-- </form> -->
-                  </div>
-                  <div id="mob_k_type_detail">
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="tab-pane" id="quotes">
-            <div class="row">
-              <div class="col-xs-pull-12">
-                <div class="cta-form cta-light custom-quote-form">
-
-                  <form id="send_data_form" class="send_data_form" method="post" action="/kitchen/product-consultation/" enctype="multipart/form-data">
-                    <!-- <form id="cta-signup-form" class="cta-signup-form"> -->
-                    <h2  class="text-center">Get Your Dream Kitchen</h2>
-                    <hr class="hr-color hr-style">
-                    <div id="mc-error-cta"><i class="fa fa-exclamation-triangle"></i> Please enter a value</div>
-                    <div id="mc-success-cta"><i class="fa fa-envelope"></i> Awesome! We have sent you a confirmation email</div>
-                    {% csrf_token %}
-                    <div class="form-group">
-                      <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required="">
-                    </div>
-                    <div class="form-group">
-                      <input type="contact_no" value="" name="contact_no" class="form-control input-lg form-input-custom" id="contact_no" placeholder="Contact No." required="">
-                    </div>
-                    <div class="form-group">
-                      <input type="email" value="" name="user_email" class="form-control input-lg form-input-custom" id="email" placeholder="Email" required="">
-                    </div>
-                    <div class="form-group">
-                      <input type="text" value="" name="address" class="form-control input-lg form-input-custom" id="address" placeholder="Address" required="">
-                    </div>
-                    <input type="text" value="all" name="color" id="selected_color"  required="" hidden>
-                    <input type="text" value="None" name="material" id="selected_material"  required="" hidden>
-                    <input type="text" value="None" name="finish" id="selected_finish"  required="" hidden>
-                    <input type="text" value="{{kitchen.id}}" name="kitchen" id="selected_kitchen"  required="" hidden>
-                    <input type="text" value="None" name="selected_appliance" id="selected_appliance"  required="" hidden>
-                    <div class="row">
-                      <div class="col-md-12 col-xs-6 text-center">
-                        <div class="form-btn text-center">
-                          <button type="submit" class="btn hollow-btn1">Book Free Consultation Now</button>
-                          <br>
-                        </div>
-                      </div>
-                      </div>
-
-                  </form>
-
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-  </div>
-</div>
-</section>
 
 <!--modal content-->
 
 <!-- Modal1 -->
 <div id="mycalci" class="modal fade" role="dialog">
-  <div class="modal-dialog" style="width: 95%;">
+  <div class="modal-dialog" style="width: 75%;">
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -713,10 +611,11 @@
                 <div class="tab-pane active" id="calci">
 
                   <div class="tz-our-blog padding-ourblog" style="background:radial-gradient(#d8c87a , #c4a146), #fff !important;">
-                    <div class="container">
+
 
                       <div class="row">
-                        <div class="col-md-3 text-center right-border">
+                        <div class="col-md-4 text-center right-border" style="
+    padding-left: 40px;">
                           <!--   <a href="#" class="tz-button-dekor"><span>STEP-1 </span></a>-->
                           <p class="f-w" style="float:left;font-size: 19px;"><b>Choose Your Kitchen</b></p>
                           <!-- <form> -->
@@ -737,7 +636,7 @@
 
                         </div>
                       </div>
-                    </div>
+
                   </div>
 
                 </div>
