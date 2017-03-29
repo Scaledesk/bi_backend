@@ -164,5 +164,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 #Website Detail
 # WEBSITE = 'http://127.0.0.1:8000/'
-ADMIN_EMAIL = 'deepaksinghbartwal@gmail.com'
+ADMIN_EMAIL = 'javedahamad4@gmail.com'
 # ADMIN_EMAIL = 'pbdhull@gmail.com'
