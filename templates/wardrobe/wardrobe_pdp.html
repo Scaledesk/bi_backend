@@ -441,7 +441,32 @@ function colorActive(color_id){
     success: function( returnedData) {
       // alert(returnedData)
       $( '#reload_flex').html( returnedData );
+      $('#reload_flex').css({"visibility": "hidden"});
+      $( '#reload_flex').html( returnedData );
       // $("#reload_flex").page();
+      jQuery('#carousel').flexslider({
+          animation: "slide",
+          controlNav: false,
+          animationLoop: false,
+          slideshow: false,
+          directionNav: false,
+          autoHeight: true,
+          itemWidth: 80,
+          itemMargin: 80,
+          asNavFor: '#slider'
+      });
+      jQuery('#slider').flexslider({
+          animation: "slide",
+          controlNav: false,
+          animationLoop: false,
+          directionNav: false,
+          autoHeight: true,
+          slideshow: false,
+          sync: "#carousel"
+      });
+      setTimeout(function () {
+        $('#reload_flex').css({"visibility": "true"});
+      }, 300);
     }
   });
 }
