@@ -100,6 +100,38 @@ def ContactRequestView(request): #user_email, activation_key, first_name
                 fail_silently=True,)
             return redirect("/thank-you/?source=contact")
 
+
+
+def ModalFormView(request): #user_email, activation_key, first_name
+    if request.method == 'POST':
+        from django.core.mail import send_mail
+        from bloom_interio.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
+        name = request.POST['name']
+        contact_no = request.POST['contact_no']
+        email = request.POST['email']
+        location = request.POST['address']
+
+        subject = 'contact request'
+        message = ('Name: ' + name + \
+            '\nContact No: ' + contact_no + \
+            '\nEmail: '+ email + \
+            '\nLocation: '+ location)
+
+        if send_mail(subject, message, DEFAULT_FROM_EMAIL, [ADMIN_EMAIL]):
+            subject = 'Bloom Interio'
+            message = ('Hi ' + name + ',' \
+                '\n\nThanks for contacting us.'\
+                '\nWe will get back to you soon'\
+                '\n\nRegards,\nBloom Interio')
+            subject = 'Thanks for contacting us.'
+            send_mail(
+                subject,
+                message,
+                DEFAULT_FROM_EMAIL,
+                [email],
+                fail_silently=True,)
+            return redirect("/thank-you/?source=contact")
+
 def ThankYouView(request):
     context = {}
     context = AppendBasicContext(context)

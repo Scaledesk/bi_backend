@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^product-help/', ProductHelpView, name='product_help'),
     url(r'^terms-and-conditions/', TermsAndConditionsView, name='terms_and_conditions'),
     url(r'^contact-request/', ContactRequestView, name='contact-request'),
+    url(r'^modal-request/$', ModalFormView, name='modal-request'),
     url(r'^thank-you', ThankYouView, name='thank_you'),
     url(r'^$', LandingView, name='landing')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
