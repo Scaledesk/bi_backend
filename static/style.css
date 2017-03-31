@@ -1558,7 +1558,7 @@ body.home-rtl .tz-recent-post li{text-align:right;}
     .widget_bestsellers ul li .as_bestsellers_thumb{float:none;margin-bottom:15px;}
     .as_bestsellers_content{padding-left:0;}
     .widget_bestsellers ul li{margin:0 0 30px;}
-    .tzcategory-shop-wrap{}
+    .tzcategory-shop-wrap{    padding: 65px 0 74px 0;}
     .shop_table thead tr th{padding:18px 10px;}
     .shop_table thead tr th:last-of-type{padding-right:0;}
     .shop_table tr td{padding:10px;}

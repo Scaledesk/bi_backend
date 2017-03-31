@@ -1160,6 +1160,7 @@ and (max-device-width: 480px) {
 /*custom icon bg end*/
 .tzslider{
     background-color: rgba(11, 9, 10, 0.62);
+    margin-bottom: 20px;
 }
 
 .footer-navi{
