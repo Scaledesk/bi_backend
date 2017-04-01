@@ -62,10 +62,10 @@ class KTheme(BaseModel):
 
 class Kitchen(BaseModel):
     """ Model to save kitchen detail """
-    theme = models.ForeignKey(KTheme, on_delete=models.CASCADE, related_name='Theme')
+    # theme = models.ForeignKey(KTheme, on_delete=models.CASCADE, related_name='Theme')
     ktype = models.ForeignKey(KType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=30, verbose_name='Name')
-    desc = models.CharField(max_length=100, verbose_name="Description")
+    desc = models.TextField(max_length=500, verbose_name="Description")
     l = models.IntegerField(verbose_name='Length')
     b = models.IntegerField(verbose_name='Breadth')
     h = models.IntegerField(verbose_name='Height')
@@ -75,7 +75,7 @@ class Kitchen(BaseModel):
     slug = models.SlugField(max_length=200, null=True, editable=False)
 
     def __unicode__(self):
-        return (self.theme.name + '_' + self.name + '_' + str(self.l) + 'x' + str(self.b) + 'x' + str(self.h))
+        return (self.name + '_' + str(self.l) + 'x' + str(self.b) + 'x' + str(self.h))
 
     def save(self, *args, **kwargs):
         self.slug = slugify('-'.join((self.name, 'x'.join((str(self.l), str(self.b), str(self.h))))))
@@ -91,8 +91,8 @@ class Kitchen(BaseModel):
         db_table = "%s_%s" % ('core', "kitchen")
         verbose_name = 'Kitchen'
         verbose_name_plural = 'Kitchens'
-        ordering = ['name', 'theme']
-        unique_together = ('theme', 'slug', 'l', 'b', 'h')
+        ordering = ['name']
+        unique_together = ( 'slug', 'l', 'b', 'h')
 
 class KIncludes(BaseModel):
     """ Model to save what kitchen includes """
@@ -274,10 +274,10 @@ class WTheme(BaseModel):
 
 class Wardrobe(BaseModel):
     """ Model to save wardrobe detail """
-    theme = models.ForeignKey(WTheme, on_delete=models.CASCADE, related_name='theme')
+    # theme = models.ForeignKey(WTheme, on_delete=models.CASCADE, related_name='theme')
     wtype = models.ForeignKey(WType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=30, verbose_name='Name')
-    desc = models.CharField(max_length=100, verbose_name="Description")
+    desc = models.TextField(max_length=500, verbose_name="Description")
     l = models.IntegerField(verbose_name='length')
     b = models.IntegerField(verbose_name='breadth')
     h = models.IntegerField(verbose_name='height')
@@ -287,7 +287,7 @@ class Wardrobe(BaseModel):
     slug = models.SlugField(max_length=200, null=True, editable=False)
 
     def __unicode__(self):
-        return (self.theme.name + '_' + self.name + '_' + str(self.l) + 'x' + str(self.b) + 'x' + str(self.h))
+        return (self.name + '_' + str(self.l) + 'x' + str(self.b) + 'x' + str(self.h))
 
     def save(self, *args, **kwargs):
         self.slug = slugify('-'.join((self.name, 'x'.join((str(self.l), str(self.b), str(self.h))))))
@@ -303,8 +303,8 @@ class Wardrobe(BaseModel):
         db_table = "%s_%s" % ('core', "wardrobe")
         verbose_name = 'Wardrobe'
         verbose_name_plural = 'Wardrobes'
-        ordering = ['name', 'theme']
-        unique_together = ('theme', 'slug', 'l', 'b', 'h')
+        ordering = ['name']
+        unique_together = ('slug', 'l', 'b', 'h')
 
 # class WIncludes(BaseModel):
 #     """ Model to save what wardrobe includes """
