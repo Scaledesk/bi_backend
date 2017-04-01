@@ -45,15 +45,15 @@ def ServeTheme(request, k_type_slug):
     return render(request, 'kitchen/product_by_type.html', context)
 
 
-def KitchenContextCreator(k_type_slug, theme_slug):
+def KitchenContextCreator(k_type_slug):
     """ to serves list of kitchen them of a particular type """
     context = {}
     kitchens = []
     k_images = []
     #theme slug is not unique. Its unique together with other attributes
     k_type = KType.objects.get(slug=k_type_slug)
-    theme = KTheme.objects.get(k_type=k_type, slug=theme_slug)
-    k_list = Kitchen.objects.filter(theme=theme)
+    # theme = KTheme.objects.get(k_type=k_type, slug=theme_slug)
+    k_list = Kitchen.objects.filter(ktype=k_type)
     for kitchen in k_list:
         temp = kitchen.__dict__
         temp['image'] = KImage.objects.filter(kitchen=kitchen).first().image.url
@@ -61,21 +61,20 @@ def KitchenContextCreator(k_type_slug, theme_slug):
     context['kitchens'] = kitchens
     return context
 
-def ServeKitchen(request, k_type_slug, theme_slug):
+def ServeKitchen(request, k_type_slug):
     """ to serve kitchens on basis of type and theme """
     context = None
-    context = KitchenContextCreator(k_type_slug, theme_slug)
+    context = KitchenContextCreator(k_type_slug)
     context = AppendBasicContext(context)
     return render(request, 'kitchen/product_by_theme.html', context)
 
-def ProductContextCreator(k_type_slug, theme_slug, kitchen_slug):
+def ProductContextCreator(k_type_slug, kitchen_slug):
     """ to create context to serve final product """
     context = {}
     k_type = KType.objects.get(slug=k_type_slug)
     # theme slug and kitchen slug are not unique. they are unique together with other fields
-    theme = KTheme.objects.get(k_type=k_type, slug=theme_slug)
-    kitchen = Kitchen.objects.get(theme=theme, slug=kitchen_slug)
-
+    # theme = KTheme.objects.get(k_type=k_type, slug=theme_slug)
+    kitchen = Kitchen.objects.get(ktype=k_type,slug=kitchen_slug)
     k_images = KImage.objects.filter(kitchen=kitchen)
     color_ids = k_images.values_list('k_color__id', flat=True).distinct()
     k_color = KColor.objects.filter(id__in=color_ids)
@@ -132,9 +131,9 @@ def ReloadKitchenType(request):
     html = render_to_string('kitchen/reload_ktype.html', context)
     return HttpResponse(html)
 
-def ServeProduct(request, k_type_slug, theme_slug, kitchen_slug):
+def ServeProduct(request, k_type_slug, kitchen_slug):
     """ to serve final product based on type, theme and kitchen """
-    context = ProductContextCreator(k_type_slug, theme_slug, kitchen_slug)
+    context = ProductContextCreator(k_type_slug, kitchen_slug)
     context = AppendBasicContext(context)
     return render(request, 'kitchen/kitchen_pdp.html', context=context)
 
