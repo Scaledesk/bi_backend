@@ -175,8 +175,8 @@
             {% for obj in k_color %}
             <li class="p-0 border-0">
               <!--obj.id-->
-              <span class="swatch-title" id="color_{{ forloop.counter }}" onclick="colorActive( {{ forloop.counter }} )" info="Custom" style="width:25px; height:25px; line-height:25px; position:relative; border: 2px solid transparent;">&nbsp;
-                <img class="image-base img-responsive" id="c_{{ forloop.counter }}" name="{{ obj.name }}" src="{{ obj.image.url }}" style="position: absolute; top: 0;left: 0;width: 100%;height: 100%;">
+              <span class="swatch-title" id="color_{{ obj.id }}" onclick="colorActive( {{ obj.id }} )" info="Custom" style="width:25px; height:25px; line-height:25px; position:relative; border: 2px solid transparent;">&nbsp;
+                <img class="image-base img-responsive" id="c_{{ obj.id }}" name="{{ obj.name }}" src="{{ obj.image.url }}" style="position: absolute; top: 0;left: 0;width: 100%;height: 100%;">
               </span>
             </li>
             {% endfor %}

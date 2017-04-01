@@ -39,15 +39,15 @@ def ServeTheme(request, w_type_slug):
     context = AppendBasicContext(context)
     return render(request, 'wardrobe/product_by_type.html', context)
 
-def WardrobeContextCreator(w_type_slug, theme_slug):
+def WardrobeContextCreator(w_type_slug):
     """ to serves list of wardrobe theme of a particular type """
     context = {}
     wardrobes = []
     w_images = []
     #theme slug is not unique. Its unique together with other attributes
     w_type = WType.objects.get(slug=w_type_slug)
-    theme = WTheme.objects.get(w_type=w_type, slug=theme_slug)
-    w_list = Wardrobe.objects.filter(theme=theme)
+    # theme = WTheme.objects.get(w_type=w_type, slug=theme_slug)
+    w_list = Wardrobe.objects.filter(wtype=w_type)
     for wardrobe in w_list:
         temp = wardrobe.__dict__
         temp['image'] = WImage.objects.filter(wardrobe=wardrobe).first().image.url
@@ -55,22 +55,23 @@ def WardrobeContextCreator(w_type_slug, theme_slug):
     context['wardrobes'] = wardrobes
     return context
 
-def ServeWardrobe(request, w_type_slug, theme_slug):
+def ServeWardrobe(request, w_type_slug):
     """ to serve wardrobes on basis of type and theme """
     context = None
-    context = WardrobeContextCreator(w_type_slug, theme_slug)
+    context = WardrobeContextCreator(w_type_slug)
     context = AppendBasicContext(context)
     return render(request, 'wardrobe/product_by_theme.html', context)
 
-def ProductContextCreator(w_type_slug, theme_slug, wardrobe_slug):
+def ProductContextCreator(w_type_slug, wardrobe_slug):
     """ to create context to serve final product """
     context = {}
     w_type = WType.objects.get(slug=w_type_slug)
     # theme slug and wardrobe slug are not unique. they are unique together with other fields
-    theme = WTheme.objects.get(w_type=w_type, slug=theme_slug)
-    wardrobe = Wardrobe.objects.get(theme=theme, slug=wardrobe_slug)
-
+    # theme = WTheme.objects.get(w_type=w_type, slug=theme_slug)
+    wardrobe = Wardrobe.objects.get(wtype=w_type,slug=wardrobe_slug)
     w_images = WImage.objects.filter(wardrobe=wardrobe)
+    color_ids = w_images.values_list('w_color__id', flat=True).distinct()
+    w_color = WColor.objects.filter(id__in=color_ids)
     w_material = WMaterial.objects.all()
     w_finishing = WFinishing.objects.all()
     # w_appliance = WAppliance.objects.filter(wardrobe=wardrobe)
@@ -96,6 +97,7 @@ def ProductContextCreator(w_type_slug, theme_slug, wardrobe_slug):
     # context['w_appliances'] = w_appliances
     context['min_price'] = min_price
     context['max_price'] = max_price
+    context['w_color'] = w_color
     return context
 
 def ReloadFlex(request):
@@ -112,9 +114,9 @@ def ReloadFlex(request):
     html = render_to_string('wardrobe/reload_flex.html', context)
     return HttpResponse(html)
 
-def ServeProduct(request, w_type_slug, theme_slug, wardrobe_slug):
+def ServeProduct(request, w_type_slug, wardrobe_slug):
     """ to serve final product based on type, theme and wardrobe """
-    context = ProductContextCreator(w_type_slug, theme_slug, wardrobe_slug)
+    context = ProductContextCreator(w_type_slug, wardrobe_slug)
     context = AppendBasicContext(context)
     return render(request, 'wardrobe/wardrobe_pdp.html', context=context)
 

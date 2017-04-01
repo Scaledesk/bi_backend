@@ -63,6 +63,7 @@ class KTheme(BaseModel):
 class Kitchen(BaseModel):
     """ Model to save kitchen detail """
     theme = models.ForeignKey(KTheme, on_delete=models.CASCADE, related_name='Theme')
+    ktype = models.ForeignKey(KType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=30, verbose_name='Name')
     desc = models.CharField(max_length=100, verbose_name="Description")
     l = models.IntegerField(verbose_name='Length')
@@ -274,6 +275,7 @@ class WTheme(BaseModel):
 class Wardrobe(BaseModel):
     """ Model to save wardrobe detail """
     theme = models.ForeignKey(WTheme, on_delete=models.CASCADE, related_name='theme')
+    wtype = models.ForeignKey(WType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=30, verbose_name='Name')
     desc = models.CharField(max_length=100, verbose_name="Description")
     l = models.IntegerField(verbose_name='length')
