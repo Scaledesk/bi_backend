@@ -3,6 +3,7 @@ from django.db import models
 # from colorfield.fields import ColorField
 from autoslug import AutoSlugField
 from django.template.defaultfilters import slugify
+from ckeditor.fields import RichTextField
 
 class BaseModel(models.Model):
     """ Base Class """
@@ -59,13 +60,13 @@ class KTheme(BaseModel):
             ordering = ['name']
             unique_together = ('k_type', 'slug')
 
-
+# models.TextField(max_length=500, verbose_name="Description")
 class Kitchen(BaseModel):
     """ Model to save kitchen detail """
     # theme = models.ForeignKey(KTheme, on_delete=models.CASCADE, related_name='Theme')
     ktype = models.ForeignKey(KType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=30, verbose_name='Name')
-    desc = models.TextField(max_length=500, verbose_name="Description")
+    desc = RichTextField(max_length=500, verbose_name="Description")
     l = models.IntegerField(verbose_name='Length')
     b = models.IntegerField(verbose_name='Breadth')
     h = models.IntegerField(verbose_name='Height')
@@ -272,12 +273,13 @@ class WTheme(BaseModel):
             ordering = ['name']
             unique_together = ('w_type', 'slug')
 
+# models.TextField(max_length=500, verbose_name="Description")
 class Wardrobe(BaseModel):
     """ Model to save wardrobe detail """
     # theme = models.ForeignKey(WTheme, on_delete=models.CASCADE, related_name='theme')
     wtype = models.ForeignKey(WType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=30, verbose_name='Name')
-    desc = models.TextField(max_length=500, verbose_name="Description")
+    desc = RichTextField(max_length=500, verbose_name="Description")
     l = models.IntegerField(verbose_name='length')
     b = models.IntegerField(verbose_name='breadth')
     h = models.IntegerField(verbose_name='height')
