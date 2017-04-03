@@ -79,6 +79,8 @@
   <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper fullscreen-container">
     <div id="rev_slider_2_1" class="rev_slider fullscreenbanner">
       <ul>
+
+
         <li data-transition="fade" data-slotamount="7" data-masterspeed="300"  data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7" data-saveperformance="off" >
           <img src="/static/images/homebanner.jpg" class="img-responsive"  alt="thumb-slider"  data-bgposition="center top" data-bgfit="100% 100%" data-bgrepeat="no-repeat">
           <div class="tp-caption small_light_white sft stt tp-resizeme  tz-title-small"
@@ -121,6 +123,19 @@
                data-endelementdelay="0.1"
                data-endspeed="900"
                data-endeasing="Quad.easeOut"> to cook
+          </div>
+
+          <div class="tp-caption black sfb tp-resizeme"
+               data-x="center" data-hoffset="0"
+               data-y="center" data-voffset="225"
+               data-speed="1100"
+               data-start="500"
+               data-easing="Power3.easeInOut"
+               data-splitin="none"
+               data-splitout="none"
+               data-elementdelay="0.1"
+               data-endelementdelay="0.1"
+               data-endspeed="300"><a class="slider-button2"  href="#"><span>SHOP NOW</span></a>
           </div>
 
         </li>
@@ -972,129 +987,14 @@ function removeResult(){
 
 
 
-<section class="tz-awesome theme-white">
-  <div class="container">
-    <h3 class="tz-title-3">OUR FEATURES</h3>
-          <span class="tz-awesome-content">
-                <a href="#">
-                    <i class="fa fa-magic"></i>
 
-                    <p class="awesome-ds">5 Year Warranty </p>
-
-                </a>
-                <a href="#">
-                    <i class="fa fa-star"></i>
- <p class="awesome-ds">Best Quality Assurance </p>
-                </a>
-
-            <a href="#">
-                    <i class="fa fa-users"></i>
- <p class="awesome-ds">Expert Design Team</p>
-                </a>
-
-                <a href="#">
-                    <i class="fa fa-share-square-o"></i>
-                   <p class="awesome-ds">Hassle Free Installation</p>
-                </a>
-                <a href="#">
-                    <i class="fa fa-taxi"></i>
-                   <p class="awesome-ds">Free Home Delivery </p>
-                </a>
-                <a href="#">
-                    <i class="fa fa-dribbble"></i>
-                   <p class="awesome-ds">Magnificent Design  </p>
-                </a>
-                <a href="#">
-                    <i class="fa fa-tasks"></i>
-                   <p class="awesome-ds">After Sales Services </p>
-                </a>
-            <a href="#">
-                   <i class="fa fa-credit-card"></i>
-                   <p class="awesome-ds">Easy Payment Process</p>
-                </a>
-            </span>
-  </div><!--end class container-->
-</section>
 
 
 
 <!--logo carousel end-->
 
-<section>
-  <div class="tz-footer-content1 hero-section">
-    <div class="container">
-      <h3 class="tz-title-3">
-        CONTACT US NOW
-      </h3>
-      <!-- <br> <br>-->
-      <div class="row tzcustom-row ">
-        <!--map-->
-
-        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.212135477927!2d77.03584181507766!3d28.41285518250496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d2299943b1b17%3A0x367d00c1dc97e821!2sBloom+Interio!5e0!3m2!1sen!2sin!4v1482577674610" width="100%" height="460" frameborder="0" style="border:0;" allowfullscreen></iframe>
-        </div>
 
 
-        <!--cta signup form-->
-
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 hidden-xs" style="position:relative;">
-          <section class="cta-form cta-light">
-
-
-
-            <!-- <form id="contact_request_form" class="cta-signup-form"> -->
-            <form id="contact_request_form" class="cta-signup-form" method="post" action="/contact-request/" enctype="multipart/form-data">
-
-              <h2  class="text-center">Get Your Dream Kitchen</h2>
-              <hr class="hr-color hr-style">
-              <div id="mc-error-cta"><i class="fa fa-exclamation-triangle"></i> Please enter a value</div>
-              <div id="mc-success-cta"><i class="fa fa-envelope"></i> Awesome! We have sent you a confirmation email</div>
-
-              {% csrf_token %}
-
-              <div class="form-group"> <i class="fa fa-user"></i>
-                <input type="text" required value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required>
-              </div>
-
-              <div class="form-group"> <i class="fa fa-phone-square" aria-hidden="true"></i>
-                <input type="number" required value="" name="contact_no" class="form-control input-lg form-input-custom" id="user_email" placeholder="Contact No." required>
-              </div>
-              <div class="form-group"> <i class="fa fa-envelope" aria-hidden="true"></i>
-                <input type="email" required value="" name="user_email" class="form-control input-lg form-input-custom" id="input-email" placeholder="Email" required>
-              </div>
-
-              <div class="form-group"> <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <input type="text" required value="" name="address" class="form-control input-lg form-input-custom" id="address" placeholder="Location" required>
-              </div>
-
-
-              <div class="form-group"> <i class="fa fa-briefcase" aria-hidden="true"></i>
-                <input type="text" required value="" name="budget" class="form-control input-lg form-input-custom" id="budget" placeholder="Budget" required>
-              </div>
-
-              <div class="form-btn text-center">
-                <button type="submit" class="btn hollow-btn1">Book Free Consultation Now</button>
-
-                <br>
-              </div>
-            </form>
-
-
-
-
-
-
-
-
-
-          </section>
-        </div>
-
-        <!--cta signup form end-->
-      </div>
-    </div>
-  </div>
-</section>
 
 
 

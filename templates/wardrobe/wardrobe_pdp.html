@@ -72,7 +72,7 @@
             </li>
 
             <li>
-              <span>Size (in mm):</span> {{ wardrobe.l }} x {{ wardrobe.b }} x {{ wardrobe.h }}
+              <span>Size (in ft.):</span> {{ wardrobe.l }} x {{ wardrobe.b }} x {{ wardrobe.h }}
             </li>
             <li>
               <span>Includes: </span> Shelf
@@ -202,6 +202,92 @@
 
 </div>
 </div>
+
+<footer>
+  <div class="tz-footer-content">
+    <div class="container">
+
+
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 footer-item">
+          <h3 class="module-title">
+                            <span>
+                                BLOOM INTERIO
+                            </span>
+          </h3>
+          <div class="textwidget">
+            Ignited by the passion for innovative techniques in woodcraft and decors Bloom Interio has come up with a range of Modular Kitchen and Furniture as the masterpieces of timeless beauty to adorn your interest.
+          </div>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1  col-xs-12 footer-item">
+          &nbsp;
+        </div>
+        <div class="col-lg-3 col-md-3 hidden-xs  col-xs-12 footer-item">
+          <h3 class="module-title">
+                            <span>
+                                OUR SERVICES
+                            </span>
+          </h3>
+          <ul class="nav-collapse hidden-xs">
+            <li class="footer-navi">
+              <a href="{% url 'landing' %}">Home</a>
+
+
+            </li>
+            <li class="footer-navi">
+              <a href="{% url 'kitchen' %}">Kitchen</a>
+            </li>
+            <li class="footer-navi">
+              <a href="{% url 'wardrobe' %}">Wardrobe</a>
+            </li>
+            <li class="footer-navi">
+              <a href="{% url 'faq' %}">FAQs</a>
+            </li>
+            <li class="footer-navi">
+              <a href="{% url 'terms_and_conditions' %}">Terms & Conditions</a>
+            </li>
+            <li class="footer-navi">
+              <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 footer-item">
+          <h3 class="module-title">
+                            <span>
+                                CONTACT
+                            </span>
+          </h3>
+          <div class="tzwidget-contact">
+            <address>
+
+              <i class="fa fa-phone" aria-hidden="true"></i>&nbsp; 0124-4932525</br>
+              <i class="fa fa-envelope" aria-hidden="true" style="font-size: 12px;"></i>&nbsp; contact@bloominterio.com </br>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; Bloom Interio
+              No. 1216, 12th Floor,<br>&nbsp;&nbsp;&nbsp;
+              Jmd Megapolis, Sohna Road, Sector 48,<br>&nbsp;&nbsp;&nbsp;
+              Gurugram, Haryana 122018
+
+            </address>
+            <!-- <span>
+                  +44 (0) 123 456 7891
+             </span>-->
+            <!--  <a href="#">dummy@gmail.com</a>-->
+                            <span class="tzwidget-social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa  fa-pinterest-p" aria-hidden="true"></i></a>
+                            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tz-copyright theme-white">
+    <p>© 2017 Bloom Interio, Designed by <a href="http://www.scaledesk.com/" style="text-decoration:none; color:#07c8fa;">Scaledesk Web Studio.</a> </p>
+  </div>
+</footer><!--end class tz-footer-->
 
 
 <!-- Modal -->
@@ -403,31 +489,26 @@
 
 
 </div>
-
-{% endblock %}
-
-{% block custom_script %}
-
 <script>
-var initial_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid transparent;";
-var selected_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid green;";
-var color = "";
-var default_material = document.getElementById('select_material').value;
-var default_finish = document.getElementById('select_finish').value;
+  var initial_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid transparent;";
+  var selected_style = "width:25px; height:25px; line-height:25px; position:relative; border: 2px solid green;";
+  var color = "";
+  var default_material = document.getElementById('select_material').value;
+  var default_finish = document.getElementById('select_finish').value;
 
-var selected = 0;
-function colorActive(color_id){
-  document.getElementById("color_"+selected).style = initial_style;
-  selected = color_id;
-  document.getElementById("color_"+color_id).style = selected_style;
-  document.getElementById('selected_color').value = document.getElementById("c_"+color_id).getAttribute("name");
+  var selected = 0;
+  function colorActive(color_id){
+    document.getElementById("color_"+selected).style = initial_style;
+    selected = color_id;
+    document.getElementById("color_"+color_id).style = selected_style;
+    document.getElementById('selected_color').value = document.getElementById("c_"+color_id).getAttribute("name");
 
 
-  // code to relod the flex images on selecting colors
-  $.ajax({
-    type: "POST",
-    url: "/wardrobe/reload-flex/",
-    data: { wardrobe_id:{{ wardrobe.id }}, color:document.getElementById("c_"+color_id).getAttribute("name"), csrfmiddlewaretoken:getCookie('csrftoken') },
+    // code to relod the flex images on selecting colors
+    $.ajax({
+      type: "POST",
+      url: "/wardrobe/reload-flex/",
+      data: { wardrobe_id:{{ wardrobe.id }}, color:document.getElementById("c_"+color_id).getAttribute("name"), csrfmiddlewaretoken:getCookie('csrftoken') },
     success: function( returnedData) {
       // alert(returnedData)
       $( '#reload_flex').html( returnedData );
@@ -435,60 +516,66 @@ function colorActive(color_id){
       $( '#reload_flex').html( returnedData );
       // $("#reload_flex").page();
       jQuery('#carousel').flexslider({
-          animation: "slide",
-          controlNav: false,
-          animationLoop: false,
-          slideshow: false,
-          directionNav: false,
-          autoHeight: true,
-          itemWidth: 80,
-          itemMargin: 80,
-          asNavFor: '#slider'
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        directionNav: false,
+        autoHeight: true,
+        itemWidth: 80,
+        itemMargin: 80,
+        asNavFor: '#slider'
       });
       jQuery('#slider').flexslider({
-          animation: "slide",
-          controlNav: false,
-          animationLoop: false,
-          directionNav: false,
-          autoHeight: true,
-          slideshow: false,
-          sync: "#carousel"
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        directionNav: false,
+        autoHeight: true,
+        slideshow: false,
+        sync: "#carousel"
       });
       setTimeout(function () {
         $('#reload_flex').css({"visibility": "true"});
       }, 300);
     }
   });
-}
-
-function changeMaterial(){
-  if (default_material == document.getElementById('select_material').value){
-    document.getElementById('selected_material').value = 'None';
-  }else{
-    document.getElementById('selected_material').value = document.getElementById('select_material').value;
   }
-}
 
-function changeFinish(){
-  if (default_finish == document.getElementById('select_finish').value){
-    document.getElementById('selected_finish').value = 'None';
-  }else{
-    document.getElementById('selected_finish').value = document.getElementById('select_finish').value;
+  function changeMaterial(){
+    if (default_material == document.getElementById('select_material').value){
+      document.getElementById('selected_material').value = 'None';
+    }else{
+      document.getElementById('selected_material').value = document.getElementById('select_material').value;
+    }
   }
-}
+
+  function changeFinish(){
+    if (default_finish == document.getElementById('select_finish').value){
+      document.getElementById('selected_finish').value = 'None';
+    }else{
+      document.getElementById('selected_finish').value = document.getElementById('select_finish').value;
+    }
+  }
 
 
-$( "#select_material" ).change(function() {
-  changeMaterial();
-});
+  $( "#select_material" ).change(function() {
+    changeMaterial();
+  });
 
-$( "#select_finish" ).change(function() {
-  changeFinish();
-});
+  $( "#select_finish" ).change(function() {
+    changeFinish();
+  });
 
-$('#send_data_form').submit(function() {
-  // to disable the submit button to prevent multiple submission
-  $(this).find(':input[type=submit]').prop('disabled', true);
-});
+  $('#send_data_form').submit(function() {
+    // to disable the submit button to prevent multiple submission
+    $(this).find(':input[type=submit]').prop('disabled', true);
+  });
 </script>
+
+{% endblock %}
+
+{% block custom_script %}
+
+
 {% endblock %}
