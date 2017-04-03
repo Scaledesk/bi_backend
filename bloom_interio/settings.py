@@ -99,7 +99,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bloom_interio',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': 'root',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -152,17 +152,17 @@ MEDIA_URL = '/media/'
 
 
 #smtp settings
-# USER_EMAIL='tamyworld@gmail.com'
+# USER_EMAIL='contact@bloominterio.com'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'tamyworld@gmail.com'
-EMAIL_HOST_PASSWORD ='lytxspoqppqotqzr'
-DEFAULT_FROM_EMAIL = 'tamyworld@gmail.com'
+EMAIL_HOST_USER = 'contact@bloominterio.com'
+EMAIL_HOST_PASSWORD ='arjundhull27'
+DEFAULT_FROM_EMAIL = 'contact@bloominterio.com'
 # DEFAULT_TO_EMAIL = ''
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 #Website Detail
 # WEBSITE = 'http://127.0.0.1:8000/'
-ADMIN_EMAIL = 'javedahamad4@gmail.com'
+ADMIN_EMAIL = 'priyankadhull@bloominterio.com'
 # ADMIN_EMAIL = 'pbdhull@gmail.com'
