@@ -26,7 +26,7 @@
                     <div class="bestsellers-thumb">
                          <!-- <img src="/static/demos/Photoshop%20Images/wardrobe6.png" alt="{{wardrobe.l}} x {{wardrobe.b}} x {{wardrobe.h}}"> -->
 
-                        <img src="{{wardrobe.image}}" width="360" height="360" alt="{{wardrobe.l}} x {{wardrobe.b}} x {{wardrobe.h}}">
+                        <img src="/media/{{wardrobe.thumbnail}}" width="360" height="360" alt="{{wardrobe.l}} x {{wardrobe.b}} x {{wardrobe.h}}">
                         <div class="tz-bestsellers-content1">
                             <h6><a href="{{ wardrobe.slug }}">{{wardrobe.l}} X {{wardrobe.b}} X {{wardrobe.h}}</a></h6>
                             <p>
@@ -41,7 +41,8 @@
 
                         </div>
                     </div>
-                    <h6><a href="{{ wardrobe.slug }}">Size: {{wardrobe.l}} x {{wardrobe.b}} x {{wardrobe.h}}(in mm)</a></h6>
+                    <!--Size: {{wardrobe.l}} x {{wardrobe.b}} x {{wardrobe.h}}(in mm)-->
+                    <h6><a href="{{ wardrobe.slug }}">{{wardrobe.name}}</a></h6>
                 </div>
             </div>
             {% endfor %}
@@ -49,62 +50,6 @@
         </div>
     </div><!--end class container-->
 </section><!--end class tz-bestsellers2-->
-
-
-<section class="theme-white tzcustom-block style-border">
-    <div class="container">
-        <h3 class="tz-title-3">OUR FEATURES</h3>
-        <p class="tz-attach">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin ligula vel fringilla lacinia. </p>
-        <div class="row tzcustom-row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 custom-right">
-                <ul class="tz-collection collection-left tz-collection2">
-                    <li>
-                        <figure class="item-collection">
-                            <img src="/static/demos/flask.png" alt="professional">
-                            <figcaption>
-                                <h6>WE’RE PROFESSIONAL</h6>
-                                <p>Sed quis dolor in lacus ullamcorper euismod nec et nibh. Morbi mollis, enim vitae rutrum porttitor.</p>
-                            </figcaption>
-                        </figure>
-                    </li>
-
-                    <li>
-                        <figure class="item-collection">
-                            <img src="/static/demos/thumnbup.png" alt="passionate">
-                            <figcaption>
-                                <h6>WE’RE PASSIONATE</h6>
-                                <p>Sed quis dolor in lacus ullamcorper euismod nec et nibh. Morbi mollis, enim vitae rutrum porttitor.</p>
-                            </figcaption>
-                        </figure>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 custom-right">
-                <ul class="tz-collection collection-left tz-collection2">
-                    <li>
-                        <figure class="item-collection">
-                            <img src="/static/demos/thumnbup.png" alt="passionate">
-                            <figcaption>
-                                <h6>WE’RE PASSIONATE</h6>
-                                <p>Sed quis dolor in lacus ullamcorper euismod nec et nibh. Morbi mollis, enim vitae rutrum porttitor.</p>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="item-collection">
-                            <img src="/static/demos/thumb.png" alt="friendly">
-                            <figcaption>
-                                <h6>WE’RE FRIENDLY</h6>
-                                <p>Sed quis dolor in lacus ullamcorper euismod nec et nibh. Morbi mollis, enim vitae rutrum porttitor.</p>
-                            </figcaption>
-                        </figure>
-                    </li>
-
-                </ul>
-            </div>
-        </div><!--end class row-->
-    </div><!--end class container-->
-</section><!--end class tzcustom-block-->
 
 
 

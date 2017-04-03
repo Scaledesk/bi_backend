@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'web',
     'kitchen',
     'wardrobe',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,24 @@ TEMPLATE_DIR = BASE_DIR + '/templates'
 #         },
 #     },
 # ]
+
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+        ],
+        'height': 200
+    },
+    'awesome_ckeditor': {
+        'toolbar': 'Basic',
+    },
+}
+
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

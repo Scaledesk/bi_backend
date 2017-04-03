@@ -26,7 +26,7 @@
                     <div class="bestsellers-thumb">
                          <!-- <img src="/static/demos/Photoshop%20Images/kitchen6.png" alt="{{kitchen.l}} x {{kitchen.b}} x {{kitchen.h}}"> -->
 
-                        <img src="{{kitchen.image}}" class="img-responsive" width="360" height="360" alt="{{kitchen.l}} x {{kitchen.b}} x {{kitchen.h}}">
+                        <img src="/media/{{kitchen.thumbnail}}" class="img-responsive" width="360" height="360" alt="{{kitchen.l}} x {{kitchen.b}} x {{kitchen.h}}">
                         <div class="tz-bestsellers-content1">
                             <h6><a href="{{ kitchen.slug }}">{{kitchen.l}} X {{kitchen.b}} X {{kitchen.h}}</a></h6>
                             <p>
@@ -41,7 +41,8 @@
 
                         </div>
                     </div>
-                    <h6><a href="{{ kitchen.slug }}">Size: {{kitchen.l}} x {{kitchen.b}} x {{kitchen.h}}(in mm)</a></h6>
+                    <!--Size: {{kitchen.l}} x {{kitchen.b}} x {{kitchen.h}}(in mm)-->
+                    <h6><a href="{{ kitchen.slug }}">{{kitchen.name}}</a></h6>
                 </div>
             </div>
             {% endfor %}
