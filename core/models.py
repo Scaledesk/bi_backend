@@ -63,7 +63,7 @@ class KTheme(BaseModel):
 # models.TextField(max_length=500, verbose_name="Description")
 class Kitchen(BaseModel):
     """ Model to save kitchen detail """
-    # theme = models.ForeignKey(KTheme, on_delete=models.CASCADE, related_name='Theme')
+    #theme = models.ForeignKey(KTheme, on_delete=models.CASCADE, related_name='Theme')
     ktype = models.ForeignKey(KType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=30, verbose_name='Name')
     thumbnail = models.ImageField(upload_to='kitchen/images/', default='kitchen/images/thumbnail.jpg')
@@ -277,7 +277,7 @@ class WTheme(BaseModel):
 # models.TextField(max_length=500, verbose_name="Description")
 class Wardrobe(BaseModel):
     """ Model to save wardrobe detail """
-    # theme = models.ForeignKey(WTheme, on_delete=models.CASCADE, related_name='theme')
+    #theme = models.ForeignKey(WTheme, on_delete=models.CASCADE, related_name='theme')
     wtype = models.ForeignKey(WType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=30, verbose_name='Name')
     desc = RichTextField(max_length=500, verbose_name="Description")
