@@ -28,6 +28,8 @@ urlpatterns = [
     url(r'^contact/', ContactView, name='contact'),
     url(r'^about/', AboutView, name='about'),
     url(r'^faq/', FAQView, name='faq'),
+    # ne page urls
+    url(r'^landing-final/', ServeLandingView, name='landing-final'),
     url(r'^interior/', InteriorView, name='interior'),
     url(r'^product-help/', ProductHelpView, name='product_help'),
     url(r'^terms-and-conditions/', TermsAndConditionsView, name='terms_and_conditions'),

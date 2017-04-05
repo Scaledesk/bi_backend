@@ -138,3 +138,10 @@ def ThankYouView(request):
     source = request.GET.get('source', None)
     context['source'] = source
     return render(request, "thank_you.html", context)
+
+
+def ServeLandingView(request):
+    """ to serve frequently asked question page """
+    context = {}
+    context = AppendBasicContext(context)
+    return render(request, 'index-new.html', context)
