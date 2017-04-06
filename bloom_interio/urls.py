@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^about/', AboutView, name='about'),
     url(r'^faq/', FAQView, name='faq'),
     # ne page urls
-    url(r'^landing-final/', ServeLandingView, name='landing-final'),
+    url(r'^modularkitchen-delhi-ncr/', ServeLandingView, name='modularkitchen-delhi-ncr'),
     url(r'^interior/', InteriorView, name='interior'),
     url(r'^product-help/', ProductHelpView, name='product_help'),
     url(r'^terms-and-conditions/', TermsAndConditionsView, name='terms_and_conditions'),
@@ -38,3 +38,4 @@ urlpatterns = [
     url(r'^thank-you', ThankYouView, name='thank_you'),
     url(r'^$', LandingView, name='landing')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -145,3 +145,4 @@ def ServeLandingView(request):
     context = {}
     context = AppendBasicContext(context)
     return render(request, 'index-new.html', context)
+

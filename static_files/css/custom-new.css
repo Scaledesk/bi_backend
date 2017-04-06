@@ -125,8 +125,10 @@
 }
 
 .wed-btn{
-    background-color: #ff0072!important;
-    color: #f5f5f5 !important;
+    background: radial-gradient(#d8c87a , #c4a146), #fff;
+    color: #fff !important;
+  /*  border:1px solid transparent;*/
+    transition: all 0.3s ease-in-out
 }
 
 
@@ -151,7 +153,7 @@
 }
 
 .border-p{
-    border-color: #ff0072;
+    border-color: #d7b85d;
     border-style: double;
     border-width: 4px;
 }
@@ -370,15 +372,15 @@
 
 
 .navbar-default.affix .navbar-nav > li > a:hover, .navbar-default.affix .navbar-nav > li > a:active, .mobile-nav-overlay ul li a:hover, .mobile-nav-overlay ul li a:active, .mobile-nav-overlay ul li a:focus, .navbar-nav .active .fa-times:hover, .navbar-nav .active .fa-times:active, .navbar-nav .active .fa-times:focus{
-    color: #ff0072;
+    color: #d7b85d;
 }
 
 a{
-    color: #ff0072;
+    color: #d7b85d;
 }
 
 a:hover, a:focus{
-    color: #ff0072;
+    color: #d7b85d;
 }
 
 
@@ -509,12 +511,14 @@ a:hover, a:focus{
 }
 
 .wed-btn:hover{
-    color: #ffffff !important;
-    background-color: #dc0062 !important;
+    color: #fff;
+    background: #d7b85d;
+
 }
 
 .user-reviews{
-    background-color: #dc0062;
+   /* background-color: #dc0062;*/
+    background: radial-gradient(#d8c87a , #c4a146), #fff !important;
 
 }
 
