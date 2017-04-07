@@ -4,7 +4,7 @@ $(function() {
 
 
     /* ==========================================================================
-       CTA Form   
+       CTA Form
        ========================================================================== */
 
 
@@ -26,7 +26,7 @@ $(function() {
 
 
     /* ==========================================================================
-       Sub Form   
+       Sub Form
        ========================================================================== */
 
 
@@ -171,7 +171,7 @@ $(function() {
 
 
     /* ==========================================================================
-   Tooltip 
+   Tooltip
    ========================================================================== */
 
     $("[data-toggle=tooltip]").tooltip();
@@ -291,7 +291,7 @@ $(function() {
     $(formFields).on('focus', function() {
         $(this).removeClass('input-error');
     });
-    $('.contact-form form').submit(function(e) {
+    $('.contact-form').submit(function(e) {
         e.preventDefault();
         $(formFields).removeClass('input-error');
         var postdata = $('.contact-form form').serialize();

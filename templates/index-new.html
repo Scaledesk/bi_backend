@@ -144,29 +144,29 @@
 
                     <div class="col-md-4">
                         <section class="cta-form cta-light">
-                            <form id="cta-signup-form" class="cta-signup-form form-bg">
-                                <!--<h2  class="text-center">Signup for a FREE trial</h2>-->
+                            <form method="post" action="{% url 'requested-callback' %}" class="cta-signup-form form-bg">                                <!--<h2  class="text-center">Signup for a FREE trial</h2>-->
                                 <!--<div id="mc-error-cta"><i class="fa fa-exclamation-triangle"></i> Please enter a value</div>-->
+                                {% csrf_token %}
                                 <div id="mc-success-cta"><i class="fa fa-envelope"></i> Awesome! We have sent you a confirmation email</div>
                                 <div class="form-group"> <i class="fa fa-user"></i>
-                                    <input type="text" value="" name="NAME" class="form-control input-lg" id="input-name" placeholder="Your name" required>
+                                    <input type="text" value="" name="name" class="form-control input-lg" id="input-name" placeholder="Your name" required>
                                 </div>
                                 <div class="form-group"><i class="fa fa-phone-square" aria-hidden="true"></i>
 
 
-                                    <input type="number" value="" name="EMAIL" class="form-control input-lg" id="input-email" placeholder="Contact Number" required>
+                                    <input type="number" value="" name="contact_no" class="form-control input-lg" id="input-email" placeholder="Contact Number" required>
                                 </div>
 
                                 <div class="form-group"><i class="fa fa-thumbs-up" aria-hidden="true"></i>
 
-                                    <input type="text" value="" name="EMAIL" class="form-control input-lg" id="input-email" placeholder="Interested Services" required>
+                                    <input type="text" value="" name="interested_service" class="form-control input-lg" id="input-email" placeholder="Interested Services" required>
                                 </div>
 
 
                                 <div class="form-group"><i class="fa fa-envelope-square" aria-hidden="true"></i>
 
 
-                                    <input type="email" value="" name="EMAIL" class="form-control input-lg" id="input-email" placeholder="Email" required>
+                                    <input type="email" value="" name="email" class="form-control input-lg" id="input-email" placeholder="Email" required>
                                 </div>
 
 
@@ -1420,24 +1420,25 @@
 
                 <!--contact form-->
 
-                <div class="contact-form text-center">
+                <div class="text-center">
                     <header class="section-header"> <img src="/static/images/img-new/WEDDING-EXPERT.png" alt="support icon" width="100">
                         <h2>Contact us</h2>
                         <h3>Have any questions? Send us a message.</h3>
                     </header>
-                    <form class="cta-form cta-light" action="php/contact.php" method="post">
+                    <form class="" action="{% url 'requested-callback' %}" method="post">
                         <div class="form-group">
-                            <input  type="text" name="name" class="contact-name form-control input-lg" placeholder="Name *" id="contact-name">
+                            <input  type="text" name="name" class="contact-name form-control input-lg" placeholder="Name *" id="contact-name" required="">
                         </div>
+                        {% csrf_token %}
                         <div class="form-group">
                         <input  type="text"  name="email" class="contact-email form-control input-lg" placeholder="Email address *" id="contact-email">
                         </div>
                         <div class="form-group">
 
-                            <input type="text" value="" name="EMAIL" class="form-control input-lg" id="input-email" placeholder="Interested Services" required>
+                            <input type="text" value="" name="interested_service" class="form-control input-lg" id="input-email" placeholder="Interested Services" required>
                         </div>
                         <div class="form-group">
-                            <input type="number" name="antispam" placeholder="Number" class="contact-antispam form-control input-lg" id="contact-antispam">
+                            <input type="number" name="contact_no" name="antispam" placeholder="Number" class="contact-antispam form-control input-lg" id="contact-antispam">
                         </div>
                         <button type="submit" class="btn wed-btn">SEND MESSAGE</button>
                     </form>
@@ -1461,34 +1462,30 @@
 
                     <!--contact form-->
 
-                    <div class="contact-form text-center">
+                    <div class=" text-center">
                         <header class="section-header"> <img src="/static/images/img-new/WEDDING-EXPERT.png" alt="support icon" width="100">
                             <h2>REQUEST FOR A FREE CONSULTATION</h2>
                             <!--<h3>Have any questions? Send us a message.</h3>-->
                         </header>
-                        <form class="cta-form cta-light" action="php/contact.php" method="post">
+                        <form class="cta-form cta-light" action="{% url 'free-consultation' %}" method="post">
                             <div class="form-group">
-                                <input  type="text" name="name" class="contact-name form-control input-lg" placeholder="Full Name *" id="contact-name">
+                                <input  type="text" name="name" class="contact-name form-control input-lg" placeholder="Full Name *" id="contact-name" required="">
                             </div>
+
+                            {% csrf_token %}
 
                             <div class="form-group text-left">
-                                <label class="radio-inline m-r-20"><input type="radio" name="optradio"> I'm The Groom</label>
-                                <label class="radio-inline"><input type="radio" name="optradio">I'm The Bride</label>
-
-
-
-                            </div>
-
-
-
-                            <div class="form-group">
-                                <input type="number" name="antispam" placeholder="Phone Number" class="contact-antispam form-control input-lg" id="contact-antispam">
+                                <label class="radio-inline m-r-20"><input type="radio" name="u_type" value="Groom"> I'm The Groom</label>
+                                <label class="radio-inline"><input type="radio" name="u_type" value="Bride">I'm The Bride</label>
                             </div>
 
                             <div class="form-group">
-                                <input type="number" name="antispam" placeholder="E-Mail Address" class="contact-antispam form-control input-lg" id="contact-antispam">
+                                <input type="number" name="contact_no" placeholder="Phone Number" class="contact-antispam form-control input-lg" id="contact-antispam" required="">
                             </div>
 
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="E-Mail Address" class="contact-antispam form-control input-lg" id="contact-antispam" required="">
+                            </div>
 
                             <button type="submit" class="btn wed-btn">SEND MESSAGE</button>
                         </form>
@@ -1501,6 +1498,13 @@
             </div>
         </div>
     </div>
+
+
+<script>
+
+
+
+</script>
 
 
 

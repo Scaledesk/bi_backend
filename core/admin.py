@@ -64,7 +64,7 @@ class WardrobeAdmin(NestedModelAdmin):
 ##### END WARDROBE #####
 
 admin.site.register(KType)
-admin.site.register(KTheme)
+# admin.site.register(KTheme)
 admin.site.register(Kitchen, KitchenAdmin)
 admin.site.register(KIncludes, KIncludesAdmin)
 # admin.site.register(KISub)
@@ -76,7 +76,7 @@ admin.site.register(KColor)
 
 
 admin.site.register(WType)
-admin.site.register(WTheme)
+# admin.site.register(WTheme)
 admin.site.register(Wardrobe, WardrobeAdmin)
 # admin.site.register(WIncludes, WIncludesAdmin)
 # admin.site.register(WISub)
