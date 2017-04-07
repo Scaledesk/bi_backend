@@ -185,13 +185,11 @@ def FreeConsultation(request): #user_email, activation_key, first_name
         name = request.POST['name']
         contact_no = request.POST['contact_no']
         email = request.POST['email']
-        u_type = request.POST['u_type']
 
         subject = 'Consultation'
         message = ('Name: ' + name + \
             '\nContact No: ' + contact_no + \
-            '\nEmail: '+ email + \
-            '\ntype: '+ u_type)
+            '\nEmail: '+ email)
 
         if send_mail(subject, message, DEFAULT_FROM_EMAIL, [ADMIN_EMAIL]):
             subject = 'Bloom Interio'
