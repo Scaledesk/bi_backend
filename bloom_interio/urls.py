@@ -30,6 +30,9 @@ urlpatterns = [
     url(r'^faq/', FAQView, name='faq'),
     # ne page urls
     url(r'^modularkitchen-delhi-ncr/', ServeLandingView, name='modularkitchen-delhi-ncr'),
+    url(r'^requestedCallback/', RequestedCallbackView, name='requested-callback'),
+    url(r'^freeConsultation/', FreeConsultation, name='free-consultation'),
+
     url(r'^interior/', InteriorView, name='interior'),
     url(r'^product-help/', ProductHelpView, name='product_help'),
     url(r'^terms-and-conditions/', TermsAndConditionsView, name='terms_and_conditions'),
@@ -38,4 +41,3 @@ urlpatterns = [
     url(r'^thank-you', ThankYouView, name='thank_you'),
     url(r'^$', LandingView, name='landing')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

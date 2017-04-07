@@ -146,3 +146,64 @@ def ServeLandingView(request):
     context = AppendBasicContext(context)
     return render(request, 'index-new.html', context)
 
+
+
+def RequestedCallbackView(request): #user_email, activation_key, first_name
+    if request.method == 'POST':
+        from django.core.mail import send_mail
+        from bloom_interio.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
+        name = request.POST['name']
+        contact_no = request.POST['contact_no']
+        email = request.POST['email']
+        interested_service = request.POST['interested_service']
+
+        subject = 'Requested Callback'
+        message = ('Name: ' + name + \
+            '\nContact No: ' + contact_no + \
+            '\nEmail: '+ email + \
+            '\nInterested service: '+ interested_service)
+
+        if send_mail(subject, message, DEFAULT_FROM_EMAIL, [ADMIN_EMAIL]):
+            subject = 'Bloom Interio'
+            message = ('Hi ' + name + ',' \
+                '\n\nThanks for contacting us.'\
+                '\nWe will get back to you soon'\
+                '\n\nRegards,\nBloom Interio')
+            subject = 'Thanks for contacting us.'
+            send_mail(
+                subject,
+                message,
+                DEFAULT_FROM_EMAIL,
+                [email],
+                fail_silently=True,)
+            return redirect("/thank-you/?source=contact")
+
+def FreeConsultation(request): #user_email, activation_key, first_name
+    if request.method == 'POST':
+        from django.core.mail import send_mail
+        from bloom_interio.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
+        name = request.POST['name']
+        contact_no = request.POST['contact_no']
+        email = request.POST['email']
+        u_type = request.POST['u_type']
+
+        subject = 'Consultation'
+        message = ('Name: ' + name + \
+            '\nContact No: ' + contact_no + \
+            '\nEmail: '+ email + \
+            '\ntype: '+ u_type)
+
+        if send_mail(subject, message, DEFAULT_FROM_EMAIL, [ADMIN_EMAIL]):
+            subject = 'Bloom Interio'
+            message = ('Hi ' + name + ',' \
+                '\n\nThanks for contacting us.'\
+                '\nWe will get back to you soon'\
+                '\n\nRegards,\nBloom Interio')
+            subject = 'Thanks for contacting us.'
+            send_mail(
+                subject,
+                message,
+                DEFAULT_FROM_EMAIL,
+                [email],
+                fail_silently=True,)
+            return redirect("/thank-you/?source=contact")
