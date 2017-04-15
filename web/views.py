@@ -155,13 +155,17 @@ def RequestedCallbackView(request): #user_email, activation_key, first_name
         name = request.POST['name']
         contact_no = request.POST['contact_no']
         email = request.POST['email']
+        address = request.POST['address']
+        budget = request.POST['budget']
         interested_service = request.POST['interested_service']
 
         subject = 'Requested Callback'
         message = ('Name: ' + name + \
             '\nContact No: ' + contact_no + \
             '\nEmail: '+ email + \
-            '\nInterested service: '+ interested_service)
+            '\nAddress: '+ address + \
+            '\nInterested service: '+ interested_service + \
+            '\nBudget: '+ budget)
 
         if send_mail(subject, message, DEFAULT_FROM_EMAIL, [ADMIN_EMAIL]):
             subject = 'Bloom Interio'
