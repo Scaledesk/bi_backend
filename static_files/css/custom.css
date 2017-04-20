@@ -1186,7 +1186,7 @@ and (max-device-width: 480px) {
 
 /*thankyou*/
     .thank-banner {
-    background: url(../images/img-new/2.jpg) center no-repeat;
+    background: url(../images/2.jpg) center no-repeat;
     width: 100%;
     background-size: cover;
     height: 100vh;
