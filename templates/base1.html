@@ -77,7 +77,7 @@ favicon
 -->
 
 {% block header %}
-<header class="tz-header tz-header2">
+<header class="tz-header fixed tz-header2">
     <div class="container">
         <h3 class="tz-logo pull-left"  style="
     margin-bottom: 0px;">
@@ -164,6 +164,18 @@ favicon
         </nav>
     </div>
 </header>
+<!--
+
+floating button
+-->
+
+<div class="float-btn" style="top:95px;bottom:auto;" id="button-free">
+
+    <a href="#cta-form" class="myfloat" style="width: 200px;padding: 4px;height: 30px;">
+   Get Free Consultation
+    </a>
+
+</div>
 {% endblock %}
 
 
@@ -178,6 +190,18 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
 {% block footer %}
 
 
+<!--
+
+floating button
+-->
+
+<div class="float-btn">
+
+    <button class="myfloat" data-toggle="modal" data-target="#mycalci">
+    Kitchen Cost Calculator
+    </button>
+
+</div>
 <!--feature section-->
 
 <section class="tz-awesome theme-white">
@@ -227,13 +251,13 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
 
 <!--contact us now section-->
 <section>
-    <div class="tz-footer-content1 hero-section">
+    <div class="tz-footer-content1 hero-section" id="cta-form">
         <div class="container">
             <h3 class="tz-title-3">
                 CONTACT US NOW
             </h3>
             <!-- <br> <br>-->
-            <div class="row tzcustom-row ">
+            <div class="row tzcustom-row " style="margin-bottom: 15px;">
                 <!--map-->
 
                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
@@ -243,7 +267,7 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
 
                 <!--cta signup form-->
 
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 hidden-xs" style="position:relative;">
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" style="position:relative;">
                     <section class="cta-form cta-light">
 
 
@@ -399,6 +423,137 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
         <p>© 2017 Bloom Interio, Designed by <a href="http://www.scaledesk.com/" style="text-decoration:none; color:#07c8fa;">Scaledesk Web Studio.</a> </p>
     </div>
 </footer><!--end class tz-footer-->
+<!-- Modal1 -->
+<div id="mycalci" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 75%;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+
+<div class="pull-right">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true" style="font-size: 20px;"></i></button>
+</div>
+        <!--<h4 class="modal-title">Modal Header</h4>-->
+      </div>
+      <div class="modal-body">
+
+        <!--
+        form-->
+
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="tabs-style">
+              <ul class="nav nav-tabs" role="tablist" id="detailTab">
+                <li class="active"><a href="#calci" role="tab" data-toggle="tab">Kitchen Cost Calculator</a></li>
+                <li><a href="#quotes" role="tab" data-toggle="tab">Get Custom Quotes</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="calci">
+
+                  <div class="tz-our-blog padding-ourblog" style="background:radial-gradient(#d8c87a , #c4a146), #fff !important;">
+
+
+                      <div class="row">
+                        <div class="col-md-4 text-center right-border" style="padding-left: 40px;">
+                          <!--   <a href="#" class="tz-button-dekor"><span>STEP-1 </span></a>-->
+                          <p class="f-w" style="float:left;font-size: 19px;"><b>Choose Your Kitchen</b></p>
+                          <!-- <form> -->
+                          <div class="form-group" style="width:220px;">
+                            <!-- <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required> -->
+                            <select name="kitchen_type" id="k_type" name="k_type" onchange="loadkitchenDescription(this)" id="select_kitchen" class="form-control input-lg form-input-custom calci-select">
+                              <option class="calci-option">Choose an Option...</option>
+                              {% for obj in k_types %}
+                                {% if obj.name != 'Island Kitchen' %}
+                                  <option value="{{obj.id}}" class="calci-option">{{obj.name}}</option>
+                                {% endif %}
+                              {% endfor %}
+                            </select>
+                          </div>
+                          <!-- </form> -->
+                        </div>
+                        <div id="k_type_detail">
+
+                        </div>
+                      </div>
+
+                  </div>
+
+                </div>
+                
+                <div class="tab-pane" id="quotes">
+                  <div class="row">
+                    <div class="col-xs-pull-12">
+                      <div class="cta-form cta-light custom-quote-form">
+                        <form id="modalForm" class="send_data_form" method="post" action="/modal-request/">
+                          <!-- <form id="cta-signup-form" class="cta-signup-form"> -->
+                          <h2  class="text-center">Get Your Dream Kitchen</h2>
+                          <hr class="hr-color hr-style">
+                          <div id="mc-error-cta"><i class="fa fa-exclamation-triangle"></i> Please enter a value</div>
+                          <div id="mc-success-cta"><i class="fa fa-envelope"></i> Awesome! We have sent you a confirmation email</div>
+                          {% csrf_token %}
+                          <div class="form-group">
+                            <input type="text" required value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required="">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" required value="" name="contact_no" class="form-control input-lg form-input-custom" id="contact_no" placeholder="Contact No." required="">
+                          </div>
+                          <div class="form-group">
+                            <input type="email" required value="" name="email" class="form-control input-lg form-input-custom" id="email" placeholder="Email" required="">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" required value="" name="address" class="form-control input-lg form-input-custom" id="address" placeholder="Address" required="">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" required value="" name="budget" class="form-control input-lg form-input-custom" id="budget" placeholder="Budget" required>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="sel1">Requirement:</label>
+                            <select class="form-control input-lg form-input-custom" id="sel1" >
+                              <option>Within 15 days</option>
+                              <option>Within 1 month</option>
+                              <option>Within 6 months</option>
+
+                            </select>
+                          </div>
+                          
+                          <div class="row">
+                            <div class="col-md-12 col-xs-6 text-center">
+                              <div class="form-btn text-center">
+                                <button type="submit" class="btn hollow-btn1">Book Free Consultation Now</button>
+                                <br>
+                              </div>
+                            </div>
+                            </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div><!--end class container-->
+
+
+
+
+
+        <!--       form end-->
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
 {% endblock %}
 
 {% block script %}
@@ -542,7 +697,7 @@ $('#contact_request_form').submit(function() {
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3054939.js"></script>
 -->
 
-<script src="//load.sumome.com/" data-sumo-site-id="0a48d44c7350da66807f6363d6d626993cef00eb1e8c127830ab13bd102e72f0" async="async"></script>
+<!--<script src="//load.sumome.com/" data-sumo-site-id="0a48d44c7350da66807f6363d6d626993cef00eb1e8c127830ab13bd102e72f0" async="async"></script>-->
 <!-- End of HubSpot Embed Code -->
 
 <script>
@@ -553,7 +708,27 @@ $('#contact_request_form').submit(function() {
 
     ga('create', 'UA-96544937-1', 'auto');
     ga('send', 'pageview');
-
+	$(document).ready(function() {
+  $('a[href="#cta-form"]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+	});
+$(window).scroll(function(){
+	if($(window).scrollTop()<120){
+		$('#button-free').css('top','95px');
+	}else{
+		$('#button-free').css('top',$('header.tz-header.fixed.tz-header2').outerHeight(true));
+	}
+});
 </script>
 {% endblock %}
 

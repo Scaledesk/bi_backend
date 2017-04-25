@@ -8,6 +8,9 @@
 .tz-background1{background:#6dd3d1 !important;}
 .tz-background2{background:#fabc59 !important;}
 .tz-background3{background:#f1805f !important;}
+.fixed{
+	position: fixed !important;
+}`8
 @media (min-width:1200){.container{max-width:1200px;width:100%;}
 }
 .color-darkturquoise{color:#6dd3d1 !important;}
@@ -1688,7 +1691,7 @@ body.home-rtl .tz-recent-post li{text-align:right;}
     body .tzautoplay i{padding-left:5px;}
     .tzcustom-button{float:left !important;margin:20px 0 0 0;padding:17px 33px;}
     .custom-html p{color:#ffffff;font-family:"Raleway",sans-serif;font-size:16px;font-weight:700;line-height:26px;margin:0;padding:0;}
-    header.tz-header2{background:rgba(0, 0, 0, 0.8);left:0;position:absolute;top:0;transition:all 0.4s linear 0s;-moz-transition:all 0.4s linear 0s;-webkit-transition:all 0.4s linear 0s;-ms-transition:all 0.4s linear 0s;-o-transition:all 0.4s linear 0s;width:100%;z-index:999999;padding:0;}
+    header.tz-header2{background:rgba(0, 0, 0, 0.8);left:0;top:0;transition:all 0.4s linear 0s;-moz-transition:all 0.4s linear 0s;-webkit-transition:all 0.4s linear 0s;-ms-transition:all 0.4s linear 0s;-o-transition:all 0.4s linear 0s;width:100%;z-index:999999;padding:0;}
     .tz-shop-cart{display:none;}
     .tz-offcavas{padding:25px 0;}
     .tz-header4 .tz-logo{margin:21px 0;}
@@ -1850,4 +1853,7 @@ body.home-rtl .tz-recent-post li{text-align:right;}
     .tz-header ul.nav-collapse > li:hover .nav-child{transition:all 0.4s linear 0s;-moz-transition:all 0.4s linear 0s;-webkit-transition:all 0.4s linear 0s;-ms-transition:all 0.4s linear 0s;-o-transition:all 0.4s linear 0s;top:100%;visibility:visible;}
     .nav-child ul li ul{border-left:1px solid #333333;left:85%;position:absolute;top:0;width:100%;display:block;visibility:hidden;transition:all 0s linear 0s;-moz-transition:all 0s linear 0s;-webkit-transition:all 0s linear 0s;-ms-transition:all 0s linear 0s;-o-transition:all 0s linear 0s;}
     .nav-child ul li:hover ul.mega-nav{transition:all 0.4s linear 0s;-moz-transition:all 0.4s linear 0s;-webkit-transition:all 0.4s linear 0s;-ms-transition:all 0.4s linear 0s;-o-transition:all 0.4s linear 0s;left:100%;visibility:visible;}
+}
+.fixed{
+	position: fixed !important;
 }
