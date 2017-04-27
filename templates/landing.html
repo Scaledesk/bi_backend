@@ -660,63 +660,7 @@
 
 
 
-      <script>
-
-function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-
-function loadkitchenDescription(obj){
-  $.ajax({
-    type: "POST",
-    url: "/kitchen/reload-kitchen-type/",
-    headers: { "X-CSRFToken": getCookie('csrftoken') },
-    data: { ktype_id:obj.value },
-    success: function( returnedData) {
-      document.getElementById('k_type_detail').innerHTML = returnedData
-    }
-  });
-}
-
-
-function loadkitchenDescriptionMob(obj){
-  $.ajax({
-    type: "POST",
-    url: "/kitchen/reload-kitchen-type/",
-    headers: { "X-CSRFToken": getCookie('csrftoken') },
-    data: { ktype_id:obj.value },
-    success: function( returnedData) {
-      document.getElementById('mob_k_type_detail').innerHTML = returnedData
-    }
-  });
-}
-
-
-function calculatePrice(price,no_of_wall){
-  var val = 0;
-  for(i=1;i<=no_of_wall;i++){
-    val+=Number(document.getElementById('height'+i).value);
-  }
-  var r = val*price
-  document.getElementById('k_result').innerHTML = r;
-}
-function removeResult(){
-  document.getElementById('k_result').innerHTML = '';
-}
-</script>
-
+ 
 
 <section class="tz-love-words2 theme-white style-border tzportfolio-wrap">
   <div class="container">

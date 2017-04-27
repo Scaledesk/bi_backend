@@ -197,7 +197,7 @@ floating button
 
 <div class="float-btn">
 
-    <button class="myfloat" data-toggle="modal" data-target="#mycalci">
+    <button class="myfloat" data-toggle="modal" data-target="#mycalci" onclick="modelOpen()">
     Kitchen Cost Calculator
     </button>
 
@@ -433,7 +433,7 @@ floating button
         <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
 
 <div class="pull-right">
-        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true" style="font-size: 20px;"></i></button>
+        <button type="button" onclick="modelClose()" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true" style="font-size: 20px;"></i></button>
 </div>
         <!--<h4 class="modal-title">Modal Header</h4>-->
       </div>
@@ -557,11 +557,15 @@ floating button
 {% endblock %}
 
 {% block script %}
-
 <script src="/static/js/jquery.min.js"></script>
-<!-- <script>
-    jQuery.noConflict();
-</script> -->
+ <script>
+   function modelOpen(){
+	   $('#mycalci').addClass('in').style({'display':'block'}).parent('body').addClass('modal-open')
+   }
+	 function modelClose(){
+	   $('#mycalci').removeClass('in').style({'display':'none'}).parent('body').removeClass('modal-open')
+   }
+</script>
 <script src="/static/js/bootstrap.min.js"></script>
 <script src="/static/js/owl.carousel.js"></script>
 <script src="/static/js/jquery.parallax-1.1.3.js"></script>
@@ -690,6 +694,62 @@ $('#contact_request_form').submit(function() {
   $(this).find(':input[type=submit]').prop('disabled', true);
 });
 </script>
+<script>
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+function loadkitchenDescription(obj){
+  $.ajax({
+    type: "POST",
+    url: "/kitchen/reload-kitchen-type/",
+    headers: { "X-CSRFToken": getCookie('csrftoken') },
+    data: { ktype_id:obj.value },
+    success: function( returnedData) {
+      document.getElementById('k_type_detail').innerHTML = returnedData
+    }
+  });
+}
+
+
+function loadkitchenDescriptionMob(obj){
+  $.ajax({
+    type: "POST",
+    url: "/kitchen/reload-kitchen-type/",
+    headers: { "X-CSRFToken": getCookie('csrftoken') },
+    data: { ktype_id:obj.value },
+    success: function( returnedData) {
+      document.getElementById('mob_k_type_detail').innerHTML = returnedData
+    }
+  });
+}
+
+
+function calculatePrice(price,no_of_wall){
+  var val = 0;
+  for(i=1;i<=no_of_wall;i++){
+    val+=Number(document.getElementById('height'+i).value);
+  }
+  var r = val*price
+  document.getElementById('k_result').innerHTML = r;
+}
+function removeResult(){
+  document.getElementById('k_result').innerHTML = '';
+}
+</script>
 
 
 <!-- Start of HubSpot Embed Code -->
@@ -701,7 +761,7 @@ $('#contact_request_form').submit(function() {
 <!-- End of HubSpot Embed Code -->
 
 <script>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -711,8 +771,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    ga('create', 'UA-96544937-1', 'auto');
-    ga('send', 'pageview');
+  <script type="text/javascript">
 	$(document).ready(function() {
   $('a[href="#cta-form"]').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
