@@ -965,7 +965,7 @@ border-color: #fff;
 
 .right-border{
     border-right: 1px solid #fff;
-    height: 240px;
+    max-height: 240px;
 }
 
 /* Mobile*/
