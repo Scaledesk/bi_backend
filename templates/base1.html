@@ -195,13 +195,93 @@ THIS IS WHERE THE MAIN CONTENT WILL GIVEN
 floating button
 -->
 
-<div class="float-btn">
+
+<!--float button for desktop-->
+<div class="float-btn hidden-xs">
 
     <button class="myfloat" data-toggle="modal" data-target="#mycalci" onclick="modelOpen()">
     Kitchen Cost Calculator
     </button>
 
 </div>
+
+<!--float button for desktop/-->
+
+<!--float button for mobile-->
+
+<div class="float-btn visible-xs">
+
+    <a class="myfloat" href="#mycalcimob" style="padding-top: 5px;">
+        Kitchen Cost Calculator
+    </a>
+
+</div>
+
+<!--float button for mobile/-->
+
+
+<section id="mycalcimob">
+
+            <!-- Modal content-->
+                    <!--
+                    form-->
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="tabs-style">
+                                <ul class="nav nav-tabs" role="tablist" id="detailTab">
+                                    <li class="active"><a href="#calcimob" role="tab" data-toggle="tab">Kitchen Cost Calculator</a></li>
+                                   <!-- <li><a href="#quotes" role="tab" data-toggle="tab">Get Custom Quotes</a></li>-->
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="calcimob">
+
+                                        <div class="tz-our-blog padding-ourblog" style="background:radial-gradient(#d8c87a , #c4a146), #fff !important;">
+
+
+                                            <div class="row">
+                                                <div class="col-md-4 text-center right-border" style="padding-left: 40px;">
+                                                    <!--   <a href="#" class="tz-button-dekor"><span>STEP-1 </span></a>-->
+                                                    <p class="f-w" style="float:left;font-size: 19px;"><b>Choose Your Kitchen</b></p>
+                                                    <!-- <form> -->
+                                                    <div class="form-group" style="width:220px;">
+                                                        <!-- <input type="text" value="" name="name" class="form-control input-lg form-input-custom" id="name" placeholder="Name" required> -->
+                                                        <select name="kitchen_type" id="k_type" name="k_type" onchange="loadkitchenDescription(this)" id="select_kitchen" class="form-control input-lg form-input-custom calci-select">
+                                                            <option class="calci-option">Choose an Option...</option>
+                                                            {% for obj in k_types %}
+                                                            {% if obj.name != 'Island Kitchen' %}
+                                                            <option value="{{obj.id}}" class="calci-option">{{obj.name}}</option>
+                                                            {% endif %}
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div>
+                                                    <!-- </form> -->
+                                                </div>
+                                                <div id="k_type_detail" style="padding:0 25px;">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div><!--end class container-->
+
+
+                    <!--       form end-->
+
+
+</section>
+
+
+
 <!--feature section-->
 
 <section class="tz-awesome theme-white">
@@ -424,7 +504,7 @@ floating button
     </div>
 </footer><!--end class tz-footer-->
 <!-- Modal1 -->
-<div id="mycalci" class="modal fade" role="dialog">
+<div id="mycalci" class="modal fade hidden-xs" role="dialog">
   <div class="modal-dialog" style="width: 75%;">
 
     <!-- Modal content-->
@@ -554,6 +634,9 @@ floating button
 
   </div>
 </div>
+
+
+
 {% endblock %}
 
 {% block script %}

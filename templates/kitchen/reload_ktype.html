@@ -1,10 +1,11 @@
 
 
-
-<div class="col-md-4 text-center right-border">
+<!--for desktop -->
+<div class="col-md-4 hidden-xs text-center right-border">
 
  <!-- <a href="#" class="tz-button-dekor"><span>STEP-2 </span></a>-->
     <p class="f-w" style="float:left;font-size: 19px;"> <b>Enter The Size Of Walls</b></p>
+
   <div class="row">
     <div class="col-xs-12">
   <div>
@@ -18,7 +19,7 @@
 
 
 </div>
-<div class="col-md-3 text-center">
+<div class="col-md-3 hidden-xs text-center">
 
 <br>
     <div class="row">
@@ -36,27 +37,116 @@
 
 
     </div>
+
+
     <div class="row">
 
     <div class="col-xs-12 text-left">
         <button type="button" class="btn btn-default appointment-btn" onclick="calculatePrice({{k_type.price}},{{k_type.no_of_wall}})" >Get estimated cost</button>
     </div>
+
     </div>
+
+
   <div class="row">
     <div class="col-xs-12">
     <p class="f-w"  style="float:left;"> <b>ESTIMATED COST</b></p>
+        <p class="f-w visible-xs"> <b>ESTIMATED COST</b></p>
   </div>
   </div>
+
+
 
   <div class="row">
     <div class="col-xs-12">
   <div class="result">&#8377;&nbsp;<span id="k_result"></span></div>
+        <div class="result visible-xs" style="margin:0 auto;">&#8377;&nbsp;<span id="k_result"></span></div>
   </div>
   </div>
-  <br>
+
+    <br>
 <!--  <div class="row">
     <div class="col-xs-12 text-left">
       <button type="button" class="btn btn-default appointment-btn" data-toggle="modal" data-target="#myModalL">BOOK AN APPOINTMENT</button>
   </div>
 </div>-->
 </div>
+
+<!--for desktop end / -->
+
+
+
+
+<!--for Mobile -->
+
+<div class="col-md-4 visible-xs text-center">
+
+    <!-- <a href="#" class="tz-button-dekor"><span>STEP-2 </span></a>-->
+    <p class="f-w" style="font-size: 19px;"> <b>Enter The Size Of Walls</b></p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div>
+
+                <img alt="Aliquam a sollicitudin" src="/media/{{k_type.thumbnails}}" height="180" width="100%">
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="col-md-3 visible-xs text-center">
+
+    <br>
+    <div class="row">
+
+
+        {% for obj in no_of_wall %}
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="height">Wall {{forloop.counter}}</label>
+                <input type="number" required value="0" min="1" value="1"  onfocus="removeResult()" name="height{{forloop.counter}}" class="form-control form-input-custom calci-select"  id="height{{forloop.counter}}" placeholder="height" required="">
+            </div>
+        </div>
+        {% endfor %}
+
+
+
+    </div>
+
+
+
+    <div class="row">
+
+        <div class="col-xs-12 text-center">
+            <button type="button" class="btn btn-default appointment-btn" onclick="calculatePrice({{k_type.price}},{{k_type.no_of_wall}})" >Get estimated cost</button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+
+            <p class="f-w"> <b>ESTIMATED COST</b></p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="result" style="margin:0 auto;">&#8377;&nbsp;<span id="k_result"></span></div>
+        </div>
+    </div>
+
+    <br>
+    <!--  <div class="row">
+        <div class="col-xs-12 text-left">
+          <button type="button" class="btn btn-default appointment-btn" data-toggle="modal" data-target="#myModalL">BOOK AN APPOINTMENT</button>
+      </div>
+    </div>-->
+</div>
+
+<!--for Mobile end/ -->
