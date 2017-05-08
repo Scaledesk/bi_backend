@@ -22,7 +22,7 @@ color:#EEEEEE;}
 }
 
 
-.cta-form{  
+.cta-form{
     width: 450px;
    /* margin-left: 50px;*/
     /* margin: 0 auto; */
@@ -966,6 +966,11 @@ border-color: #fff;
 .right-border{
     border-right: 1px solid #fff;
     max-height: 240px;
+}
+
+select.input-lg {
+
+    line-height: 60px;
 }
 
 /* Mobile*/
