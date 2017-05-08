@@ -65,6 +65,7 @@ def TermsAndConditionsView(request):
 
 def ContactRequestView(request): #user_email, activation_key, first_name
     if request.method == 'POST':
+        from django.template.loader import get_template
         from django.core.mail import send_mail
         from bloom_interio.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
 
@@ -92,12 +93,15 @@ def ContactRequestView(request): #user_email, activation_key, first_name
             message = ('Hi,\n\nThanks for contacting us. We will get back to you soon.\n\n' + \
                     'Regards,\nAdmin')
 
+
+            html_content = get_template('email/emailtemp.html').render({})
             send_mail(
                 subject,
                 message,
                 DEFAULT_FROM_EMAIL,
                 [user_email],
-                fail_silently=True,)
+                fail_silently=True,
+                html_message=html_content)
             return redirect("/thank-you/?source=contact")
 
 
@@ -105,6 +109,7 @@ def ContactRequestView(request): #user_email, activation_key, first_name
 def ModalFormView(request): #user_email, activation_key, first_name
     if request.method == 'POST':
         from django.core.mail import send_mail
+        from django.template.loader import get_template
         from bloom_interio.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
         name = request.POST['name']
         contact_no = request.POST['contact_no']
@@ -124,12 +129,15 @@ def ModalFormView(request): #user_email, activation_key, first_name
                 '\nWe will get back to you soon'\
                 '\n\nRegards,\nBloom Interio')
             subject = 'Thanks for contacting us.'
+
+            html_content = get_template('email/emailtemp.html').render({})
             send_mail(
                 subject,
                 message,
                 DEFAULT_FROM_EMAIL,
                 [email],
-                fail_silently=True,)
+                fail_silently=True,
+                html_message=html_content)
             return redirect("/thank-you/?source=contact")
 
 def ThankYouView(request):
