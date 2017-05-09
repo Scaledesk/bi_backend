@@ -6,6 +6,12 @@ body{
     overflow-x: hidden;
 }
 
+img{
+
+    max-width: 100%;
+
+}
+
 b,
 strong { font-weight: 700; }
 
@@ -974,10 +980,7 @@ border-color: #fff;
     max-height: 240px;
 }
 
-select.input-lg {
 
-    line-height: 60px;
-}
 
 /* Mobile*/
 
@@ -1191,8 +1194,16 @@ and (max-device-width: 480px) {
 }
 
 
+    select.input-lg {
+        height: 55px;}
+
 
 }
+
+.col-md-push-7 .cta-form{
+    margin-bottom: 20px;
+}
+
 
 
 /*thankyou*/
