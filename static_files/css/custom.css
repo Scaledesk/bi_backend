@@ -1,4 +1,10 @@
+html{
+    overflow-x: hidden;
+}
 
+body{
+    overflow-x: hidden;
+}
 
 b,
 strong { font-weight: 700; }
@@ -999,23 +1005,23 @@ select.input-lg {
 .float-btn > .myfloat{
     background: radial-gradient(#d8c87a , #c4a146), #fff;
     width: 143px;
+    max-width: 143px;
     min-width: 100%;
-    height: 55px;
+    height: 52px;
     text-align: center;
     line-height: 20px;
     text-decoration: none;
     border: none;
-    font-size:14px;
+    font-size: 14px;
     text-transform: capitalize;
     color: #fff;
     font-weight: bolder;
     -webkit-border-top-left-radius: 25px;
     -webkit-border-bottom-left-radius: 25px;
-        border-top-left-radius: 25px;
-            border-bottom-left-radius: 25px;
-
-    /*transform: rotate(90deg);*/
-    display:block;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    /* transform: rotate(90deg); */
+    display: block;
 }
 
 .modal-body{
