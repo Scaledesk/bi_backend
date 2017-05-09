@@ -182,12 +182,14 @@ def RequestedCallbackView(request): #user_email, activation_key, first_name
                 '\nWe will get back to you soon'\
                 '\n\nRegards,\nBloom Interio')
             subject = 'Thanks for contacting us.'
+            html_content = get_template('email/emailtemp.html').render({})
             send_mail(
                 subject,
                 message,
                 DEFAULT_FROM_EMAIL,
                 [email],
-                fail_silently=True,)
+                fail_silently=True,
+                html_message=html_content)
             return redirect("/thank-you/?source=contact")
 
 def FreeConsultation(request): #user_email, activation_key, first_name
@@ -210,10 +212,12 @@ def FreeConsultation(request): #user_email, activation_key, first_name
                 '\nWe will get back to you soon'\
                 '\n\nRegards,\nBloom Interio')
             subject = 'Thanks for contacting us.'
+            html_content = get_template('email/emailtemp.html').render({})
             send_mail(
                 subject,
                 message,
                 DEFAULT_FROM_EMAIL,
                 [email],
-                fail_silently=True,)
+                fail_silently=True,
+                html_message=html_content)
             return redirect("/thank-you/?source=contact")
