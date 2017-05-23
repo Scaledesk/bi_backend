@@ -8,7 +8,7 @@
   ul.nav-collapse li:nth-child(2) > a { border-bottom : 2px solid #333; }
 
   ul.level1 li:nth-child(2) a { border-bottom : 0px; }
-
+	.float-btn{display: none}
 </style>
 
 {% endblock %}
@@ -36,7 +36,7 @@
                 <ul class="slides">
                   {% for obj in k_images %}
                   <li>
-                    <img src="{{obj.image.url}}"  alt="Roses Deco Accent Chair" width="655" height="420" style="max-width: 100%;"/>
+                    <img src="{{obj.image.url}}"  alt="Roses Deco Accent Chair" style="max-width: 100%;"/>
                   </li>
                   {% endfor %}
                 </ul>

@@ -1264,6 +1264,10 @@ and (max-device-width: 480px) {
 #mycalci .modal-header{
     border-bottom: none;
 }
-
+@media(max-width:460px){
+	div.flexslider {
+    height: 209px;
+}
+}
 
 /*thankyou end*/
