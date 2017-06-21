@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from core.models import *
 from core.utils import *
+from django.template.loader import get_template
 # Create your views here.
 
 # def TestView(request):
@@ -65,7 +66,6 @@ def TermsAndConditionsView(request):
 
 def ContactRequestView(request): #user_email, activation_key, first_name
     if request.method == 'POST':
-        from django.template.loader import get_template
         from django.core.mail import send_mail
         from bloom_interio.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
 
