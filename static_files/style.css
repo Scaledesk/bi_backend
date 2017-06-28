@@ -424,7 +424,7 @@ body .tz-view-style2:hover:after{transform:rotate(45deg) scale(6);-moz-transform
 .tz-load-more{text-align:center;}
 .tz-load-more .tz-view-more2{margin:60px 0 85px;}
 .tz-our-blog{position:relative;overflow:hidden;padding:38px 0 30px;text-align:center;}
-body .padding-ourblog{padding:40px 0 60px;}
+body .padding-ourblog{padding:40px 0 40px;}
 .our-blog-item{background:#fff;border:2px solid #eeeeee;position:relative;perspective:1000px;-moz-perspective:1000px;-webkit-perspective:1000px;-ms-perspective:1000px;-o-perspective:1000px;cursor:pointer;margin-top:51px;}
 .our-blog-item .blog-thumb{height:370px;width:100%;text-align:center;overflow:hidden;position:relative;}
 .blog-thumb img{width:auto;height:100%;}
@@ -584,7 +584,7 @@ body .tz-rotate-skill p{color:#fff;font-family:'Raleway', sans-serif;font-size:1
 .tzshop-content ul li a{color:#333333;font-family:'Raleway',sans-serif;font-size:14px;font-weight:400;line-height:25px;margin:0;padding:0;display:block;text-align:center;text-decoration:none !important;}
 .tzshop-content ul li span{color:#333333;font-family:'Raleway',sans-serif;font-size:16px;font-weight:600;line-height:28px;margin:0;padding:0;display:block;text-align:center;}
 .tab-active{color:#545454 !important;}
-.tz-awesome{background-image:url('demos/awe-bk.jpg');background-repeat:no-repeat;background-position:center center;background-size:cover;padding:71px 0 79px;}
+.tz-awesome{background-image:url('demos/awe-bk.jpg');background-repeat:no-repeat;background-position:center center;background-size:cover;padding:40px 0 40px;}
 .awesome-ds{padding:5px 0;margin:0;color:#999999;font-family:'Raleway', sans-serif;font-size:14px;font-weight:400;line-height:18px;text-align:center;}
 .tz-awesome-content{display:block;text-align:center;margin:38px 0 29px;}
 .tz-awesome-content a:first-child{margin-left:0;}
@@ -682,7 +682,7 @@ body .tz-love-slider .owl-controls.clickable .owl-page:hover span{background:#6d
 .tz-count button i{color:#7d5e2c;font-size:32px;line-height:100px;}
 .tz-count strong{padding:21px 0 0;margin:0;color:rgba(255,255,255,0.3);font-family:'Raleway', sans-serif;font-size:25px;font-weight:600;line-height:40px;text-decoration:none !important;text-align:center;display:block;}
 .tz-count small{padding:0;margin:0;color:rgba(255,255,255,0.3);font-family:'Raleway', sans-serif;font-size:13px;font-weight:400;line-height:24px;text-decoration:none !important;text-align:center;display:block;}
-.tz-love-words2{padding:44px 0 45px!important;}
+.tz-love-words2{padding:40px 0 20px!important;}
 .tz-love-words-slider{list-style:none;padding:0;margin:64px 0 49px;}
 .tzcontent-for-words{position:relative;background:#eeeeee;padding:20px 30px 25px;margin-right:20px;}
 .tzcontent-for-words p{padding:0;margin:0;color:#555555;font-family:'Raleway', sans-serif;font-size:13px;font-weight:400;line-height:26px;text-decoration:none !important;}
@@ -716,7 +716,7 @@ body ul.tz-love-words-slider .owl-controls{margin-top:34px;text-align:center;}
 .tz-video:hover .tzpause{opacity:1 !important;}
 .tzcustom-block{padding:1px 0;}
 .tz-attach{padding:26px 0;margin:0;color:#999999;font-family:'Raleway', sans-serif;font-size:14px;font-weight:400;line-height:16px;text-align:center;}
-.tzcustom-row{margin-bottom:85px;margin-top:83px;}
+.tzcustom-row{margin-bottom:85px;margin-top:40px;}
 .custom-left img{max-width:100%;width:auto;}
 body .custom-right .tz-collection2{padding-top:0;}
 .custom-right .tz-collection2 li:first-child .item-collection{margin-top:0;}
@@ -1324,7 +1324,7 @@ body .kfrontstats .kcol-mid{width:93%;padding:24px 20px 32px;}
 .tz-tzshop-slider li:hover .line-bottom:before,
 .tz-tzshop-slider li:hover .line-bottom:after{transform:scale(1);-moz-transform:scale(1);-webkit-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);}
 .tz-tzshop-slider li:hover .tzcatslider-title:after{transform:scale(1);-moz-transform:scale(1);-webkit-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);}.tz-tzshop-slider li:hover .tzcatslider-title{top:38%;}
-.tz-footer-content1{background:#ffffff;padding:50px 0 0;}
+.tz-footer-content1{background:#ffffff;padding:40px 0 0;}
 .tz-footer-content{background:#0C1220;padding:50px 0 78px;}
 .footer-item h3.module-title{padding:20px 0 13px;margin:0;}
 .footer-item h3.module-title span{padding:0;margin:0;color:#ffffff;font-family:'Raleway', sans-serif;font-size:16px;font-weight:700;line-height:19px;text-decoration:none !important;}

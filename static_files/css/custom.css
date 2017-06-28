@@ -1271,3 +1271,41 @@ and (max-device-width: 480px) {
 }
 
 /*thankyou end*/
+
+
+.hot-selling-block .selling-details{
+margin-top:30px;
+margin-bottom:30px;
+
+
+}
+
+.hot-selling-block .item img {
+    transition: all .3s ease-in-out;
+}
+
+
+.hot-selling-block .team-details img {
+    width: 360px!important;
+    height: 260px!important;
+}
+
+.hot-selling-block .border-p {
+    border-color: #d7b85d;
+    border-style: double;
+    border-width: 4px;
+}
+
+.hot-selling-block .wed-box {
+    border: 1px solid #eee;
+    padding: 5px;
+     margin: 15px 15px 30px 15px;
+    background-color: #fff;
+    transition: all .1s;
+    cursor: pointer;
+}
+.hot-selling-block .item:hover .wed-box {
+    transition: all .3s ease-in-out;
+    background-color: #cdb35e;
+    color: #ffffff;
+    }
