@@ -14,13 +14,17 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import environ
+root = environ.Path(__file__) - 0 # three folder back (/a/b/c/ - 3 = /)
+env = environ.Env(DEBUG=(bool, False),) # set default values and casting
+environ.Env.read_env()
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@wqsdsfv332gy*thc7rmn5b(4i*p+45aj$3&vm0@@%blbd$^20'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -174,14 +178,14 @@ MEDIA_URL = '/media/'
 # USER_EMAIL='contact@bloominterio.com'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'contact@bloominterio.com'
-EMAIL_HOST_PASSWORD ='arjundhull27'
-DEFAULT_FROM_EMAIL = 'contact@bloominterio.com'
+EMAIL_PORT = env('EMAIL_PORT')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 # DEFAULT_TO_EMAIL = ''
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 #Website Detail
 # WEBSITE = 'http://127.0.0.1:8000/'
-ADMIN_EMAIL = 'priyankadhull@bloominterio.com'
+ADMIN_EMAIL = env('ADMIN_EMAIL')
 # ADMIN_EMAIL = 'pbdhull@gmail.com'
