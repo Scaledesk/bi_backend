@@ -16,9 +16,11 @@ class KImageInline(NestedStackedInline):
 
 class KitchenAdmin(NestedModelAdmin):
     """Kitchen Admin class"""
+    model = Kitchen
     inlines=[
         KImageInline,
     ]
+    prepopulated_fields = {"slug": ("name",)}
 
 class KISubInline(NestedStackedInline):
     model = KISub
@@ -46,10 +48,12 @@ class WImageInline(NestedStackedInline):
 #
 class WardrobeAdmin(NestedModelAdmin):
     """Kitchen Admin class"""
+    model = Wardrobe
     inlines=[
         WImageInline,
         # WApplianceInline,
     ]
+    prepopulated_fields = {"slug": ("name",)}
 
 # class WISubInline(NestedStackedInline):
 #     model = WISub

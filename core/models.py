@@ -15,11 +15,16 @@ class BaseModel(models.Model):
 class KType(BaseModel):
     """ Model to save Kitchen Types """
     name = models.CharField(max_length=30, unique=True, verbose_name='Type Name')
+    slug = AutoSlugField(populate_from='name', unique=True,editable=True)
     image = models.ImageField(upload_to='kitchen/images/kitchen_types/')
     thumbnails = models.ImageField(upload_to='kitchen/images/kitchen_types/', default='kitchen/images/kitchen_types/thumbnail.jpg')
     price = models.IntegerField(default=1)
     no_of_wall = models.IntegerField(default=1)
-    slug = AutoSlugField(populate_from='name', unique=True)
+    meta_title = models.CharField(max_length=300,null=True,blank=True)
+    meta_description = models.TextField(max_length=500,null=True,blank=True)
+    meta_keyword = models.CharField(max_length=500,null=True,blank=True)
+    custom_header_meta = models.TextField(max_length=500,null=True,blank=True)
+    
 
     def __unicode__(self):
         return self.name
@@ -66,6 +71,7 @@ class Kitchen(BaseModel):
     #theme = models.ForeignKey(KTheme, on_delete=models.CASCADE, related_name='Theme')
     ktype = models.ForeignKey(KType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=50, verbose_name='Name')
+    slug = models.SlugField(max_length=200, null=True, unique=True)
     thumbnail = models.ImageField(upload_to='kitchen/images/', default='kitchen/images/thumbnail.jpg')
     desc = RichTextField(max_length=500, verbose_name="Description")
     l = models.CharField(max_length=50,verbose_name='Length')
@@ -74,7 +80,11 @@ class Kitchen(BaseModel):
     base_price = models.IntegerField(verbose_name='Base Price')
     min_change = models.IntegerField(default=20, verbose_name='Miniumum Change')
     max_change = models.IntegerField(default=40, verbose_name='Maximum Change')
-    slug = models.SlugField(max_length=200, null=True, editable=False)
+    meta_title = models.CharField(max_length=300,null=True,blank=True)
+    meta_description = models.TextField(max_length=500,null=True,blank=True)
+    meta_keyword = models.CharField(max_length=500,null=True,blank=True)
+    custom_header_meta = models.TextField(max_length=500,null=True,blank=True)
+
 
     def __unicode__(self):
         return (self.name + '_' + str(self.l) + 'x' + str(self.b) + 'x' + str(self.h))
@@ -234,6 +244,10 @@ class WType(BaseModel):
     name = models.CharField(max_length=30, unique=True, verbose_name='Type Name')
     image = models.ImageField(upload_to='wardrobe/images/wardrobe_types/')
     slug = AutoSlugField(populate_from='name', unique=True)
+    meta_title = models.CharField(max_length=300,null=True,blank=True)
+    meta_description = models.TextField(max_length=500,null=True,blank=True)
+    meta_keyword = models.CharField(max_length=500,null=True,blank=True)
+    custom_header_meta = models.TextField(max_length=500,null=True,blank=True)
 
     def __unicode__(self):
         return self.name
@@ -280,6 +294,7 @@ class Wardrobe(BaseModel):
     #theme = models.ForeignKey(WTheme, on_delete=models.CASCADE, related_name='theme')
     wtype = models.ForeignKey(WType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=50, verbose_name='Name')
+    slug = models.SlugField(max_length=200, null=True, unique=True)
     desc = RichTextField(max_length=500, verbose_name="Description")
     thumbnail = models.ImageField(upload_to='wardrobe/images/', default='wardrobe/images/thumbnail.jpg')
     l = models.CharField(max_length=50,verbose_name='length')
@@ -288,7 +303,10 @@ class Wardrobe(BaseModel):
     base_price = models.IntegerField(verbose_name='Base Price')
     min_change = models.IntegerField(default=20, verbose_name='Miniumum Change')
     max_change = models.IntegerField(default=40, verbose_name='Maximum Change')
-    slug = models.SlugField(max_length=200, null=True, editable=False)
+    meta_title = models.CharField(max_length=300,null=True,blank=True)
+    meta_description = models.TextField(max_length=500,null=True,blank=True)
+    meta_keyword = models.CharField(max_length=500,null=True,blank=True)
+    custom_header_meta = models.TextField(max_length=500,null=True,blank=True)
 
     def __unicode__(self):
         return (self.name + '_' + str(self.l) + 'x' + str(self.b) + 'x' + str(self.h))

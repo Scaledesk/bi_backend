@@ -39,9 +39,8 @@ def ServeTheme(request, w_type_slug):
     context = AppendBasicContext(context)
     return render(request, 'wardrobe/product_by_type.html', context)
 
-def WardrobeContextCreator(w_type_slug):
+def WardrobeContextCreator(w_type_slug,context):
     """ to serves list of wardrobe theme of a particular type """
-    context = {}
     wardrobes = []
     w_images = []
     #theme slug is not unique. Its unique together with other attributes
@@ -53,18 +52,21 @@ def WardrobeContextCreator(w_type_slug):
         temp['image'] = WImage.objects.filter(wardrobe=wardrobe).first().image.url
         wardrobes.append(temp)
     context['wardrobes'] = wardrobes
+    context['meta_title'] = w_type.meta_title
+    context['meta_desc'] = w_type.meta_description
+    context['meta_keyword'] = w_type.meta_keyword
+    context['custom_header'] = w_type.custom_header_meta
     return context
 
 def ServeWardrobe(request, w_type_slug):
     """ to serve wardrobes on basis of type and theme """
-    context = None
-    context = WardrobeContextCreator(w_type_slug)
+    context = {}
     context = AppendBasicContext(context)
+    context = WardrobeContextCreator(w_type_slug,context)
     return render(request, 'wardrobe/product_by_theme.html', context)
 
-def ProductContextCreator(w_type_slug, wardrobe_slug):
+def ProductContextCreator(w_type_slug, wardrobe_slug,context):
     """ to create context to serve final product """
-    context = {}
     w_type = WType.objects.get(slug=w_type_slug)
     # theme slug and wardrobe slug are not unique. they are unique together with other fields
     # theme = WTheme.objects.get(w_type=w_type, slug=theme_slug)
@@ -98,6 +100,11 @@ def ProductContextCreator(w_type_slug, wardrobe_slug):
     context['min_price'] = min_price
     context['max_price'] = max_price
     context['w_color'] = w_color
+
+    context['meta_title'] = wardrobe.meta_title
+    context['meta_desc'] = wardrobe.meta_description
+    context['meta_keyword'] = wardrobe.meta_keyword
+    context['custom_header'] = wardrobe.custom_header_meta
     return context
 
 def ReloadFlex(request):
@@ -116,8 +123,9 @@ def ReloadFlex(request):
 
 def ServeProduct(request, w_type_slug, wardrobe_slug):
     """ to serve final product based on type, theme and wardrobe """
-    context = ProductContextCreator(w_type_slug, wardrobe_slug)
+    context = {}
     context = AppendBasicContext(context)
+    context = ProductContextCreator(w_type_slug, wardrobe_slug,context)
     return render(request, 'wardrobe/wardrobe_pdp.html', context=context)
 
 # def WardrobeResponse(request):

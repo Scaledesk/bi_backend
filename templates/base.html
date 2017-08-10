@@ -5,19 +5,13 @@
     <meta name="google-site-verification" content="PSZ7QH7LHClbFczRSFZxOO-36xX1ArrJ-JZZZQHQ2Sw" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-    <meta name="description" content="Bloom Interio - Modular Kitchen, Modern Wardrobes & Wardrobes Design Manufacturer from Gurgaon, Haryana, India">
-    <meta name="keywords" content="Modular Kitchen, Modern Wardrobes, Wardrobes Design, Italian Modular Kitchens, Island Modular Kitchen, Wooden Modular Kitchen, Modular Kitchen, Bloom Interio, Gurgaon">
+    <meta name="title" content="{{meta_title}}">
+    <meta name="description" content="{{meta_desc}}">
+    <meta name="keywords" content="{{meta_keyword}}">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/static/images/fevi/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:url"                content="http://www.bloominterio.com/" />
-    <meta property="og:type"               content="Website" />
-    <meta property="og:title"              content="Bloom Interio" />
-    <meta property="og:description"        content="Bloom Interio offers a range of Modular Kitchen and Furniture as the masterpieces of timeless beauty to adorn your interest." />
-    <meta property="og:image"              content="http://www.bloominterio.com/static/images/logo.png" />
     <title>Bloom Interio</title>
-
-
     {% block css %}
 
     <!--
@@ -63,8 +57,16 @@ favicon
     <link href="/static/css/custom.css" rel="stylesheet" />
     {% endblock %}
 
-    {% block custom_css %}
+    {% block custom_header %}
+        <meta property="og:url"                content="http://www.bloominterio.com/" />
+        <meta property="og:type"               content="Website" />
+        <meta property="og:title"              content="Bloom Interio" />
+        <meta property="og:description"        content="Bloom Interio offers a range of Modular Kitchen and Furniture as the masterpieces of timeless beauty to adorn your interest." />
+        <meta property="og:image"              content="http://www.bloominterio.com/static/images/logo.png" />
+    {% endblock %}
 
+    {% block custom_css %}
+        
     {% endblock %}
 
 </head>

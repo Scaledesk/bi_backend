@@ -45,9 +45,8 @@ def ServeTheme(request, k_type_slug):
     return render(request, 'kitchen/product_by_type.html', context)
 
 
-def KitchenContextCreator(k_type_slug):
+def KitchenContextCreator(k_type_slug,context):
     """ to serves list of kitchen them of a particular type """
-    context = {}
     kitchens = []
     k_images = []
     #theme slug is not unique. Its unique together with other attributes
@@ -59,18 +58,24 @@ def KitchenContextCreator(k_type_slug):
         temp['image'] = KImage.objects.filter(kitchen=kitchen).first().image.url
         kitchens.append(temp)
     context['kitchens'] = kitchens
+
+    context['meta_title'] = k_type.meta_title
+    context['meta_desc'] = k_type.meta_description
+    context['meta_keyword'] = k_type.meta_keyword
+    context['custom_header'] = k_type.custom_header_meta
+    
     return context
 
 def ServeKitchen(request, k_type_slug):
     """ to serve kitchens on basis of type and theme """
     context = None
-    context = KitchenContextCreator(k_type_slug)
+    context = {}
     context = AppendBasicContext(context)
+    context = KitchenContextCreator(k_type_slug,context)
     return render(request, 'kitchen/product_by_theme.html', context)
 
-def ProductContextCreator(k_type_slug, kitchen_slug):
+def ProductContextCreator(k_type_slug, kitchen_slug, context):
     """ to create context to serve final product """
-    context = {}
     k_type = KType.objects.get(slug=k_type_slug)
     # theme slug and kitchen slug are not unique. they are unique together with other fields
     # theme = KTheme.objects.get(k_type=k_type, slug=theme_slug)
@@ -104,6 +109,12 @@ def ProductContextCreator(k_type_slug, kitchen_slug):
     context['k_appliances'] = k_appliances
     context['min_price'] = min_price
     context['max_price'] = max_price
+
+    context['meta_title'] = kitchen.meta_title
+    context['meta_desc'] = kitchen.meta_description
+    context['meta_keyword'] = kitchen.meta_keyword
+    context['custom_header'] = kitchen.custom_header_meta
+    
     return context
 
 def ReloadFlex(request):
@@ -133,8 +144,9 @@ def ReloadKitchenType(request):
 
 def ServeProduct(request, k_type_slug, kitchen_slug):
     """ to serve final product based on type, theme and kitchen """
-    context = ProductContextCreator(k_type_slug, kitchen_slug)
+    context = {}
     context = AppendBasicContext(context)
+    context = ProductContextCreator(k_type_slug, kitchen_slug,context)
     return render(request, 'kitchen/kitchen_pdp.html', context=context)
 
 # def KitchenResponse(request):

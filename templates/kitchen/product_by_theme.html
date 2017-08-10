@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
+
+{% block custom_header %}
+    {% if custom_header %}
+        {{custom_header|safe}}
+    {% endif %}
+{% endblock %}
+
+
 {% block custom_css %}
 <style>
 
