@@ -416,20 +416,75 @@ a:hover, a:focus {
 
 }
 
-.tzwidget-social a:nth-child(1):hover{
-    background-color: #3b5998!important;
+.tzwidget-social a i{
+    font-size: 17px;
 }
 
-.tzwidget-social a:nth-child(2):hover{
-    background-color: #1da1f2!important;
+.tzwidget-social a:nth-child(1){
+/*    background-color: #3b5998!important;*/
+    background: #2d2d2d;
+    border: 1px solid #3b5998;
+    transition: all 0.2s;
+    
 }
+
+
+
+.tzwidget-social a:nth-child(1):hover{
+    background-color: #3b5998!important;
+    
+}
+
+/*Google+*/
+.tzwidget-social a:nth-child(2){
+/*    background-color: #3b5998!important;*/
+    background: #2d2d2d;
+    border: 1px solid #dd4b39;
+    transition: all 0.2s;
+    
+}
+
+
+
+.tzwidget-social a:nth-child(2):hover{
+    background-color: #dd4b39!important;
+    
+}
+
+
+/*Insta*/
+.tzwidget-social a:nth-child(3){
+/*    background-color: #3b5998!important;*/
+    background: #2d2d2d;
+    border: 1px solid #833ab4;
+    transition: all 0.2s;
+    
+}
+
 
 
 .tzwidget-social a:nth-child(3):hover{
-    background-color: #dd4b39!important;
+    background-color: #833ab4!important;
+    
 }
 
 
+
+
+/*
+.tzwidget-social a:nth-child(2){
+
+     background-color: #dd4b39!important;
+}
+
+
+.tzwidget-social a:nth-child(3){
+
+    background-color: #833ab4 !important;
+}
+
+
+*/
 
 .tzwidget-social a:nth-child(4):hover{
     background-color: #e1306c!important;
@@ -1246,6 +1301,7 @@ and (max-device-width: 480px) {
 }
 
 
+
 .appointment-btn {
     color: #ffffff;
     background: #6dd3d1;
@@ -1310,3 +1366,37 @@ margin-bottom:30px;
     background-color: #cdb35e;
     color: #ffffff;
     }
+
+
+/*August Code*/
+.textwidget{
+    padding: 0px 10px 0 0;
+}
+
+.tzwidget-contact address, .tzwidget-contact span, .tzwidget-contact > a{
+    letter-spacing: 0.3px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.tz-footer-content{
+    background: #2d2d2d;
+}
+
+.tz-footer-content a:hover, tz-footer-content a:focus{
+    text-decoration: none;
+    color: #cbaf59;
+}
+
+.fb-box-footer{
+    margin-left: -70px;
+}
+
+footer ul.nav-collapse li:nth-child(2) > a{
+    border-bottom: 0px;
+}
+
+@media screen and (max-width:767px){
+    .fb-box-footer{
+    margin-left: 15px;
+}
+}
