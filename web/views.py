@@ -63,6 +63,12 @@ def TermsAndConditionsView(request):
     context = AppendBasicContext(context)
     return render(request, 'terms_and_conditions.html', context)
 
+def ModularKitchenAccessories(request):
+    """ to serve terms and condition page """
+    context = {}
+    context = AppendBasicContext(context)
+    return render(request, 'modular-kitchen-accessories.html', context)
+
 
 def ContactRequestView(request): #user_email, activation_key, first_name
     if request.method == 'POST':
