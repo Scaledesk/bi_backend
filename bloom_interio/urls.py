@@ -39,5 +39,6 @@ urlpatterns = [
     url(r'^contact-request/', ContactRequestView, name='contact-request'),
     url(r'^modal-request/$', ModalFormView, name='modal-request'),
     url(r'^thank-you', ThankYouView, name='thank_you'),
+    url(r'^modular-kitchen-accessories/', ModularKitchenAccessories, name='modular_accessories'),
     url(r'^$', LandingView, name='landing')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
