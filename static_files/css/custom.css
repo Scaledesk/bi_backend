@@ -1424,8 +1424,395 @@ footer ul.nav-collapse li:nth-child(2) > a{
     background: #ffffff;
 }
 
+.testimonials-custom .client-card-custom {
+    background: #eee;height: 300px;
+}
+
+.testimonials-custom .client-card-custom .img-container-div{
+    height: 100%;
+}
+
+
+.testimonials-custom .client-card-custom .img-container-div img{
+   width: 100%;height: 100%;
+}
+
+.testimonials-custom .card{
+    margin-top: 60px;
+    background: #fff;
+    padding: 20px;
+    margin-left: -80px;
+    height: 180px;
+    margin-right: 30px;
+    box-shadow: 1px 1px 1px #d6d6d6;
+}
+
+.testimonials-custom .card p{
+    font-size: 16px;
+}
+
 @media screen and (max-width:767px){
     .fb-box-footer{
     margin-left: 15px;
 }
+    
+    
+    .testimonials-custom .client-card-custom {
+    background: #eee;height: auto;
+}
+
+.testimonials-custom .client-card-custom .img-container-div{
+    height: 100%;
+}
+
+
+.testimonials-custom .client-card-custom .img-container-div img{
+   width: 100%;
+}
+    
+.testimonials-custom .client-card-custom  img.tzavata-for-words {
+  margin: 0 auto;
+}
+
+.testimonials-custom .card{
+    margin: 0px;
+    background: #eee;
+    padding: 20px;
+    
+    height: auto;
+    
+   
+}
+
+
+    
+    
+    
+}
+
+
+
+/* ----------- iPad mini ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      
+       .testimonials-custom .client-card-custom {
+    background: #eee;height: auto;
+}
+
+.testimonials-custom .client-card-custom .img-container-div{
+    height: 100%;
+}
+
+
+.testimonials-custom .client-card-custom .img-container-div img{
+   width: 100%;
+}
+    
+.testimonials-custom .client-card-custom  img.tzavata-for-words {
+  margin: 0 auto;
+}
+
+.testimonials-custom .card{
+    margin: 0px;
+    background: #eee;
+    padding: 20px;
+    
+    height: auto;
+    
+   
+}
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      
+       .testimonials-custom .client-card-custom {
+    background: #eee;height: auto;
+}
+
+.testimonials-custom .client-card-custom .img-container-div{
+    height: 100%;
+}
+
+
+.testimonials-custom .client-card-custom .img-container-div img{
+   width: 100%;
+}
+    
+.testimonials-custom .client-card-custom  img.tzavata-for-words {
+  margin: 0 auto;
+}
+
+.testimonials-custom .card{
+    margin: 0px;
+    background: #eee;
+    padding: 20px;
+    
+    height: auto;
+    
+   
+}
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      
+       .testimonials-custom .client-card-custom {
+    background: #eee;height: auto;
+}
+
+.testimonials-custom .client-card-custom .img-container-div{
+    height: 100%;
+}
+
+
+.testimonials-custom .client-card-custom .img-container-div img{
+   width: 100%;
+}
+    
+.testimonials-custom .client-card-custom  img.tzavata-for-words {
+  margin: 0 auto;
+}
+
+.testimonials-custom .card{
+    margin: 0px;
+    background: #eee;
+    padding: 20px;
+    
+    height: auto;
+    
+   
+}
+
+}
+
+/* ----------- iPad 1 and 2 ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      
+       .testimonials-custom .client-card-custom {
+    background: #eee;height: auto;
+}
+
+.testimonials-custom .client-card-custom .img-container-div{
+    height: 100%;
+}
+
+
+.testimonials-custom .client-card-custom .img-container-div img{
+   width: 100%;
+}
+    
+.testimonials-custom .client-card-custom  img.tzavata-for-words {
+  margin: 0 auto;
+}
+
+.testimonials-custom .card{
+    margin: 0px;
+    background: #eee;
+    padding: 20px;
+    
+    height: auto;
+    
+   
+}
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      
+       .testimonials-custom .client-card-custom {
+    background: #eee;height: auto;
+}
+
+.testimonials-custom .client-card-custom .img-container-div{
+    height: 100%;
+}
+
+
+.testimonials-custom .client-card-custom .img-container-div img{
+   width: 100%;
+}
+    
+.testimonials-custom .client-card-custom  img.tzavata-for-words {
+  margin: 0 auto;
+}
+
+.testimonials-custom .card{
+    margin: 0px;
+    background: #eee;
+    padding: 20px;
+    
+    height: auto;
+    
+   
+}
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      
+       .testimonials-custom .client-card-custom {
+    background: #eee;height: auto;
+}
+
+.testimonials-custom .client-card-custom .img-container-div{
+    height: 100%;
+}
+
+
+.testimonials-custom .client-card-custom .img-container-div img{
+   width: 100%;
+}
+    
+.testimonials-custom .client-card-custom  img.tzavata-for-words {
+  margin: 0 auto;
+}
+
+.testimonials-custom .card{
+    margin: 0px;
+    background: #eee;
+    padding: 20px;
+    
+    height: auto;
+    
+   
+}
+
+}
+
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+      
+       .testimonials-custom .client-card-custom {
+    background: #eee;height: auto;
+}
+
+.testimonials-custom .client-card-custom .img-container-div{
+    height: 100%;
+}
+
+
+.testimonials-custom .client-card-custom .img-container-div img{
+   width: 100%;
+}
+    
+.testimonials-custom .client-card-custom  img.tzavata-for-words {
+  margin: 0 auto;
+}
+
+.testimonials-custom .card{
+    margin: 0px;
+    background: #eee;
+    padding: 20px;
+    
+    height: auto;
+    
+   
+}
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+      
+       .testimonials-custom .client-card-custom {
+    background: #eee;height: auto;
+}
+
+.testimonials-custom .client-card-custom .img-container-div{
+    height: 100%;
+}
+
+
+.testimonials-custom .client-card-custom .img-container-div img{
+   width: 100%;
+}
+    
+.testimonials-custom .client-card-custom  img.tzavata-for-words {
+  margin: 0 auto;
+}
+
+.testimonials-custom .card{
+    margin: 0px;
+    background: #eee;
+    padding: 20px;
+    
+    height: auto;
+    
+   
+}
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+      
+       .testimonials-custom .client-card-custom {
+    background: #eee;height: auto;
+}
+
+.testimonials-custom .client-card-custom .img-container-div{
+    height: 100%;
+}
+
+
+.testimonials-custom .client-card-custom .img-container-div img{
+   width: 100%;
+}
+    
+.testimonials-custom .client-card-custom  img.tzavata-for-words {
+  margin: 0 auto;
+}
+
+.testimonials-custom .card{
+    margin: 0px;
+    background: #eee;
+    padding: 20px;
+    
+    height: auto;
+    
+   
+}
+
 }
