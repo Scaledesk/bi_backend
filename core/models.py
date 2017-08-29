@@ -71,7 +71,7 @@ class Kitchen(BaseModel):
     #theme = models.ForeignKey(KTheme, on_delete=models.CASCADE, related_name='Theme')
     ktype = models.ForeignKey(KType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=50, verbose_name='Name')
-    slug = models.SlugField(max_length=200, null=True, unique=True)
+    slug = models.SlugField(max_length=200, null=True, unique=True,blank=True)
     thumbnail = models.ImageField(upload_to='kitchen/images/', default='kitchen/images/thumbnail.jpg')
     desc = RichTextField(max_length=500, verbose_name="Description")
     l = models.CharField(max_length=50,verbose_name='Length')
@@ -83,14 +83,15 @@ class Kitchen(BaseModel):
     meta_title = models.CharField(max_length=300,null=True,blank=True)
     meta_description = models.TextField(max_length=500,null=True,blank=True)
     meta_keyword = models.CharField(max_length=500,null=True,blank=True)
-    custom_header_meta = models.TextField(max_length=500,null=True,blank=True)
+    custom_header_meta = models.TextField(max_length=5000,null=True,blank=True)
 
 
     def __unicode__(self):
         return (self.name + '_' + str(self.l) + 'x' + str(self.b) + 'x' + str(self.h))
 
     def save(self, *args, **kwargs):
-        self.slug = slugify('-'.join((self.name, 'x'.join((str(self.l), str(self.b), str(self.h))))))
+        if not self.slug:
+            self.slug = slugify('-'.join((self.name, 'x'.join((str(self.l), str(self.b), str(self.h))))))
         super(Kitchen, self).save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
@@ -294,7 +295,7 @@ class Wardrobe(BaseModel):
     #theme = models.ForeignKey(WTheme, on_delete=models.CASCADE, related_name='theme')
     wtype = models.ForeignKey(WType, on_delete=models.CASCADE,null=True,default=None)
     name = models.CharField(max_length=50, verbose_name='Name')
-    slug = models.SlugField(max_length=200, null=True, unique=True)
+    slug = models.SlugField(max_length=200, null=True, unique=True,blank=True)
     desc = RichTextField(max_length=500, verbose_name="Description")
     thumbnail = models.ImageField(upload_to='wardrobe/images/', default='wardrobe/images/thumbnail.jpg')
     l = models.CharField(max_length=50,verbose_name='length')
@@ -306,13 +307,14 @@ class Wardrobe(BaseModel):
     meta_title = models.CharField(max_length=300,null=True,blank=True)
     meta_description = models.TextField(max_length=500,null=True,blank=True)
     meta_keyword = models.CharField(max_length=500,null=True,blank=True)
-    custom_header_meta = models.TextField(max_length=500,null=True,blank=True)
+    custom_header_meta = models.TextField(max_length=5000,null=True,blank=True)
 
     def __unicode__(self):
         return (self.name + '_' + str(self.l) + 'x' + str(self.b) + 'x' + str(self.h))
 
     def save(self, *args, **kwargs):
-        self.slug = slugify('-'.join((self.name, 'x'.join((str(self.l), str(self.b), str(self.h))))))
+        if not self.slug:
+            self.slug = slugify('-'.join((self.name, 'x'.join((str(self.l), str(self.b), str(self.h))))))
         super(Wardrobe, self).save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
