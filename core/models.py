@@ -21,9 +21,9 @@ class KType(BaseModel):
     price = models.IntegerField(default=1)
     no_of_wall = models.IntegerField(default=1)
     meta_title = models.CharField(max_length=300,null=True,blank=True)
-    meta_description = models.TextField(max_length=500,null=True,blank=True)
-    meta_keyword = models.CharField(max_length=500,null=True,blank=True)
-    custom_header_meta = models.TextField(max_length=500,null=True,blank=True)
+    meta_description = models.TextField(max_length=1000,null=True,blank=True)
+    meta_keyword = models.CharField(max_length=1000,null=True,blank=True)
+    custom_header_meta = models.TextField(max_length=5000,null=True,blank=True)
     
 
     def __unicode__(self):
@@ -81,8 +81,8 @@ class Kitchen(BaseModel):
     min_change = models.IntegerField(default=20, verbose_name='Miniumum Change')
     max_change = models.IntegerField(default=40, verbose_name='Maximum Change')
     meta_title = models.CharField(max_length=300,null=True,blank=True)
-    meta_description = models.TextField(max_length=500,null=True,blank=True)
-    meta_keyword = models.CharField(max_length=500,null=True,blank=True)
+    meta_description = models.TextField(max_length=1000,null=True,blank=True)
+    meta_keyword = models.CharField(max_length=1000,null=True,blank=True)
     custom_header_meta = models.TextField(max_length=5000,null=True,blank=True)
 
 
@@ -246,9 +246,9 @@ class WType(BaseModel):
     image = models.ImageField(upload_to='wardrobe/images/wardrobe_types/')
     slug = AutoSlugField(populate_from='name', unique=True)
     meta_title = models.CharField(max_length=300,null=True,blank=True)
-    meta_description = models.TextField(max_length=500,null=True,blank=True)
-    meta_keyword = models.CharField(max_length=500,null=True,blank=True)
-    custom_header_meta = models.TextField(max_length=500,null=True,blank=True)
+    meta_description = models.TextField(max_length=1000,null=True,blank=True)
+    meta_keyword = models.CharField(max_length=1000,null=True,blank=True)
+    custom_header_meta = models.TextField(max_length=5000,null=True,blank=True)
 
     def __unicode__(self):
         return self.name
@@ -305,8 +305,8 @@ class Wardrobe(BaseModel):
     min_change = models.IntegerField(default=20, verbose_name='Miniumum Change')
     max_change = models.IntegerField(default=40, verbose_name='Maximum Change')
     meta_title = models.CharField(max_length=300,null=True,blank=True)
-    meta_description = models.TextField(max_length=500,null=True,blank=True)
-    meta_keyword = models.CharField(max_length=500,null=True,blank=True)
+    meta_description = models.TextField(max_length=1000,null=True,blank=True)
+    meta_keyword = models.CharField(max_length=1000,null=True,blank=True)
     custom_header_meta = models.TextField(max_length=5000,null=True,blank=True)
 
     def __unicode__(self):
