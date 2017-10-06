@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from web.views import *
+from django.views.generic import TemplateView
 
 urlpatterns = [
     # url(r'^test/', TestView, name='test'),
@@ -40,5 +41,7 @@ urlpatterns = [
     url(r'^modal-request/$', ModalFormView, name='modal-request'),
     url(r'^thank-you', ThankYouView, name='thank_you'),
     url(r'^modular-kitchen-accessories/', ModularKitchenAccessories, name='modular_accessories'),
-    url(r'^$', LandingView, name='landing')
+    url(r'^$', LandingView, name='landing'),
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt',content_type='text/plain')),
+    url(r'^sitemap\.xml$', TemplateView.as_view(template_name='sitemap.xml',content_type='text/xml')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
