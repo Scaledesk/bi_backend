@@ -19,6 +19,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from web.views import *
 from django.views.generic import TemplateView
+from django.contrib.sitemaps.views import sitemap   
+from core.custom_sitemap import *
+sitemaps = {
+    'static': StaticViewSitemap,
+    'kitchen': KitchenSitemap,
+    'kitchenType':KitchenTypeSitemap,
+    'wardrobe': WardrobeSitemap,
+    'wardrobeType':WardrobeTypeSitemap
+}
 
 urlpatterns = [
     # url(r'^test/', TestView, name='test'),
@@ -43,5 +52,6 @@ urlpatterns = [
     url(r'^modular-kitchen-accessories/', ModularKitchenAccessories, name='modular_accessories'),
     url(r'^$', LandingView, name='landing'),
     url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt',content_type='text/plain')),
-    url(r'^sitemap\.xml$', TemplateView.as_view(template_name='sitemap.xml',content_type='text/xml')),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    # url(r'^sitemap\.xml$', TemplateView.as_view(template_name='sitemap.xml',content_type='text/xml')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

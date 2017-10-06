@@ -35,6 +35,8 @@ ALLOWED_HOSTS = ['www.bloominterio.com','bloominterio.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -166,6 +168,7 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 
+SITE_ID = 1
 
 #smtp settings
 # USER_EMAIL='contact@bloominterio.com'

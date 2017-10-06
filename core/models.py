@@ -4,6 +4,7 @@ from django.db import models
 from autoslug import AutoSlugField
 from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField
+from django.urls import reverse
 
 class BaseModel(models.Model):
     """ Base Class """
@@ -28,6 +29,9 @@ class KType(BaseModel):
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('serveKitchenType', args=[self.slug])
 
     def delete(self, *args, **kwargs):
         # onveriding delete method to ensure that file is deleted along with database entry
@@ -93,6 +97,9 @@ class Kitchen(BaseModel):
         if not self.slug:
             self.slug = slugify('-'.join((self.name, 'x'.join((str(self.l), str(self.b), str(self.h))))))
         super(Kitchen, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('serveKitchenPage', args=[self.ktype.slug,self.slug])
 
     def delete(self, *args, **kwargs):
         # Delete the file after the model
@@ -258,6 +265,9 @@ class WType(BaseModel):
         storage, path = self.image.storage, self.image.path
         super(WType, self).delete(*args, **kwargs)
         storage.delete(path)
+    
+    def get_absolute_url(self):
+        return reverse('serveWardrobeType', args=[self.slug])
 
     class Meta:
             db_table = "%s_%s" % ('core', "wardrobe_type")
@@ -316,6 +326,9 @@ class Wardrobe(BaseModel):
         if not self.slug:
             self.slug = slugify('-'.join((self.name, 'x'.join((str(self.l), str(self.b), str(self.h))))))
         super(Wardrobe, self).save(*args, **kwargs)
+    
+    def get_absolute_url(self):
+        return reverse('serveWardrobePage', args=[self.wtype.slug,self.slug])
 
     def delete(self, *args, **kwargs):
         # Delete the file after the model
