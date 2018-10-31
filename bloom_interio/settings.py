@@ -29,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.bloominterio.com','bloominterio.com']
+ALLOWED_HOSTS = ['35.200.221.37','www.bloominterio.com','bloominterio.com','bloominterio.online']
 
 
 # Application definition
@@ -173,7 +173,7 @@ SITE_ID = 1
 #smtp settings
 # USER_EMAIL='contact@bloominterio.com'
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_PORT = env('EMAIL_PORT')
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')

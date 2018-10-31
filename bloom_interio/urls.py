@@ -42,6 +42,7 @@ urlpatterns = [
     url(r'^modularkitchen-delhi-ncr/', ServeLandingView, name='modularkitchen-delhi-ncr'),
     url(r'^requestedCallback/', RequestedCallbackView, name='requested-callback'),
     url(r'^freeConsultation/', FreeConsultation, name='free-consultation'),
+    url(r'^modular-kitchen-in-gurgaon/', ServeLandingView, name='modular-kitchen-in-gurgaon'),
 
     url(r'^interior/', InteriorView, name='interior'),
     url(r'^product-help/', ProductHelpView, name='product_help'),

@@ -160,6 +160,12 @@ def ServeLandingView(request):
     context = AppendBasicContext(context)
     return render(request, 'index-new.html', context)
 
+def ServeLandingViewNew(request):
+    """ to serve frequently asked question page """
+    context = {}
+    context = AppendBasicContext(context)
+    return render(request, 'index-new.html', context)
+
 
 
 def RequestedCallbackView(request): #user_email, activation_key, first_name
