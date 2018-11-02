@@ -91,7 +91,7 @@
 
 
 
-.welcome-message h1{
+.welcome-message h1, .welcome-message .h1{
  /*   font-size: 38px;*/
     font-size: 28px;
 }
@@ -608,10 +608,13 @@ a:hover, a:focus{
 @media screen and (max-device-width: 370px) {
     .wed-btn{ padding-left: 5%;}
 
-    .welcome-message h1{
+    .welcome-message h1, .welcome-message .h1{
         font-size: 20px !important;
     }
 }
 
 
-
+.sub-heading{
+  margin: 16px 0 0;
+  font-size: 20px;
+}
